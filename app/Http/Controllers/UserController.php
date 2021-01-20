@@ -13,7 +13,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $data['title'] = 'Data Pengguna';
+
+        return view('pengguna.index', $data);
     }
 
     /**
