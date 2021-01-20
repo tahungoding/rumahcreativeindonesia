@@ -256,7 +256,7 @@
             </header>
         @endauth
         <div class="main-content">
-            <div class="page-content" >
+            <div @auth class="page-content" @endauth >
                 <div class="container-fluid">
                     @yield('content')
         @auth
