@@ -37,27 +37,45 @@
                             <th>Email</th>
                             <th>Username</th>
                             <th>Hak Akses</th>
+                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <div class="button-items">
-                                <a href="#" class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                                    <i class="ti-pencil"></i></a>
-                                <a href="#" class="btn btn-outline-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Hapus">
-                                    <i class="ti-trash"></i></a>
-                            </div>
-                        </td>
-                    </tr>
                     <tbody>
+                        @php
+                        $number = 1
+                        @endphp
+                        @foreach ($users as $user)
+                        <tr>
+                            <td>{{ $number++ }}</td>
+                            <td>
+                                <img class="d-flex align-self-center rounded" src="{{ profile_picture($user->foto) }}"
+                                    height="64">
+                            </td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->username }}</td>
+                            <td>{{ $user->userLevel['nama'] }}</td>
+                            <td>{{ $user->status }}</td>
+                            <td>
+                                <div class="button-items">
+                                    <a href="{{ route('user.edit', $user) }}"
+                                        class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip"
+                                        data-placement="top" title="Edit">
+                                        <i class="ti-pencil"></i></a>
 
+                                    <form action="{{ route('user.destroy', $user) }}" method="post"
+                                        onsubmit="return confirm('Yakin hapus data ini?')">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-outline-danger waves-effect waves-light"
+                                            data-toggle="tooltip" data-placement="top" title="Hapus">
+                                            <i class="ti-trash"></i></button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
