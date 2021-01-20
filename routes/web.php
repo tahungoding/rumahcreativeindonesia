@@ -6,8 +6,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
-=======
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('agenda', 'AgendaController');
     Route::resource('artikel', 'ArtikelController');
@@ -27,5 +25,3 @@ Route::group(['middleware' => 'auth'], function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
->>>>>>> 195ae7637de45702ecb201e01c319852eac42088
