@@ -198,7 +198,7 @@
                                                 <i class="ti-briefcase"></i>Profil
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-left" aria-labelledby="topnav-email">
-                                                <a href="{{url('user')}}" class="dropdown-item">Profil Perusahaan</a>
+                                                <a href="{{url('profil')}}" class="dropdown-item">Profil Perusahaan</a>
                                                 <a href="{{url('struktur_tim')}}" class="dropdown-item">Struktur Tim</a>
                                             </div>
                                         </li>
