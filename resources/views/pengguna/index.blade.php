@@ -65,7 +65,7 @@
                                         <i class="ti-pencil"></i></a>
 
                                     <form action="{{ route('user.destroy', $user) }}" method="post"
-                                        onsubmit="return confirm('Yakin hapus data ini?')">
+                                        onsubmit="return confirm('Yakin hapus data ini?')" style="display: inline">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-outline-danger waves-effect waves-light"
