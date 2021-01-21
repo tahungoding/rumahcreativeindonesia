@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Profile;
 
 class ProfileController extends Controller
 {
@@ -13,7 +15,11 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+        $data['title']      = 'Profile Perusahaan';
+        $data['actionUrl']  = route('profile.update', 1);
+        $data['profile'] = Profile::all();
+
+        return view('profil', $data);
     }
 
     /**
@@ -68,7 +74,39 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'latar_belakang'   => "required",
+            'visi'             => "required",
+            'misi'             => "required",
+            'model_konsep'     => "required",
+            'kekuatan'         => "required",
+            'fokus_wilayah'    => "required",
+            'alamat'           => "required",
+            'telepon'          => "required|numeric",
+            'email'            => "required|email",
+            'instagram'        => "required",
+            'facebook'         => "required",
+            'youtube'          => "required",
+        ]);
+
+        $profil = Profile::findOrFail($id);
+
+        $data['latar_belakang'] = $request->latar_belakang;
+        $data['visi'] = $request->visi;
+        $data['misi'] = $request->misi;
+        $data['model_konsep'] = $request->model_konsep;
+        $data['kekuatan'] = $request->kekuatan;
+        $data['fokus_wilayah'] = $request->fokus_wilayah;
+        $data['alamat'] = $request->alamat;
+        $data['telepon'] = $request->telepon;
+        $data['email'] = $request->email;
+        $data['instagram'] = $request->instagram;
+        $data['facebook'] = $request->facebook;
+        $data['youtube'] = $request->youtube;
+
+        $profil->update($data);
+
+        return redirect(route('profile.index'));
     }
 
     /**
