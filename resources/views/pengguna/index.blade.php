@@ -56,8 +56,8 @@
                                 <div class="button-items">
                                     <a href="{{ route('user.edit', $user) }}" class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
                                         <i class="ti-pencil"></i></a>
-
-                                    <form action="{{ route('user.destroy', $user) }}" method="post" onsubmit="return confirm('Yakin hapus data ini?')">
+                                    <form action="{{ route('user.destroy', $user) }}" method="post"
+                                        onsubmit="return confirm('Yakin hapus data ini?')" style="display: inline">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-outline-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Hapus">

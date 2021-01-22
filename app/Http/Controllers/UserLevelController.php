@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\UserLevel;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class UserLevelController extends Controller
 {
@@ -13,7 +15,10 @@ class UserLevelController extends Controller
      */
     public function index()
     {
-        //
+        $data['title']      = 'Data Level Pengguna';
+        $data['userLevels'] = UserLevel::all();
+
+        return view('level_pengguna.index', $data);
     }
 
     /**
@@ -23,7 +28,10 @@ class UserLevelController extends Controller
      */
     public function create()
     {
-        //
+        $data['title']     = 'Tambah Level Pengguna';
+        $data['actionUrl'] = route('user_level.store');
+
+        return view('level_pengguna.form', $data);
     }
 
     /**
@@ -34,7 +42,20 @@ class UserLevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'level_name' => "required|unique:user_level,nama",
+            'status'     => [
+                'required',
+                Rule:: in(['aktif', 'tidak aktif']),
+            ],
+        ]);
+
+        $levelData = $request->only('status');
+        $levelData['nama'] = $request->level_name;
+
+        UserLevel::create($levelData);
+
+        return redirect(route('user_level.index'));
     }
 
     /**
@@ -51,34 +72,53 @@ class UserLevelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  UserLevel $userLevel
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(UserLevel $userLevel)
     {
-        //
+        $data['title']     = 'Edit Level Pengguna';
+        $data['actionUrl'] = route('user_level.update', $userLevel);
+        $data['userLevel'] = $userLevel;
+
+        return view('level_pengguna.form', $data);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  UserLevel $userLevel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, UserLevel $userLevel)
     {
-        //
+        $request->validate([
+            'level_name' => "required|unique:user_level,nama,$userLevel->id",
+            'status'     => [
+                'required',
+                Rule::in(['aktif', 'tidak aktif']),
+            ],
+        ]);
+
+        $levelData = $request->only('status');
+        $levelData['nama'] = $request->level_name;
+
+        $userLevel->update($levelData);
+
+        return redirect(route('user_level.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  UserLevel $userLevel
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(UserLevel $userLevel)
     {
-        //
+        $userLevel->delete();
+
+        return redirect(route('user_level.index'));
     }
 }
