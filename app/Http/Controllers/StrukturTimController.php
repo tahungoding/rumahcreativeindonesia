@@ -115,9 +115,9 @@ class StrukturTimController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(StruktutTim $id)
+    public function destroy(StrukturTim $strukturTim)
     {
-        $id->delete();
+        $strukturTim->delete();
 
         return  redirect(route('struktur_tim.index'));
     }
