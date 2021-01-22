@@ -43,6 +43,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function articles()
+    {
+        return $this->hasMany(Artikel::class, 'id_user', 'id');
+    }
+
     public function userLevel()
     {
         return $this->belongsTo(UserLevel::class, 'id_level', 'id');

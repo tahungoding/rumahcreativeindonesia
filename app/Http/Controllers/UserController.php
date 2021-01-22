@@ -55,7 +55,7 @@ class UserController extends Controller
         ]);
 
         $path = ($request->foto)
-            ? $request->file('foto')->store("/public/users")
+            ? $request->file('foto')->store("/public/images/users")
             : null;
 
         $userData = $request->except('user_level', 'confirm_password');
@@ -117,7 +117,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
 
         $path = ($request->foto)
-            ? $request->file('foto')->store("/public/users")
+            ? $request->file('foto')->store("/public/images/users")
             : $user->foto;
 
         if ($request->foto) {
