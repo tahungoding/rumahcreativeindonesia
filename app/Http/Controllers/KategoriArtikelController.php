@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\KategoriArtikel;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class KategoriArtikelController extends Controller
 {
@@ -13,7 +15,10 @@ class KategoriArtikelController extends Controller
      */
     public function index()
     {
-        //
+        $data['title']      = 'Data Kategori Artikel';
+        $data['categories'] = KategoriArtikel::all();
+
+        return view('kategori_artikel.index', $data);
     }
 
     /**
@@ -23,7 +28,10 @@ class KategoriArtikelController extends Controller
      */
     public function create()
     {
-        //
+        $data['title']     = 'Tambah Kategori Artikel';
+        $data['actionUrl'] = route('kategori_artikel.store');
+
+        return view('kategori_artikel.form', $data);
     }
 
     /**
@@ -34,7 +42,20 @@ class KategoriArtikelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'category_name' => "required|unique:user_level,nama",
+            'status'     => [
+                'required',
+                Rule::in(['aktif', 'tidak aktif']),
+            ],
+        ]);
+
+        $categoryData = $request->only('status');
+        $categoryData['nama'] = $request->category_name;
+
+        KategoriArtikel::create($categoryData);
+
+        return redirect(route('kategori_artikel.index'));
     }
 
     /**
@@ -51,34 +72,53 @@ class KategoriArtikelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  KategoriArtikel $kategoriArtikel
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(KategoriArtikel $kategoriArtikel)
     {
-        //
+        $data['title']           = 'Edit Kategori Artikel';
+        $data['actionUrl']       = route('kategori_artikel.update', $kategoriArtikel);
+        $data['kategoriArtikel'] = $kategoriArtikel;
+
+        return view('kategori_artikel.form', $data);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  KategoriArtikel $kategoriArtikel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, KategoriArtikel $kategoriArtikel)
     {
-        //
+        $request->validate([
+            'category_name' => "required|unique:user_level,nama,$kategoriArtikel->id",
+            'status'     => [
+                'required',
+                Rule::in(['aktif', 'tidak aktif']),
+            ],
+        ]);
+
+        $categoryData = $request->only('status');
+        $categoryData['nama'] = $request->category_name;
+
+        $kategoriArtikel->update($categoryData);
+
+        return redirect(route('kategori_artikel.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  KategoriArtikel $kategoriArtikel
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(KategoriArtikel $kategoriArtikel)
     {
-        //
+        $kategoriArtikel->delete();
+
+        return redirect(route('kategori_artikel.index'));
     }
 }
