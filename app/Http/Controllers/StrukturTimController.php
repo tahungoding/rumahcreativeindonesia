@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\StrukturTim;
 
 class StrukturTimController extends Controller
 {
@@ -13,7 +14,10 @@ class StrukturTimController extends Controller
      */
     public function index()
     {
-        //
+        $data['title'] = "Struktur Tim";
+        $data['tim'] = StrukturTim::all();
+
+        return view('struktur_tim.index', $data);
     }
 
     /**
@@ -23,7 +27,10 @@ class StrukturTimController extends Controller
      */
     public function create()
     {
-        //
+        $data['title']      = 'Tambah Tim';
+        $data['actionUrl']  = route('struktur_tim.store');
+
+        return view('struktur_tim.create', $data);
     }
 
     /**
@@ -34,7 +41,19 @@ class StrukturTimController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama' => "required",
+            'jabatan' => "required",
+            'status' => "required"
+        ]);
+
+        $data['nama'] = $request->nama;
+        $data['jabatan'] = $request->jabatan;
+        $data['status'] = $request->status;
+
+        StrukturTim::create($data);
+
+        return redirect(route('struktur_tim.index'));
     }
 
     /**
@@ -54,9 +73,13 @@ class StrukturTimController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(StrukturTim $id)
     {
-        //
+        $data['title']      = 'Edit Tim';
+        $data['actionUrl']  = route('StrukturTim.update', $id);
+        $data['tim']       = $id;
+
+        return view('struktur_tim.edit', $data);
     }
 
     /**
@@ -77,8 +100,10 @@ class StrukturTimController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(StruktutTim $id)
     {
-        //
+        $id->delete();
+
+        return  redirect(route('struktur_tim.index'));
     }
 }
