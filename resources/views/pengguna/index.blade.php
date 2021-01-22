@@ -6,13 +6,10 @@
 
 @section('css')
 <!-- DataTables -->
-<link href="{{ asset('assets/back/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"
-    type="text/css" />
-<link href="{{ asset('assets/back/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}" rel="stylesheet"
-    type="text/css" />
+<link href="{{ asset('assets/back/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/back/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
 <!-- Responsive datatable examples -->
-<link href="{{ asset('assets/back/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}"
-    rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/back/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -27,8 +24,7 @@
                         <i class="ti-plus"></i> Tambah</a>
                 </p>
 
-                <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
-                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -49,8 +45,7 @@
                         <tr>
                             <td>{{ $number++ }}</td>
                             <td>
-                                <img class="d-flex align-self-center rounded" src="{{ profile_picture($user->foto) }}"
-                                    height="64">
+                                <img class="d-flex align-self-center rounded" src="{{ profile_picture($user->foto) }}" height="64">
                             </td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
@@ -59,17 +54,13 @@
                             <td>{{ $user->status }}</td>
                             <td>
                                 <div class="button-items">
-                                    <a href="{{ route('user.edit', $user) }}"
-                                        class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip"
-                                        data-placement="top" title="Edit">
+                                    <a href="{{ route('user.edit', $user) }}" class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
                                         <i class="ti-pencil"></i></a>
-
                                     <form action="{{ route('user.destroy', $user) }}" method="post"
                                         onsubmit="return confirm('Yakin hapus data ini?')" style="display: inline">
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="btn btn-outline-danger waves-effect waves-light"
-                                            data-toggle="tooltip" data-placement="top" title="Hapus">
+                                        <button type="submit" class="btn btn-outline-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Hapus">
                                             <i class="ti-trash"></i></button>
                                     </form>
                                 </div>
