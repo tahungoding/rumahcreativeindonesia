@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mitra;
+use App\KategoriMitra;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MitraController extends Controller
 {
@@ -13,7 +16,10 @@ class MitraController extends Controller
      */
     public function index()
     {
-        //
+        $data['title'] = 'Data Mitra';
+        $data['mitras'] = Mitra::all();
+
+        return view('mitra.index', $data);
     }
 
     /**
@@ -23,7 +29,11 @@ class MitraController extends Controller
      */
     public function create()
     {
-        //
+        $data['title']      = 'Tambah Data Mitra';
+        $data['actionUrl']  = route('mitra.store');
+        $data['kategori_mitras']     = KategoriMitra::all();
+
+        return view('mitra.create', $data);
     }
 
     /**
@@ -34,7 +44,26 @@ class MitraController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $request->validate([
+            'nama'             => "required|unique:mitra,nama",
+            'logo'             => "nullable|mimes:png,jpg|max:2048",
+            'id_kategori_mitra'   => "required",
+        ]);
+
+        $path = ($request->logo)
+            ? $request->file('logo')->store("/public/mitra")
+            : null;
+            
+        $mitraData['nama']           = $request->nama;
+        $mitraData['logo']           = $path;
+        $mitraData['id_kategori_mitra'] = $request->id_kategori_mitra;
+
+        if (Mitra::create($mitraData)) {
+            return redirect('mitra')->with('success', 'Data Mitra berhasil ditambahkan!');
+        } else {
+            return redirect('mitra/create')->with('error', 'Data Mitra gagal ditambahkan!');
+        }
     }
 
     /**
@@ -54,9 +83,14 @@ class MitraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Mitra $mitra)
     {
-        //
+        $data['title']              = 'Edit Mitra';
+        $data['actionUrl']          = route('mitra.update', $mitra);
+        $data['kategori_mitras']    = KategoriMitra::all();
+        $data['mitra']              = $mitra;
+
+        return view('mitra.edit', $data);
     }
 
     /**
@@ -68,7 +102,36 @@ class MitraController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        if (isset($request->id_kategori_mitra) == '') {
+            $request->id_kategori_mitra = null;
+        }
+        $request->validate([
+            'nama'             => "required",
+            'logo'             => "nullable|mimes:png,jpg|max:2048",
+            'id_kategori_mitra'=> "required",
+        ]);
+
+        $mitra = Mitra::findOrFail($id);
+
+        $path = ($request->logo)
+            ? $request->file('logo')->store("/public/mitra")
+            : $mitra->logo;
+        
+        if ($request->logo) {
+            Storage::delete($mitra->logo);
+        }
+            
+        $mitraData['nama']           = $request->nama;
+        $mitraData['logo']           = $path;
+        $mitraData['id_kategori_mitra'] = $request->id_kategori_mitra;
+
+
+        if ($mitra->update($mitraData)) {
+            return redirect('mitra')->with('success', 'Data Mitra berhasil diubah!');
+        } else {
+            return redirect('mitra/create')->with('error', 'Data Mitra gagal diubah!');
+        }
     }
 
     /**
@@ -77,8 +140,15 @@ class MitraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Mitra $mitra)
     {
-        //
+        Storage::delete($mitra->logo);
+
+
+        if ($mitra->delete()) {
+            return redirect('mitra')->with('success', 'Data Mitra berhasil dihapus!');
+        } else {
+            return redirect('mitra/create')->with('error', 'Data Mitra gagal dihapus!');
+        }
     }
 }
