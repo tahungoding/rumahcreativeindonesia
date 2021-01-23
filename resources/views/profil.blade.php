@@ -9,6 +9,17 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
+
+                @if ($msg = Session::get('success'))
+                <div class="alert alert-success">
+                    {{ $msg }}
+                </div>
+                @endif
+                @if ($msg = Session::get('error'))
+                <div class="alert alert-danger">
+                    {{ $msg }}
+                </div>
+                @endif
                 <h4 class="card-title">{{ $title }}</h4>
                 <p class="card-title-desc"></p>
 
