@@ -35,9 +35,8 @@
                             <th>Judul</th>
                             <th>Kategori</th>
                             <th>Penulis</th>
-                            <th>Hits</th>
+                            <th>Dilihat</th>
                             <th>Status</th>
-                            <th>Tanggal Publish</th>
                             <th>Tanggal Dibuat</th>
                             <th>Terakhir Diubah</th>
                             <th>Aksi</th>
@@ -50,12 +49,11 @@
                         @foreach ($articles as $article)
                         <tr>
                             <td>{{ $number++ }}</td>
-                            <td>{{ $article->judul }}</td>
+                            <td><a href="#">{{ $article->judul }}</a></td>
                             <td>{{ $article->category->nama }}</td>
                             <td>{{ $article->writer->name }}</td>
                             <td>{{ $article->hits }}</td>
                             <td>{{ $article->status }}</td>
-                            <td>{{ tgl_indo($article->tanggal_publish, true) }}</td>
                             <td>{{ tgl_indo($article->created_at, true) }}</td>
                             <td>{{ tgl_indo($article->updated_at, true) }}</td>
                             <td>

@@ -52,7 +52,6 @@ class ArtikelController extends Controller
             'image'        => "required|mimes:png,jpg|max:2048",
             'content'      => "required",
             'category'     => "required|exists:kategori_artikel,id",
-            'publish_date' => "required|date",
             'status'       => [
                 'required',
                 Rule:: in(['aktif', 'tidak aktif']),
@@ -66,7 +65,6 @@ class ArtikelController extends Controller
             'id_kategori_artikel' => $request->category,
             'slug'                => Str::slug($request->title),
             'id_user'             => Auth::id(),
-            'tanggal_publish'     => $request->publish_date,
             'status'              => $request->status,
         ];
 
@@ -116,7 +114,6 @@ class ArtikelController extends Controller
             'image'        => "nullable|mimes:png,jpg|max:2048",
             'content'      => "required",
             'category'     => "required|exists:kategori_artikel,id",
-            'publish_date' => "nullable|date",
             'status'       => [
                 'required',
                 Rule::in(['aktif', 'tidak aktif']),
@@ -133,10 +130,6 @@ class ArtikelController extends Controller
             Storage::delete($article->gambar);
         }
 
-        $publishDate = ($request->publish_date)
-            ? $request->publish_date
-            : $article->tanggal_publish ;
-
         $articleData = [
             'judul'               => $request->title,
             'gambar'              => $path,
@@ -144,7 +137,6 @@ class ArtikelController extends Controller
             'id_kategori_artikel' => $request->category,
             'slug'                => Str::slug($request->title),
             'id_user'             => Auth::id(),
-            'tanggal_publish'     => $publishDate,
             'status'              => $request->status,
         ];
 

@@ -63,16 +63,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Tanggal Publish</label>
-                        <input type="datetime-local" class="form-control" name="publish_date"
-                            value="{{ $article->tanggal_publish ?? old('publish_date') }}" @empty($article) required
-                            @endempty />
-                        @error('publish_date')
-                        <span class="text-danger">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
                         <label>Status</label>
                         <select class="custom-select" name="status" required>
                             @php
