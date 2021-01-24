@@ -95,6 +95,26 @@
                         </div>
                     </div>
 
+                    @isset($user)
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select class="custom-select" name="status" required>
+                            @php
+                            $selectedStatus = (isset($user)) ? $user->status : old('status') ;
+                            @endphp
+
+                            <option disabled selected>-- Pilih status --</option>
+                            @foreach (['aktif', 'tidak aktif'] as $status)
+                            <option value="{{ $status }}" @if ($selectedStatus===$status) selected @endif>{{ $status }}
+                            </option>
+                            @endforeach
+                        </select>
+                        @error('status')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+                    @endisset
+
                     <div class="form-group mb-0">
                         <div>
                             <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">

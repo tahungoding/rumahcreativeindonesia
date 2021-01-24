@@ -49,13 +49,13 @@
                         <tr>
                             <td>{{ $number++ }}</td>
                             <td>
-                                <img class="d-flex align-self-center rounded" src="{{ profile_picture($user->foto) }}"
+                                <img class="d-flex align-self-center rounded" src="{{ avatar($user->foto) }}"
                                     height="64">
                             </td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->username }}</td>
-                            <td>{{ $user->userLevel['nama'] }}</td>
+                            <td>{{ $user->userLevel->nama }}</td>
                             <td>{{ $user->status }}</td>
                             <td>
                                 <div class="button-items">

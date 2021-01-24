@@ -10,8 +10,8 @@ class UserLevel extends Model
 
     protected $fillable = ['nama', 'status'];
 
-    public function user()
+    public function users()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(User::class, 'id_level', 'id');
     }
 }
