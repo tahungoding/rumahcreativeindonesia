@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use App\Testimoni;
 
 class TestimoniController extends Controller
 {
@@ -13,7 +16,10 @@ class TestimoniController extends Controller
      */
     public function index()
     {
-        //
+        $data['title'] = "Testimoni";
+        $data['testimoni'] = Testimoni::all();
+
+        return view('testimoni.index', $data);
     }
 
     /**
@@ -23,7 +29,10 @@ class TestimoniController extends Controller
      */
     public function create()
     {
-        //
+        $data['title'] = "Tambah Testimoni";
+        $data['actionUrl'] = route('testimoni.store');
+
+        return view('testimoni.create', $data);
     }
 
     /**
@@ -34,7 +43,26 @@ class TestimoniController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'responden' => 'required',
+            'asal'      => 'required',
+            'isi'       => 'required',
+            'gambar'    => 'nullable|mimes:png,jpg|max:2048'
+        ]);
+
+        $path = ($request->gambar)
+            ? $request->file('gambar')->store("/public/images/testimoni") : Null;
+
+        $data['responden'] = $request->responden;
+        $data['asal'] = $request->asal;
+        $data['isi'] = $request->isi;
+        $data['gambar'] = $path;
+
+        if (Testimoni::create($data)) {
+            return redirect(route('testimoni.index'))->with('success', 'Data testimoni berhasil ditambahkan!');
+        } else {
+            return redirect(route('testimoni.index'))->with('error', 'Data testimoni gagal ditambahkan!');
+        }
     }
 
     /**
@@ -54,9 +82,13 @@ class TestimoniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Testimoni $testimoni)
     {
-        //
+        $data['title'] = "Edit Testimoni";
+        $data['actionUrl'] = route('testimoni.update', $testimoni);
+        $data['testimoni'] = $testimoni;
+
+        return view('testimoni.edit', $data);
     }
 
     /**
@@ -68,7 +100,32 @@ class TestimoniController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'responden' => 'required',
+            'asal'      => 'required',
+            'isi'       => 'required',
+            'gambar'    => 'nullable|mimes:png,jpg|max:2048'
+        ]);
+
+        $testimoni = Testimoni::findOrFail($id);
+
+        $path = ($request->gambar)
+            ? $request->file('gambar')->store("/public/images/testimoni") : $testimoni->gambar;
+
+        if ($request->gambar) {
+            Storage::delete($testimoni->gambar);
+        }
+
+        $data['responden'] = $request->responden;
+        $data['asal'] = $request->asal;
+        $data['isi'] = $request->isi;
+        $data['gambar'] = $path;
+
+        if ($testimoni->update($data)) {
+            return redirect(route('testimoni.index'))->with('success', 'Data testimoni berhasil diubah!');
+        } else {
+            return redirect(route('testimoni.index'))->with('error', 'Data testimoni gagal diubah!');
+        }
     }
 
     /**
@@ -77,8 +134,13 @@ class TestimoniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Testimoni $testimoni)
     {
-        //
+        if ($testimoni->delete()) {
+            Storage::delete($testimoni->gambar);
+            return redirect(route('testimoni.index'))->with('success', 'Data berhasil dihapus!');
+        } else {
+            return redirect(route('testimoni.index'))->with('error', 'Data gagal dihapus!');
+        }
     }
 }
