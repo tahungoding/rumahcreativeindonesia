@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\KategoriMitra;
 use Illuminate\Http\Request;
 
 class KategoriMitraController extends Controller
@@ -13,7 +14,10 @@ class KategoriMitraController extends Controller
      */
     public function index()
     {
-        //
+        $data['title'] = 'Kategori Mitra';
+        $data['kategori_mitras'] = KategoriMitra::all();
+
+        return view('kategori_mitra.index', $data);
     }
 
     /**
@@ -23,7 +27,11 @@ class KategoriMitraController extends Controller
      */
     public function create()
     {
-        //
+        $data['title']              = 'Tambah Kategori Mitra';
+        $data['actionUrl']          = route('kategori_mitra.store');
+        $data['kategori_mitras']    = KategoriMitra::all();
+
+        return view('kategori_mitra.create', $data);
     }
 
     /**
@@ -34,7 +42,17 @@ class KategoriMitraController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama'             => "required|unique:kategori_mitra,nama",
+        ]);
+
+        $kategori_mitraData['nama'] = $request->nama;
+
+        if (KategoriMitra::create($kategori_mitraData)) {
+            return redirect('kategori_mitra')->with('success', 'Data Kategori Mitra berhasil ditambahkan!');
+        } else {
+            return redirect('kategori_mitra/create')->with('error', 'Data Kategori Mitra gagal ditambahkan!');
+        }
     }
 
     /**
@@ -54,9 +72,14 @@ class KategoriMitraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(KategoriMitra $kategori_mitra)
     {
-        //
+        $data['title']              = 'Edit kategori Mitra';
+        $data['actionUrl']          = route('kategori_mitra.update', $kategori_mitra);
+        $data['kategori_mitras']    = KategoriMitra::all();
+        $data['kategori_mitra']     = $kategori_mitra;
+
+        return view('kategori_mitra.edit', $data);
     }
 
     /**
@@ -68,7 +91,19 @@ class KategoriMitraController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama'             => "required",
+        ]);
+
+        $kategori_mitra = KategoriMitra::findOrFail($id);
+
+        $kategori_mitraData['nama'] = $request->nama;
+
+        if ($kategori_mitra->update($kategori_mitraData)) {
+            return redirect('kategori_mitra')->with('success', 'Data Mitra berhasil diubah!');
+        } else {
+            return redirect('kategori_mitra/create')->with('error', 'Data Mitra gagal diubah!');
+        }
     }
 
     /**
@@ -77,8 +112,13 @@ class KategoriMitraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(KategoriMitra $kategori_mitra)
     {
-        //
+
+        if ( $kategori_mitra->delete()) {
+            return redirect('kategori_mitra')->with('success', 'Data Kategori Mitra berhasil dihapus!');
+        } else {
+            return redirect('kategori_mitra/create')->with('error', 'Data Katgeori Mitra gagal dihapus!');
+        }
     }
 }
