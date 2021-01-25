@@ -68,9 +68,11 @@ class ArtikelController extends Controller
             'status'              => $request->status,
         ];
 
-        Artikel::create($articleData);
-
-        return redirect(route('artikel.index'));
+        if (Artikel::create($articleData)) {
+            return redirect(route('artikel.index'))->with('success', 'Data telah ditambahkan.');
+        } else {
+            return back()->withInput()->with('failed', 'Data gagal disimpan.');
+        }
     }
 
     /**
@@ -140,9 +142,11 @@ class ArtikelController extends Controller
             'status'              => $request->status,
         ];
 
-        $article->update($articleData);
-
-        return redirect(route('artikel.index'));
+        if ($article->update($articleData)) {
+            return redirect(route('artikel.index'))->with('success', 'Data telah diubah.');
+        } else {
+            return back()->withInput()->with('failed', 'Data gagal diubah.');
+        }
     }
 
     /**
@@ -157,8 +161,10 @@ class ArtikelController extends Controller
 
         Storage::delete($article->gambar);
 
-        $article->delete();
-
-        return  redirect(route('artikel.index'));
+        if ($article->delete()) {
+            return redirect(route('artikel.index'))->with('success', 'Data telah dihapus.');
+        } else {
+            return back()->with('failed', 'Data gagal dihapus.');
+        }
     }
 }
