@@ -50,6 +50,6 @@ class User extends Authenticatable
 
     public function userLevel()
     {
-        return $this->belongsTo(UserLevel::class,'id_level', 'id');
+        return $this->belongsTo(UserLevel::class, 'id_level', 'id');
     }
 }

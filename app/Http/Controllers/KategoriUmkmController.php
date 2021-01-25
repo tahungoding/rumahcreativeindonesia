@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\KategoriUmkm;
 use Illuminate\Http\Request;
 
 class KategoriUmkmController extends Controller
@@ -14,6 +15,10 @@ class KategoriUmkmController extends Controller
     public function index()
     {
         //
+        $data['title'] = 'Kategori UMKM';
+        $data['kategori_umkms'] = KategoriUmkm::all();
+
+        return view('kategori_umkm.index', $data);
     }
 
     /**
@@ -23,7 +28,11 @@ class KategoriUmkmController extends Controller
      */
     public function create()
     {
-        //
+        $data['title']              = 'Tambah Kategori UMKM';
+        $data['actionUrl']          = route('kategori_umkm.store');
+        $data['kategori_umkms']     = KategoriUmkm::all();
+
+        return view('kategori_umkm.create', $data);
     }
 
     /**
@@ -34,7 +43,17 @@ class KategoriUmkmController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama'             => "required",
+        ]);
+
+        $kategori_umkmData['nama'] = $request->nama;
+
+        if (KategoriUmkm::create($kategori_umkmData)) {
+            return redirect('kategori_umkm')->with('success', 'Data Kategori UMKM berhasil ditambahkan!');
+        } else {
+            return redirect('kategori_umkm/create')->with('error', 'Data Kategori UMKM gagal ditambahkan!');
+        }
     }
 
     /**
@@ -54,9 +73,14 @@ class KategoriUmkmController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(KategoriUmkm $kategori_umkm)
     {
-        //
+        $data['title']              = 'Edit kategori UMKM';
+        $data['actionUrl']          = route('kategori_umkm.update', $kategori_umkm);
+        $data['kategori_umkms']     = KategoriUmkm::all();
+        $data['kategori_umkm']      = $kategori_umkm;
+
+        return view('kategori_umkm.edit', $data);
     }
 
     /**
@@ -68,7 +92,19 @@ class KategoriUmkmController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $request->validate([
+            'nama'             => "required",
+        ]);
+
+        $kategori_umkm = KategoriUmkm::findOrFail($id);
+
+        $kategori_umkmData['nama'] = $request->nama;
+
+        if ($kategori_umkm->update($kategori_umkmData)) {
+            return redirect('kategori_umkm')->with('success', 'Data Kategori UMKM berhasil diubah!');
+        } else {
+            return redirect('kategori_umkm/create')->with('error', 'Data Kategori UMKM gagal diubah!');
+        }
     }
 
     /**
@@ -77,8 +113,12 @@ class KategoriUmkmController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(KategoriUmkm $kategori_umkm)
     {
-        //
+        if ($kategori_umkm->delete()) {
+            return redirect('kategori_umkm')->with('success', 'Data Kategori UMKM berhasil dihapus!');
+        } else {
+            return redirect('kategori_umkm/create')->with('error', 'Data Katgeori UMKM gagal dihapus!');
+        }
     }
 }
