@@ -53,9 +53,11 @@ class UserLevelController extends Controller
         $levelData = $request->only('status');
         $levelData['nama'] = $request->level_name;
 
-        UserLevel::create($levelData);
-
-        return redirect(route('user_level.index'));
+        if (UserLevel::create($levelData)) {
+            return redirect(route('user_level.index'))->with('success', 'Data telah ditambahkan.');
+        } else {
+            return back()->withInput()->with('failed', 'Data gagal disimpan.');
+        }
     }
 
     /**
@@ -104,9 +106,11 @@ class UserLevelController extends Controller
         $levelData = $request->only('status');
         $levelData['nama'] = $request->level_name;
 
-        $userLevel->update($levelData);
-
-        return redirect(route('user_level.index'));
+        if ($userLevel->update($levelData)) {
+            return redirect(route('user_level.index'))->with('success', 'Data telah diubah.');
+        } else {
+            return back()->withInput()->with('failed', 'Data gagal diubah.');
+        }
     }
 
     /**
@@ -117,8 +121,10 @@ class UserLevelController extends Controller
      */
     public function destroy(UserLevel $userLevel)
     {
-        $userLevel->delete();
-
-        return redirect(route('user_level.index'));
+        if ($userLevel->delete()) {
+            return redirect(route('user_level.index'))->with('success', 'Data telah dihapus.');
+        } else {
+            return back()->with('failed', 'Data gagal dihapus.');
+        }
     }
 }
