@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Page Title -->
+    <title>Rumah Creative Preuner Indonesia </title>
+
+    <!-- Meta Data -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.png" />
+
+    <!-- Web Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli%7CRubik:400,400i,500,700" />
+
+    <!-- ======= Bootstrap CSS ======= -->
+    <link rel="stylesheet" href="{{asset('assets/front/css/bootstrap.min.css')}}" />
+
+    <!-- ======= Font Awesome CSS ======= -->
+    <link rel="stylesheet" href="{{asset('assets/front/css/font-awesome.min.css')}}" />
+
+    <!-- ======= Owl Carousel CSS ======= -->
+    <link rel="stylesheet" href="{{asset('assets/front/plugins/owlcarousel/owl.carousel.min.css')}}" />
+
+    <!-- ======= Magnific Popup CSS ======= -->
+    <link rel="stylesheet" href="{{asset('assets/front/plugins/magnific-popup/magnific-popup.min.css')}}" />
+
+    <!-- ======= Main Stylesheet ======= -->
+    <link rel="stylesheet" href="{{asset('assets/front/css/style.css')}}" />
+
+    <!-- ======= Custom Stylesheet ======= -->
+    <link rel="stylesheet" href="{{asset('assets/front/css/custom.css')}}" />
+
+</head>
+<body>
+
+    <!-- Preloader Begin -->
+    <div class='preloader w-100 h-100 position-fixed'>
+        <div class="loader">
+            <img class="icon" width="50" src="{{asset('assets/front/img/logo.png')}}" alt="" />
+        </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- Header Begin -->
+    <header class="header fixed-top">
+        <!-- Header Style One Begin -->
+        <div class="fixed-top header-main style--one">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-sm-4 col-8">
+                        <!-- Logo Begin -->
+                        <div class="logo">
+                            <a href="index.html">
+                                <img class="default-logo" src="{{asset('assets/front/img/logo.png')}}" data-rjs="2" alt=""
+                                    style="width: 100px;">
+                                <img class="sticky-logo" src="{{asset('assets/front/img/logo.png')}}" style="width: 100px;" data-rjs="2"
+                                    alt="">
+                            </a>
+                        </div>
+                        <!-- Logo End -->
+                    </div>
+
+                    <div class="col-lg-9 col-sm-8 col-4">
+                        <!-- Main Menu Begin -->
+                        <div class="main-menu d-flex align-items-center justify-content-end">
+                            <ul class="nav align-items-center">
+                                <li>
+                                    <a href="#">Beranda</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('profiles')}}">Profil</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('programs')}}">Program</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('agendas')}}">Agenda</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('umkms')}}">Komunitas UMKM</a>
+                                </li>
+                                <li><a href="{{url('articles')}}">Artikel</a></li>
+                                <li><a href="{{url('mitras')}}">Mitra</a></li>
+                            </ul>
+                            <!-- Offcanvas Holder Trigger -->
+                            <span class="offcanvas-trigger text-right d-none d-lg-block">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                            <!-- Offcanvas Trigger End -->
+                        </div>
+                        <!-- Main Menu ENd -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Style One End -->
+    </header>
+    <!-- Header End -->
+
+    @yield('content')
+
+    <!-- Offcanvas Begin -->
+    <div class="offcanvas-overlay fixed-top w-100 h-100"></div>
+    <div class="offcanvas-wrapper bg-white fixed-top h-100">
+        <!-- Offcanvas Close Button Begin -->
+        <div class="offcanvas-close position-absolute">
+            <img src="{{asset('assets/front/img/icons/close.svg')}}" class="svg" alt="">
+        </div>
+        <!-- Offcanvas Close Button End -->
+
+        <!-- Offcanvas Content Begin -->
+        <div class="offcanvas-content">
+            <!-- About Widget Begin -->
+            <div class="widget widget_about">
+                <div class="widget-logo">
+                    <img src="{{asset('assets/front/img/logo.png')}}" data-rjs="2" alt="">
+                </div>
+
+            <!-- Offcanvas Button Begin -->
+            @if (Auth::check())
+                <div class="offcanvas-btn btn-block">
+                    <a href="{{url('home')}}" class="btn"><span>Dashboard</span></a>
+                </div>
+            @else 
+                <div class="offcanvas-btn btn-block">
+                    <a href="{{url('login')}}" class="btn"><span>Login</span></a>
+                </div>
+            @endif
+            <!-- Offcanvas Button End -->
+        </div>
+        <!-- Offcanvas Content End -->
+    </div>
+    <!-- Offcanvas End -->
+        
+        <!-- Footer Bottom Begin -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="copyright-text text-center">
+                            © 2021 RCI <span class="d-none d-sm-inline-block"> - Crafted by 
+                                TAHUNGODING.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom End -->
+    
+    </footer>
+    <!-- Footer End -->
+    
+    <!-- Back to Top Begin -->
+    <a href="#" class="back-to-top position-fixed">
+        <div class="back-toop-tooltip"><span>Back To Top</span></div>
+        <div class="top-arrow"></div>
+        <div class="top-line"></div>
+    </a>
+    <!-- Back to Top End -->
+    
+    <!-- ======= jQuery Library ======= -->
+    <script src="{{asset('assets/front/js/jquery.min.j')}}s"></script>
+    
+    <!-- ======= Bootstrap Bundle JS ======= -->
+    <script src="{{asset('assets/front/js/bootstrap.bundle.min.js')}}"></script>
+    
+    <!-- =======  Mobile Menu JS ======= -->
+    <script src="{{asset('assets/front/js/menu.min.js')}}"></script>
+    
+    <!-- ======= Waypoints JS ======= -->
+    <script src="{{asset('assets/front/plugins/waypoints/jquery.waypoints.min.js')}}"></script>
+    
+    <!-- ======= Counter Up JS ======= -->
+    <script src="{{asset('assets/front/plugins/waypoints/jquery.counterup.min.js')}}"></script>
+    
+    <!-- ======= Owl Carousel JS ======= -->
+    <script src="{{asset('assets/front/plugins/owlcarousel/owl.carousel.min.j')}}s"></script>
+    
+    <!-- ======= Isotope JS ====== -->
+    <script src="{{asset('assets/front/plugins/isotope/isotope.pkgd.min.js')}}"></script>
+    
+    <!-- ======= Magnific Popup JS ======= -->
+    <script src="{{asset('assets/front/plugins/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
+    
+    <!-- ======= Countdown JS ======= -->
+    <script src="{{asset('assets/front/plugins/countdown/countdown.min.js')}}"></script>
+    
+    <!-- ======= Retina JS ======= -->
+    <script src="{{asset('assets/front/plugins/retinajs/retina.min.js')}}"></script>
+    
+    <!-- ======= Google API ======= -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjkssBA3hMeFtClgslO2clWFR6bRraGz0"></script>
+    
+    <!-- ======= Main JS ======= -->
+    <script src="{{asset('assets/front/js/main.js')}}"></script>
+    
+    <!-- ======= Custom JS ======= -->
+    <script src="{{asset('assets/front/js/custom.js')}}"></script>
+    </body>
+    
+    </html>

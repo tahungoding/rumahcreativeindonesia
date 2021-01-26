@@ -23,7 +23,6 @@
                     <a href="{{ route('user.create') }}" class="btn btn-primary waves-effect waves-light">
                         <i class="ti-plus"></i> Tambah</a>
                 </p>
-
                 <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                     <thead>
                         <tr>
