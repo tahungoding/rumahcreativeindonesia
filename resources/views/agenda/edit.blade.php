@@ -26,16 +26,10 @@
                         @enderror
                     </div>
 
-                    <!-- <div class="form-group row">
-                        <label>Date and time</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" type="datetime-local" name="tanggal_awal" value="{{ date_format($agenda->tanggal_awal, 'Y/m/d H:i:s') }}" id="example-datetime-local-input">
-                        </div>
-                    </div> -->
-
                     <div class="form-group">
                         <label>Tanggal Awal</label>
-                        <input class="form-control" type="date" name="tanggal_awal" value="{{ date_format($agenda->tanggal_awal, 'Y/m/d H:i:s') }}" id="example-date-input">
+
+                        <input class="form-control" type="date" name="tanggal_awal" value="{{ strftime('%m-%d-%Y', strtotime($agenda->tanggal_awal)) }}" id="example-date-input">
                         @error('tanggal_awal')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
