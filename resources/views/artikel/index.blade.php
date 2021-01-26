@@ -25,6 +25,24 @@
                 <p class="card-title-desc">
                     <a href="{{ route('artikel.create') }}" class="btn btn-primary waves-effect waves-light">
                         <i class="ti-plus"></i> Tambah</a>
+
+                    @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Berhasil!</strong> {{ session('success') }}
+                    </div>
+                    @endif
+
+                    @if (session('failed'))
+                    <div class="alert alert-danger alert-dismissible fade show mb-0" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Error!</strong> {{ session('failed') }}
+                    </div>
+                    @endif
                 </p>
 
                 <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
@@ -35,9 +53,8 @@
                             <th>Judul</th>
                             <th>Kategori</th>
                             <th>Penulis</th>
-                            <th>Hits</th>
+                            <th>Dilihat</th>
                             <th>Status</th>
-                            <th>Tanggal Publish</th>
                             <th>Tanggal Dibuat</th>
                             <th>Terakhir Diubah</th>
                             <th>Aksi</th>
@@ -50,12 +67,11 @@
                         @foreach ($articles as $article)
                         <tr>
                             <td>{{ $number++ }}</td>
-                            <td>{{ $article->judul }}</td>
+                            <td><a href="#">{{ $article->judul }}</a></td>
                             <td>{{ $article->category->nama }}</td>
                             <td>{{ $article->writer->name }}</td>
                             <td>{{ $article->hits }}</td>
                             <td>{{ $article->status }}</td>
-                            <td>{{ tgl_indo($article->tanggal_publish, true) }}</td>
                             <td>{{ tgl_indo($article->created_at, true) }}</td>
                             <td>{{ tgl_indo($article->updated_at, true) }}</td>
                             <td>

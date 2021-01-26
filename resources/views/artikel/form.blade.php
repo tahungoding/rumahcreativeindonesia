@@ -10,7 +10,16 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">{{ $title }}</h4>
-                <p class="card-title-desc"></p>
+                <p class="card-title-desc">
+                    @if (session('failed'))
+                    <div class="alert alert-danger alert-dismissible fade show mb-0" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Error!</strong> {{ session('failed') }}
+                    </div>
+                    @endif
+                </p>
 
                 <form class="custom-validation" action="{{ $actionUrl }}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -59,16 +68,6 @@
                         </select>
                         @error('category')
                         <span class="text-danger">{{ $message}}</span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label>Tanggal Publish</label>
-                        <input type="datetime-local" class="form-control" name="publish_date"
-                            value="{{ $article->tanggal_publish ?? old('publish_date') }}" @empty($article) required
-                            @endempty />
-                        @error('publish_date')
-                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
 

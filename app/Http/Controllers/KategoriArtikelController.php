@@ -53,9 +53,11 @@ class KategoriArtikelController extends Controller
         $categoryData = $request->only('status');
         $categoryData['nama'] = $request->category_name;
 
-        KategoriArtikel::create($categoryData);
-
-        return redirect(route('kategori_artikel.index'));
+        if (KategoriArtikel::create($categoryData)) {
+            return redirect(route('kategori_artikel.index'))->with('success', 'Data telah ditambahkan.');
+        } else {
+            return back()->withInput()->with('failed', 'Data gagal disimpan.');
+        }
     }
 
     /**
@@ -104,9 +106,11 @@ class KategoriArtikelController extends Controller
         $categoryData = $request->only('status');
         $categoryData['nama'] = $request->category_name;
 
-        $kategoriArtikel->update($categoryData);
-
-        return redirect(route('kategori_artikel.index'));
+        if ($kategoriArtikel->update($categoryData)) {
+            return redirect(route('kategori_artikel.index'))->with('success', 'Data telah diubah.');
+        } else {
+            return back()->withInput()->with('failed', 'Data gagal diubah.');
+        }
     }
 
     /**
@@ -117,8 +121,10 @@ class KategoriArtikelController extends Controller
      */
     public function destroy(KategoriArtikel $kategoriArtikel)
     {
-        $kategoriArtikel->delete();
-
-        return redirect(route('kategori_artikel.index'));
+        if ($kategoriArtikel->delete()) {
+            return redirect(route('kategori_artikel.index'))->with('success', 'Data telah dihapus.');
+        } else {
+            return back()->with('failed', 'Data gagal dihapus.');
+        }
     }
 }

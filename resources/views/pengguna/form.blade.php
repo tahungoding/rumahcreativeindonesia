@@ -10,7 +10,16 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">{{ $title }}</h4>
-                <p class="card-title-desc"></p>
+                <p class="card-title-desc">
+                    @if (session('failed'))
+                    <div class="alert alert-danger alert-dismissible fade show mb-0" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Error!</strong> {{ session('failed') }}
+                    </div>
+                    @endif
+                </p>
 
                 <form class="custom-validation" action="{{ $actionUrl }}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -94,6 +103,26 @@
                             @enderror
                         </div>
                     </div>
+
+                    @isset($user)
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select class="custom-select" name="status" required>
+                            @php
+                            $selectedStatus = (isset($user)) ? $user->status : old('status') ;
+                            @endphp
+
+                            <option disabled selected>-- Pilih status --</option>
+                            @foreach (['aktif', 'tidak aktif'] as $status)
+                            <option value="{{ $status }}" @if ($selectedStatus===$status) selected @endif>{{ $status }}
+                            </option>
+                            @endforeach
+                        </select>
+                        @error('status')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+                    @endisset
 
                     <div class="form-group mb-0">
                         <div>

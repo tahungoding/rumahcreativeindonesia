@@ -63,9 +63,11 @@ class UserController extends Controller
         $userData['password'] = bcrypt($request->password);
         $userData['foto']     = $path;
 
-        User::create($userData);
-
-        return redirect(route('user.index'));
+        if (User::create($userData)) {
+            return redirect(route('user.index'))->with('success', 'Data telah ditambahkan.');
+        } else {
+            return back()->withInput()->with('failed', 'Data gagal disimpan.');
+        }
     }
 
     /**
@@ -132,9 +134,11 @@ class UserController extends Controller
             $userData['password'] = bcrypt($request->password);
         }
 
-        $user->update($userData);
-
-        return redirect(route('user.index'));
+        if ($user->update($userData)) {
+            return redirect(route('user.index'))->with('success', 'Data telah diubah.');
+        } else {
+            return back()->withInput()->with('failed', 'Data gagal diubah.');
+        }
     }
 
     /**
@@ -147,8 +151,10 @@ class UserController extends Controller
     {
         Storage::delete($user->foto);
 
-        $user->delete();
-
-        return  redirect(route('user.index'));
+        if ($user->delete()) {
+            return redirect(route('user.index'))->with('success', 'Data telah dihapus.');
+        } else {
+            return back()->with('failed', 'Data gagal dihapus.');
+        }
     }
 }
