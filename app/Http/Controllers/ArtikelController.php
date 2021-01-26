@@ -52,7 +52,6 @@ class ArtikelController extends Controller
             'image'        => "required|mimes:png,jpg|max:2048",
             'content'      => "required",
             'category'     => "required|exists:kategori_artikel,id",
-            'publish_date' => "required|date",
             'status'       => [
                 'required',
                 Rule:: in(['aktif', 'tidak aktif']),
@@ -66,13 +65,14 @@ class ArtikelController extends Controller
             'id_kategori_artikel' => $request->category,
             'slug'                => Str::slug($request->title),
             'id_user'             => Auth::id(),
-            'tanggal_publish'     => $request->publish_date,
             'status'              => $request->status,
         ];
 
-        Artikel::create($articleData);
-
-        return redirect(route('artikel.index'));
+        if (Artikel::create($articleData)) {
+            return redirect(route('artikel.index'))->with('success', 'Data telah ditambahkan.');
+        } else {
+            return back()->withInput()->with('failed', 'Data gagal disimpan.');
+        }
     }
 
     /**
@@ -116,7 +116,6 @@ class ArtikelController extends Controller
             'image'        => "nullable|mimes:png,jpg|max:2048",
             'content'      => "required",
             'category'     => "required|exists:kategori_artikel,id",
-            'publish_date' => "nullable|date",
             'status'       => [
                 'required',
                 Rule::in(['aktif', 'tidak aktif']),
@@ -133,10 +132,6 @@ class ArtikelController extends Controller
             Storage::delete($article->gambar);
         }
 
-        $publishDate = ($request->publish_date)
-            ? $request->publish_date
-            : $article->tanggal_publish ;
-
         $articleData = [
             'judul'               => $request->title,
             'gambar'              => $path,
@@ -144,13 +139,14 @@ class ArtikelController extends Controller
             'id_kategori_artikel' => $request->category,
             'slug'                => Str::slug($request->title),
             'id_user'             => Auth::id(),
-            'tanggal_publish'     => $publishDate,
             'status'              => $request->status,
         ];
 
-        $article->update($articleData);
-
-        return redirect(route('artikel.index'));
+        if ($article->update($articleData)) {
+            return redirect(route('artikel.index'))->with('success', 'Data telah diubah.');
+        } else {
+            return back()->withInput()->with('failed', 'Data gagal diubah.');
+        }
     }
 
     /**
@@ -165,8 +161,10 @@ class ArtikelController extends Controller
 
         Storage::delete($article->gambar);
 
-        $article->delete();
-
-        return  redirect(route('artikel.index'));
+        if ($article->delete()) {
+            return redirect(route('artikel.index'))->with('success', 'Data telah dihapus.');
+        } else {
+            return back()->with('failed', 'Data gagal dihapus.');
+        }
     }
 }

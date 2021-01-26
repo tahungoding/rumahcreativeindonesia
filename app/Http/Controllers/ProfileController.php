@@ -104,9 +104,11 @@ class ProfileController extends Controller
         $data['facebook'] = $request->facebook;
         $data['youtube'] = $request->youtube;
 
-        $profil->update($data);
-
-        return redirect(route('profile.index'));
+        if ($profil->update($data)) {
+            return redirect(route('profile.index'))->with('success', 'Data profile berhasil diubah!');
+        } else {
+            return redirect(route('profile.index'))->with('error', 'Data profile gagal diubah!');
+        }
     }
 
     /**

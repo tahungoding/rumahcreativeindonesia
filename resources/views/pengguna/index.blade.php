@@ -22,6 +22,24 @@
                 <p class="card-title-desc">
                     <a href="{{ route('user.create') }}" class="btn btn-primary waves-effect waves-light">
                         <i class="ti-plus"></i> Tambah</a>
+
+                    @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Berhasil!</strong> {{ session('success') }}
+                    </div>
+                    @endif
+
+                    @if (session('failed'))
+                    <div class="alert alert-danger alert-dismissible fade show mb-0" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Error!</strong> {{ session('failed') }}
+                    </div>
+                    @endif
                 </p>
                 <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                     <thead>
@@ -44,12 +62,13 @@
                         <tr>
                             <td>{{ $number++ }}</td>
                             <td>
-                                <img class="d-flex align-self-center rounded" src="{{ profile_picture($user->foto) }}" height="64">
+                                <img class="d-flex align-self-center rounded" src="{{ avatar($user->foto) }}"
+                                    height="64">
                             </td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->username }}</td>
-                            <td>{{ $user->userLevel['nama'] }}</td>
+                            <td>{{ $user->userLevel->nama }}</td>
                             <td>{{ $user->status }}</td>
                             <td>
                                 <div class="button-items">

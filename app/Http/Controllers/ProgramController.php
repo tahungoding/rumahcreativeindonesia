@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use App\Program;
 
 class ProgramController extends Controller
 {
@@ -13,7 +16,10 @@ class ProgramController extends Controller
      */
     public function index()
     {
-        //
+        $data['title'] = "Program";
+        $data['program'] = Program::all();
+
+        return view('program.index', $data);
     }
 
     /**
@@ -23,7 +29,10 @@ class ProgramController extends Controller
      */
     public function create()
     {
-        //
+        $data['title'] = "Tambah Program";
+        $data['actionUrl'] = route('program.store');
+
+        return view('program.create', $data);
     }
 
     /**
@@ -34,7 +43,27 @@ class ProgramController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_program'  => 'required',
+            'gambar'        => 'nullable|mimes:png,jpg|max:2048',
+            'deskripsi'     => 'required',
+            'status'        => 'required'
+        ]);
+
+        $path = ($request->gambar)
+            ? $request->file('gambar')->store("/public/images/programs")
+            : null;
+
+        $data['nama_program'] = $request->nama_program;
+        $data['gambar'] = $path;
+        $data['deskripsi'] = $request->deskripsi;
+        $data['status'] = $request->status;
+
+        if (Program::create($data)) {
+            return redirect(route('program.index'))->with('success', 'Data program berhasil ditambahkan!');
+        } else {
+            return redirect(route('program.index'))->with('error', 'Data program gagal ditambahkan!');
+        }
     }
 
     /**
@@ -54,9 +83,13 @@ class ProgramController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Program $program)
     {
-        //
+        $data['title'] = "Edit Program";
+        $data['actionUrl'] = route('program.update', $program);
+        $data['program'] = $program;
+
+        return view('program.edit', $data);
     }
 
     /**
@@ -68,7 +101,33 @@ class ProgramController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama_program'  => 'required',
+            'gambar'        => 'nullable|mimes:png,jpg|max:2048',
+            'deskripsi'     => 'required',
+            'status'        => 'required'
+        ]);
+
+        $program = Program::findOrFail($id);
+
+        $path = ($request->gambar)
+            ? $request->file('gambar')->store("/public/images/programs")
+            : $program->gambar;
+
+        if ($request->gambar) {
+            Storage::delete($program->gambar);
+        }
+
+        $data['nama_program'] = $request->nama_program;
+        $data['gambar'] = $path;
+        $data['deskripsi'] = $request->deskripsi;
+        $data['status'] = $request->status;
+
+        if ($program->update($data)) {
+            return redirect(route('program.index'))->with('success', 'Data program berhasil diubah!');
+        } else {
+            return redirect(route('program.index'))->with('error', 'Data program gagal diubah!');
+        }
     }
 
     /**
@@ -77,8 +136,13 @@ class ProgramController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Program $program)
     {
-        //
+        if ($program->delete()) {
+            Storage::delete($program->gambar);
+            return redirect(route('program.index'))->with('success', 'Data berhasil dihapus!');
+        } else {
+            return redirect(route('program.index'))->with('error', 'Data gagal dihapus!');
+        }
     }
 }
