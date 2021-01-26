@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use App\Agenda;
 
 class AgendaController extends Controller
 {
@@ -13,7 +16,10 @@ class AgendaController extends Controller
      */
     public function index()
     {
-        //
+        $data['title'] = "Agenda";
+        $data['agenda'] = Agenda::all();
+
+        return view('agenda.index', $data);
     }
 
     /**
@@ -23,7 +29,10 @@ class AgendaController extends Controller
      */
     public function create()
     {
-        //
+        $data['title'] = "Tambah Agenda";
+        $data['actionUrl'] = route('agenda.store');
+
+        return view('agenda.create', $data);
     }
 
     /**
@@ -34,7 +43,34 @@ class AgendaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_agenda'   => 'required',
+            'tanggal_awal'  => 'required',
+            'tanggal_akhir' => 'required',
+            'tempat'        => 'required',
+            'deskripsi'     => 'required',
+            'penyelenggara' => 'required',
+            'gambar'        => 'nullable|mimes:png,jpg|max:2048',
+            'status'        => 'required',
+        ]);
+
+        $path = ($request->gambar)
+            ? $request->file('gambar')->store("/public/images/agendas") : Null;
+
+        $data['nama_agenda'] = $request->nama_agenda;
+        $data['tanggal_awal'] = $request->tanggal_awal;
+        $data['tanggal_akhir'] = $request->tanggal_akhir;
+        $data['tempat'] = $request->tempat;
+        $data['deskripsi'] = $request->deskripsi;
+        $data['penyelenggara'] = $request->penyelenggara;
+        $data['gambar'] = $path;
+        $data['status'] = $request->status;
+
+        if (Agenda::create($data)) {
+            return redirect(route('agenda.index'))->with('success', 'Data agenda berhasil ditambahkan!');
+        } else {
+            return redirect(route('agenda.index'))->with('error', 'Data agenda gagal ditambahkan!');
+        }
     }
 
     /**
@@ -54,9 +90,13 @@ class AgendaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Agenda $agenda)
     {
-        //
+        $data['title'] = "Edit Agenda";
+        $data['actionUrl'] = route('agenda.update', $agenda);
+        $data['agenda'] = $agenda;
+
+        return view('agenda.edit', $data);
     }
 
     /**
@@ -68,7 +108,40 @@ class AgendaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama_agenda'   => 'required',
+            'tanggal_awal'  => 'required',
+            'tanggal_akhir' => 'required',
+            'tempat'        => 'required',
+            'deskripsi'     => 'required',
+            'penyelenggara' => 'required',
+            'gambar'        => 'nullable|mimes:png,jpg|max:2048',
+            'status'        => 'required',
+        ]);
+
+        $agenda = Agenda::findOrFail($id);
+
+        $path = ($request->gambar)
+            ? $request->file('gambar')->store("/public/images/agendas") : $agenda->gambar;
+
+        if ($request->gambar) {
+            Storage::delete($agenda->gambar);
+        }
+
+        $data['nama_agenda'] = $request->nama_agenda;
+        $data['tanggal_awal'] = $request->tanggal_awal;
+        $data['tanggal_akhir'] = $request->tanggal_akhir;
+        $data['tempat'] = $request->tempat;
+        $data['deskripsi'] = $request->deskripsi;
+        $data['penyelenggara'] = $request->penyelenggara;
+        $data['gambar'] = $path;
+        $data['status'] = $request->status;
+
+        if ($agenda->update($data)) {
+            return redirect(route('agenda.index'))->with('success', 'Data agenda berhasil diubah!');
+        } else {
+            return redirect(route('agenda.index'))->with('error', 'Data agenda gagal diubah!');
+        }
     }
 
     /**
@@ -77,8 +150,13 @@ class AgendaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Agenda $agenda)
     {
-        //
+        if ($agenda->delete()) {
+            Storage::delete($agenda->gambar);
+            return redirect(route('agenda.index'))->with('success', 'Data berhasil dihapus!');
+        } else {
+            return redirect(route('agenda.index'))->with('error', 'Data gagal dihapus!');
+        }
     }
 }

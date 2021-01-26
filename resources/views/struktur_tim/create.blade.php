@@ -17,7 +17,7 @@
 
                     <div class="form-group">
                         <label>Nama</label>
-                        <input type="text" class="form-control" name="nama" required />
+                        <input type="text" class="form-control" name="nama" value="{{ old('nama') }}" required />
                         @error('nama')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
@@ -25,7 +25,7 @@
 
                     <div class="form-group">
                         <label>Jabatan</label>
-                        <input type="text" class="form-control" name="jabatan" required />
+                        <input type="text" class="form-control" name="jabatan" value="{{ old('jabatan') }}" required />
                         @error('jabatan')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror

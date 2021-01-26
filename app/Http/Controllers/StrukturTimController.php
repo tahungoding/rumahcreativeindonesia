@@ -52,9 +52,11 @@ class StrukturTimController extends Controller
         $data['jabatan'] = $request->jabatan;
         $data['status'] = $request->status;
 
-        StrukturTim::create($data);
-
-        return redirect(route('struktur_tim.index'));
+        if (StrukturTim::create($data)) {
+            return redirect(route('struktur_tim.index'))->with('success', 'Data berhasil ditambahkan!');
+        } else {
+            return redirect(route('struktur_tim.index'))->with('error', 'Data gagal ditambahkan!');
+        }
     }
 
     /**
@@ -104,9 +106,11 @@ class StrukturTimController extends Controller
         $data['jabatan'] = $request->jabatan;
         $data['status'] = $request->status;
 
-        $tim->update($data);
-
-        return redirect(route('struktur_tim.index'));
+        if ($tim->update($data)) {
+            return redirect(route('struktur_tim.index'))->with('success', 'Data berhasil diubah!');
+        } else {
+            return redirect(route('struktur_tim.index'))->with('error', 'Data gagal diubah!');
+        }
     }
 
     /**
@@ -117,8 +121,10 @@ class StrukturTimController extends Controller
      */
     public function destroy(StrukturTim $strukturTim)
     {
-        $strukturTim->delete();
-
-        return  redirect(route('struktur_tim.index'));
+        if ($strukturTim->delete()) {
+            return redirect(route('struktur_tim.index'))->with('success', 'Data berhasil dihapus!');
+        } else {
+            return redirect(route('struktur_tim.index'))->with('error', 'Data gagal dihapus!');
+        }
     }
 }
