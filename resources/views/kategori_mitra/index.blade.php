@@ -27,8 +27,10 @@
                         {{$msg}}
                     </div>
                     @endif
-                    <a href="{{ route('kategori_mitra.create') }}" class="btn btn-primary waves-effect waves-light">
-                        <i class="ti-plus"></i> Tambah</a>
+                    @if (Auth::user()->userLevel->nama == 'Admin')
+                        <a href="{{ route('kategori_mitra.create') }}" class="btn btn-primary waves-effect waves-light">
+                            <i class="ti-plus"></i> Tambah</a>
+                    @endif
                 </p>
 
                 <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
@@ -37,7 +39,9 @@
                         <tr>
                             <th>No.</th>
                             <th>Nama</th>
+                            @if (Auth::user()->userLevel->nama == 'Admin')
                             <th>Aksi</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -48,23 +52,25 @@
                         <tr>
                             <td>{{ $number++ }}</td>
                             <td>{{ $kategori_mitra->nama }}</td>
-                            <td>
-                                <div class="button-items">
-                                    <a href="{{ route('kategori_mitra.edit', $kategori_mitra) }}"
-                                        class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip"
-                                        data-placement="top" title="Edit">
-                                        <i class="ti-pencil"></i></a>
+                            @if (Auth::user()->userLevel->nama == 'Admin')
+                                <td>
+                                    <div class="button-items">
+                                        <a href="{{ route('kategori_mitra.edit', $kategori_mitra) }}"
+                                            class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip"
+                                            data-placement="top" title="Edit">
+                                            <i class="ti-pencil"></i></a>
 
-                                    <form action="{{ route('kategori_mitra.destroy', $kategori_mitra) }}" method="post"
-                                        onsubmit="return confirm('Yakin hapus data ini?')">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-outline-danger waves-effect waves-light"
-                                            data-toggle="tooltip" data-placement="top" title="Hapus">
-                                            <i class="ti-trash"></i></button>
-                                    </form>
-                                </div>
-                            </td>
+                                        <form action="{{ route('kategori_mitra.destroy', $kategori_mitra) }}" method="post"
+                                            onsubmit="return confirm('Yakin hapus data ini?')">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-outline-danger waves-effect waves-light"
+                                                data-toggle="tooltip" data-placement="top" title="Hapus">
+                                                <i class="ti-trash"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

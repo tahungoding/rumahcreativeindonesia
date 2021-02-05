@@ -27,6 +27,22 @@
                     </div>
 
                     <div class="form-group">
+                        <label>Tanda</label>
+                        <input type="text" class="form-control" name="tanda" value="{{ $program->tanda ?? old('tanda') }}" required />
+                        @error('tanda')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label>Icon</label>
+                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="icon" value="{{ $program->icon ?? old('icon') }}">
+                        @error('icon')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
                         <label>Gambar</label>
                         <input type="file" class="filestyle" data-buttonname="btn-secondary" name="gambar" value="{{ $program->gambar ?? old('gambar') }}">
                         @error('gambar')
@@ -37,7 +53,7 @@
                     <div class="form-group">
                         <label>Deskripsi</label>
                         <div>
-                            <textarea required class="form-control" rows="5" name="deskripsi">{{ $program->deskripsi ?? old('deskripsi') }}</textarea>
+                            <textarea required class="form-control tiny" rows="5" name="deskripsi">{{ $program->deskripsi ?? old('deskripsi') }}</textarea>
                             @error('deskripsi')
                             <span class="text-danger">{{ $message}}</span>
                             @enderror
@@ -83,4 +99,10 @@
 <script src="{{ asset('assets/back/libs/parsleyjs/parsley.min.js') }}"></script>
 <script src="{{ asset('assets/back/js/pages/form-validation.init.js') }}"></script>
 <script src="{{ asset('assets/back/libs/admin-resources/bootstrap-filestyle/bootstrap-filestyle.min.js') }}"></script>
+
+<!--tinymce js-->
+<script src="{{asset('assets/back/libs/tinymce/tinymce.min.js')}}"></script>
+
+<!-- init js -->
+<script src="{{asset('assets/back/js/pages/form-editor.init.js')}}"></script>
 @endsection

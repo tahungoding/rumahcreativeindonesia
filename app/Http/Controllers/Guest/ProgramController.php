@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\front;
+namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Program;
 
 class ProgramController extends Controller
 {
@@ -14,7 +15,10 @@ class ProgramController extends Controller
      */
     public function index()
     {
-        //
+        $data['title'] = "Program";
+        $data['program'] = Program::where('status', '=', 'aktif')->get();
+
+        return view('guest.program.index', $data);
     }
 
     /**

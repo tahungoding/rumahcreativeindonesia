@@ -19,7 +19,15 @@
                         <label>Nama</label>
                         <input type="text" class="form-control" name="nama" value="{{ old('nama') }}" required />
                         @error('nama')
-                        <span class="text-danger">{{ $message}}</span>
+                            <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Foto</label>
+                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="foto" id="" required>
+                        @error('foto')
+                            <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
 
@@ -30,6 +38,48 @@
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
+
+                    <div class="form-group">
+                        <label><i class="fab fa-facebook"></i> Facebook</label>
+                        <input type="text" class="form-control" name="facebook" placeholder="Masukan username facebook" value="{{ old('facebook') }}" required />
+                        @error('facebook')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fab fa-twitter"></i> Twitter</label>
+                        <input type="text" class="form-control" name="twitter" placeholder="Masukan username twitter" value="{{ old('twitter') }}" required />
+                        @error('twitter')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fab fa-linkedin"></i> Linkedin</label>
+                        <input type="text" class="form-control" name="linkedin" placeholder="Masukan username linkedin" value="{{ old('linkedin') }}" required />
+                        @error('linkedin')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fab fa-instagram"></i> Instagram</label>
+                        <input type="text" class="form-control" name="instagram" placeholder="Masukan username instagram" value="{{ old('instagram') }}" required />
+                        @error('instagram')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+
+                    {{-- <div class="form-group">
+                        <label for="">Urutan Tampil</label>
+                        <select name="urutan" class="form-control" id="">
+                            <option value="">-- Pilih Urutan Tampil --</option>
+                            @for ($i = 1; $i < $urutan; $i++)
+                                <option value="{{$i}}"> {{$i}}</option>
+                            @endfor
+                        </select>
+                    </div> --}}
 
                     <div class="form-group">
                         <label>Status</label>

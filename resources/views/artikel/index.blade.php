@@ -23,8 +23,10 @@
 
                 <h4 class="card-title">{{ $title }}</h4>
                 <p class="card-title-desc">
-                    <a href="{{ route('artikel.create') }}" class="btn btn-primary waves-effect waves-light">
-                        <i class="ti-plus"></i> Tambah</a>
+                    @if (Auth::user()->userLevel->nama == 'Admin')
+                        <a href="{{ route('artikel.create') }}" class="btn btn-primary waves-effect waves-light">
+                            <i class="ti-plus"></i> Tambah</a>
+                    @endif
 
                     @if (session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -57,7 +59,9 @@
                             <th>Status</th>
                             <th>Tanggal Dibuat</th>
                             <th>Terakhir Diubah</th>
-                            <th>Aksi</th>
+                            @if (Auth::user()->userLevel->nama == 'Admin')
+                                <th>Aksi</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -74,23 +78,25 @@
                             <td>{{ $article->status }}</td>
                             <td>{{ tgl_indo($article->created_at, true) }}</td>
                             <td>{{ tgl_indo($article->updated_at, true) }}</td>
-                            <td>
-                                <div class="button-items">
-                                    <a href="{{ route('artikel.edit', $article) }}"
-                                        class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip"
-                                        data-placement="top" title="Edit">
-                                        <i class="ti-pencil"></i></a>
+                            @if (Auth::user()->userLevel->nama == 'Admin')
+                                <td>
+                                    <div class="button-items">
+                                        <a href="{{ route('artikel.edit', $article) }}"
+                                            class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip"
+                                            data-placement="top" title="Edit">
+                                            <i class="ti-pencil"></i></a>
 
-                                    <form action="{{ route('artikel.destroy', $article) }}" method="post"
-                                        onsubmit="return confirm('Yakin hapus data ini?')" style="display: inline">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-outline-danger waves-effect waves-light"
-                                            data-toggle="tooltip" data-placement="top" title="Hapus">
-                                            <i class="ti-trash"></i></button>
-                                    </form>
-                                </div>
-                            </td>
+                                        <form action="{{ route('artikel.destroy', $article) }}" method="post"
+                                            onsubmit="return confirm('Yakin hapus data ini?')" style="display: inline">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-outline-danger waves-effect waves-light"
+                                                data-toggle="tooltip" data-placement="top" title="Hapus">
+                                                <i class="ti-trash"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

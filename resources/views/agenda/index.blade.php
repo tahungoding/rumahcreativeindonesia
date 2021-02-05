@@ -31,10 +31,12 @@
 
                 <h4 class="card-title">{{ $title }}</h4>
                 <p class="card-title-desc">
-                    <a href="{{ route('agenda.create') }}" class="btn btn-primary waves-effect waves-light">
-                        <i class="ti-plus"></i> Tambah</a>
+                    @if (Auth::user()->userLevel->nama == 'Admin')  
+                        <a href="{{ route('agenda.create') }}" class="btn btn-primary waves-effect waves-light">
+                            <i class="ti-plus"></i> Tambah</a>
+                    @endif
                 </p>
-
+                
                 <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                     <thead>
                         <tr>
@@ -47,7 +49,9 @@
                             <th>Penyelenggara</th>
                             <th>Gambar</th>
                             <th>Status</th>
-                            <th>Aksi</th>
+                            @if (Auth::user()->userLevel->nama == 'Admin')
+                                <th>Aksi</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -58,25 +62,27 @@
                         <tr>
                             <td>{{ $number++ }}</td>
                             <td>{{ $agend->nama_agenda }}</td>
-                            <td>{{ $agend->tanggal_awal }}</td>
-                            <td>{{ $agend->tanggal_akhir }}</td>
+                            <td>{{ tgl_indo($agend->tanggal_awal) }}</td>
+                            <td>{{ tgl_indo($agend->tanggal_akhir) }}</td>
                             <td>{{ $agend->tempat }}</td>
                             <td>{{ $agend->deskripsi }}</td>
                             <td>{{ $agend->penyelenggara }}</td>
-                            <td><img class="d-flex align-self-center rounded" src="{{ profile_picture($agend->gambar) }}" height="64"></td>
+                            <td><img class="d-flex align-self-center rounded" src="{{ avatar($agend->gambar) }}" height="64"></td>
                             <td>{{ $agend->status }}</td>
-                            <td>
-                                <div class="button-items">
-                                    <a href="{{ route('agenda.edit', $agend) }}" class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                                        <i class="ti-pencil"></i></a>
-                                    <form action="{{ route('agenda.destroy', $agend) }}" method="post" onsubmit="return confirm('Yakin hapus data ini?')" style="display: inline">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-outline-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Hapus">
-                                            <i class="ti-trash"></i></button>
-                                    </form>
-                                </div>
-                            </td>
+                            @if (Auth::user()->userLevel->nama == 'Admin')
+                                <td>
+                                    <div class="button-items">
+                                        <a href="{{ route('agenda.edit', $agend) }}" class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                            <i class="ti-pencil"></i></a>
+                                        <form action="{{ route('agenda.destroy', $agend) }}" method="post" onsubmit="return confirm('Yakin hapus data ini?')" style="display: inline">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-outline-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Hapus">
+                                                <i class="ti-trash"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

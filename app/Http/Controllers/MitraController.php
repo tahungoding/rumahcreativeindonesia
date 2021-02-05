@@ -49,6 +49,7 @@ class MitraController extends Controller
             'nama'             => "required|unique:mitra,nama",
             'logo'             => "nullable|mimes:png,jpg|max:2048",
             'id_kategori_mitra'   => "required",
+            'link'          => "required",
         ]);
 
         $path = ($request->logo)
@@ -58,6 +59,7 @@ class MitraController extends Controller
         $mitraData['nama']           = $request->nama;
         $mitraData['logo']           = $path;
         $mitraData['id_kategori_mitra'] = $request->id_kategori_mitra;
+        $mitraData['link'] = $request->link;
 
         if (Mitra::create($mitraData)) {
             return redirect('mitra')->with('success', 'Data Mitra berhasil ditambahkan!');
@@ -110,6 +112,8 @@ class MitraController extends Controller
             'nama'             => "required",
             'logo'             => "nullable|mimes:png,jpg|max:2048",
             'id_kategori_mitra'=> "required",
+            'link'=> "required",
+            'status'=> "required",
         ]);
 
         $mitra = Mitra::findOrFail($id);
@@ -125,6 +129,8 @@ class MitraController extends Controller
         $mitraData['nama']           = $request->nama;
         $mitraData['logo']           = $path;
         $mitraData['id_kategori_mitra'] = $request->id_kategori_mitra;
+        $mitraData['link'] = $request->link;
+        $mitraData['status'] = $request->status;
 
 
         if ($mitra->update($mitraData)) {

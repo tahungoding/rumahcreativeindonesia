@@ -52,6 +52,25 @@
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <label>Link</label>
+                        <input type="text" class="form-control" name="link" value="{{ $mitra->link ?? old('link') }}"
+                            required />
+                        @error('link')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="kategori_mitra" name="id_kategori_mitra" class="form-control">
+                        <option value="">- Pilih Status -</option>
+                            <option value="aktif" {{($mitra->status == 'aktif') ? 'selected' : null}}>Aktif</option>
+                            <option value="tidak aktif" {{($mitra->status == 'tidak aktif') ? 'selected' : null}}>Tidak Aktif</option>
+                        </select>
+                        @error('id_kategori_mitra')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
                     <div class="form-group mb-0">
                         <div>
                             <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">

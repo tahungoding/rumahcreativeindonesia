@@ -27,11 +27,65 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="">Foto</label>
+                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="foto" id="" >
+                        @error('foto')
+                            <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
                         <label>Jabatan</label>
                         <input type="text" class="form-control" name="jabatan" value="{{ $tim->jabatan ?? old('jabatan') }}" required />
                         @error('jabatan')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fab fa-facebook"></i> Facebook</label>
+                        <input type="text" class="form-control" name="facebook" placeholder="Masukan username facebook"
+                            value="{{ $tim->facebook ?? old('facebook') }}" required />
+                        @error('facebook')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><i class="fab fa-twitter"></i> Twitter</label>
+                        <input type="text" class="form-control" name="twitter" placeholder="Masukan username twitter"
+                            value="{{ $tim->twitter ?? old('twitter') }}" required />
+                        @error('twitter')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><i class="fab fa-linkedin"></i> Linkedin</label>
+                        <input type="text" class="form-control" name="linkedin" placeholder="Masukan username linkedin"
+                            value="{{ $tim->linkedin ?? old('linkedin') }}" required />
+                        @error('linkedin')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><i class="fab fa-instagram"></i> Instagram</label>
+                        <input type="text" class="form-control" name="instagram" placeholder="Masukan username instagram"
+                            value="{{ $tim->instagram ?? old('instagram') }}" required />
+                        @error('instagram')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Urutan Tampil</label>
+                        <select name="urutan" class="form-control" id="">
+                            <option value="0">-- Pilih Urutan Tampil --</option>
+                            @for ($i = 1; $i < $urutan + 1; $i++)
+                                <option value="{{$i}}" {{($i == old('urutan')) ? 'selected' : null}} >{{$i}}</option>
+                            @endfor
+                        </select>
                     </div>
 
                     <div class="form-group">

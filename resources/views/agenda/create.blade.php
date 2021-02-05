@@ -50,7 +50,7 @@
                     <div class="form-group">
                         <label>Deskripsi</label>
                         <div>
-                            <textarea required class="form-control" rows="5" name="deskripsi">{{ old('responden') }}</textarea>
+                            <textarea required class="form-control" rows="5" name="deskripsi">{{ old('deskripsi') }}</textarea>
                             @error('deskripsi')
                             <span class="text-danger">{{ $message}}</span>
                             @enderror
@@ -77,8 +77,8 @@
                         <label>Status</label>
                         <select class="custom-select" name="status" required>
                             <option disabled selected>-- Pilih Status --</option>
-                            <option value="aktif">Aktif</option>
-                            <option value="tidak aktif">Tidak aktif</option>
+                            <option value="aktif" {{(old('status') == 'aktif') ? 'selected' : null}} >Aktif</option>
+                            <option value="tidak aktif" {{(old('status') == 'tidak aktif') ? 'selected' : null}} >Tidak aktif</option>
                         </select>
                         @error('status')
                         <span class="text-danger">{{ $message}}</span>

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\front;
+namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Agenda;
 
 class AgendaController extends Controller
 {
@@ -12,9 +13,22 @@ class AgendaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $data['title'] = "Agenda";
+        // print_r($request->status);die;
+        $status = $request->status;
+        $data['agenda'] = Agenda::when($status, function($q, $status) {
+                                  return $q->where('status', $status);
+                                 })
+                                 ->paginate(4);
+
+        if ($request->ajax()) {
+            $view = view('guest.agenda.data_agenda',$data)->render();
+            return response()->json(['html'=>$view]);
+        }
+
+        return view('guest.agenda.index', $data);
     }
 
     /**
@@ -46,7 +60,11 @@ class AgendaController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['agenda'] = Agenda::where('slug', $id)->first();
+        $data['agendas'] = Agenda::whereDate('created_at', '<', date('Y-m-d H:i:s', strtotime(($data['agenda']->created_at))))->limit(5)->get();
+        $data['title'] = $data['agenda']->nama_agenda;
+
+        return view('guest.agenda.detail', $data);
     }
 
     /**

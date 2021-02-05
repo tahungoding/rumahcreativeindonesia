@@ -3,7 +3,7 @@
 
 <head>
     <!-- Page Title -->
-    <title>Rumah Creative Preuner Indonesia </title>
+    <title> {{$title.' - '}}Rumah Creativepreuner Indonesia </title>
 
     <!-- Meta Data -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,9 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
+    <meta property="og:title" content="{{$title}}">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="shortcut icon" href="{{asset('assets/front/favicon.png')}}" />
 
     <!-- Web Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli%7CRubik:400,400i,500,700" />
@@ -36,6 +37,10 @@
 
     <!-- ======= Custom Stylesheet ======= -->
     <link rel="stylesheet" href="{{asset('assets/front/css/custom.css')}}" />
+
+    <script type="text/javascript"
+        src="https://platform-api.sharethis.com/js/sharethis.js#property=60162321fe6fa50012b7b860&product=inline-share-buttons"
+    async="async"></script>
 
 </head>
 <body>
@@ -72,7 +77,7 @@
                         <div class="main-menu d-flex align-items-center justify-content-end">
                             <ul class="nav align-items-center">
                                 <li>
-                                    <a href="#">Beranda</a>
+                                    <a href="/">Beranda</a>
                                 </li>
                                 <li>
                                     <a href="{{url('profiles')}}">Profil</a>
@@ -140,15 +145,140 @@
         <!-- Offcanvas Content End -->
     </div>
     <!-- Offcanvas End -->
-        
+</div>
+
+<footer class="footer bg-light section-pattern footer-bg" data-bg-img="assets/img/section-pattern/footer-pattern.png">
+        <!-- Footer Top Begin -->
+        <div class="footer-top pt-60">
+            <div class="container border-bottom">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <!-- Contact Widget Begin -->
+                        <div class="widget widget_contact_info">
+                            <!-- Widget Logo Begin -->
+                            <div class="widget-logo">
+                                <img src="{{asset('assets/front/img/logo.png')}}" data-rjs="2" alt="" width="150px">
+                            </div>
+                            <!-- Widget Logo End -->
+    
+    
+                        </div>
+                        <!-- About Widget End -->
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <!-- Widget Recent Post Begin -->
+                        <div class="widget widget_recent_entries">
+                            <!-- Widget Title Begin  -->
+                            <div class="widget-title">
+                                <h4>Artikel Terakhir</h4>
+                            </div>
+                            <!-- Widget Title End  -->
+                            @php
+                                $artikel = App\Artikel::orderBy('created_at', 'DESC')->limit(2)->get();
+                            @endphp
+                            <!-- Single Latest Post Begin -->
+                            @foreach ($artikel as $item)
+                                <div class="single-post media">
+                                    {{-- <div class="post-image">
+                                        <img src="{{avatar($item->gambar)}}" data-rjs="2" alt="">
+                                    </div> --}}
+                                    <div class="post-content media-body">
+                                        <span class="posted-on">{{tgl_indo($item->created_at)}}</span>
+                                        <h5><a href="#">{{$item->judul}}</a></h5>
+                                    </div>
+                                </div>
+                            @endforeach
+                            <!-- Single Latest Post End -->
+                        </div>
+                        <!-- Widget Recent Post End -->
+                    </div>
+                    <div class="col-lg-2 col-sm-6">
+                        <!-- Widget Quick Nav -->
+                        <div class="widget widget_nav_menu">
+                            <!-- Widget Title Begin  -->
+                            <div class="widget-title">
+                                <h4>Menu</h4>
+                            </div>
+                            <!-- Widget Title End  -->
+    
+                            <!-- Menu Begin -->
+                            <ul class="menu">
+                                <li><a href="{{url('/')}}">Beranda</a></li>
+                                <li><a href="{{url('profile')}}">Profile</a></li>
+                                <li><a href="{{url('agendas')}}">Agenda</a></li>
+                                <li><a href="{{url('umkms')}}">UMKM</a></li>
+                                <li><a href="{{url('articles')}}">Artikel</a></li>
+                                <li><a href="{{url('mitras')}}">Mitra</a></li>
+                            </ul>
+                            <!-- Menu End -->
+                        </div>
+                        <!-- Widget Quick Nav -->
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <!-- Widget Newsletter Begin -->
+                        <div class="widget widget_newsletter">
+                            <!-- Widget Title Begin  -->
+                            <div class="widget-title">
+                                <h4>Kontak</h4>
+                            </div>
+                            @php
+                                $profile = App\Profile::first();
+                            @endphp
+                            <!-- Widget Title End  -->
+                            <!-- Widget Content Begin -->
+                            <div class="info-content">
+                                <div class="single-info">
+                                    <span><i class="fa fa-home"></i> Lokasi Kantor</span>
+                                    <p>{{$profile->alamat}}</p>
+                                </div>
+                                <div class="single-info">
+                                    <span><i class="fa fa-phone"></i> Telepon</span>
+                                    <p>{{$profile->telepon}}</p>
+                                </div>
+                                <div class="single-info">
+                                    <span><i class="fa fa-envelope"></i> Support mail</span>
+                                    <p>
+                                        {{$profile->email}}
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Widget Content End -->
+    
+                        </div>
+                        <!-- Widget Newsletter End -->
+    
+                        <!-- Widget Social Icon Begin -->
+                        <div class="widget widget_social_icon">
+                            <ul class="social_icon_list list-inline">
+                                <li>
+                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Widget Social Icon End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Top End -->
+    
         <!-- Footer Bottom Begin -->
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="copyright-text text-center">
-                            © 2021 RCI <span class="d-none d-sm-inline-block"> - Crafted by 
-                                TAHUNGODING.</span>
+                            <span><a href="#">Rumah CreativePreneur Indonesia</a> &copy; Copyright 2021.All rights
+                                reserved.</span>
                         </div>
                     </div>
                 </div>
@@ -205,6 +335,9 @@
     
     <!-- ======= Custom JS ======= -->
     <script src="{{asset('assets/front/js/custom.js')}}"></script>
+
+    @yield('js')
+
     </body>
     
     </html>

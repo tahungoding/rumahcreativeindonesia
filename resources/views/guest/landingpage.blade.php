@@ -7,64 +7,34 @@
         <!-- Banner Slider Begin -->
         <div class="banner-slider owl-carousel d-flex align-items-center justify-content-center"
             data-owl-animate-in="fadeIn" data-owl-animate-Out="fadeOut" data-owl-autoplay="false" data-owl-dots="true">
-            <!-- Single Slide Begin -->
-            <div class="single-banner-slider">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <!-- Banner Content Begin -->
-                            <div class="banner-content">
-                                <h1>Rumah<h1>
-                                        <span>Creative Preneur</span> <br>
-                                        Indonesia</h1>
-                                    <p>Rumah Creativepreneur Indonesia memiliki fokus pada
-                                        pemberdayaan UMKM dan Dunia Kreatif melalui prinsip "Membangun
-                                        Ekonomi Kerakyatan melalui Industri Kreatif".
-                                    </p>
-                                    <a href="#" data-toggle="modal" data-target="#appointmentModalForm"
-                                        class="banner-btn btn"><span>Get Appointment</span></a>
+            @foreach ($slider as $item)
+                <!-- Single Slide Begin -->
+                <div class="single-banner-slider">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <!-- Banner Content Begin -->
+                                <div class="banner-content">
+                                    <h1>{!! $item->judul !!}</h1>
+                                        <p>{{$item->deskripsi}}
+                                        </p>
+                                        <a href="{{$item->link}}" data-toggle="modal" data-target="#appointmentModalForm"
+                                            class="banner-btn btn"><span>Selengkapnya</span></a>
+                                </div>
+                                <!-- Banner Content End -->
                             </div>
-                            <!-- Banner Content End -->
-                        </div>
-                        <div class="col-lg-6">
-                            <!-- Banner Content Begin -->
-                            <div class="banner-image mt-50 mt-lg-0 text-center text-lg-right">
-                                <img src="{{asset('assets')}}/front/img/banner/slider-1.png" data-rjs="2" alt="">
+                            <div class="col-lg-6">
+                                <!-- Banner Content Begin -->
+                                <div class="banner-image mt-50 mt-lg-0 text-center text-lg-right">
+                                    <img src="{{avatar($item->gambar)}}" data-rjs="2" alt="">
+                                </div>
+                                <!-- Banner Content End -->
                             </div>
-                            <!-- Banner Content End -->
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Single Slide End -->
-    
-            <!-- Single Slide Begin -->
-            <div class="single-banner-slider">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <!-- Banner Content Begin -->
-                            <div class="banner-content">
-                                <h1>Our <span>Business</span> <br>
-                                    Is Your Business</h1>
-                                <p>Tolerably we as extremity exquisite do commanded. Doubtful offended do entrance of
-                                    landlord moreover is mistress in. Nay
-                                    was appear entire ladies.</p>
-                                <a href="#" class="banner-btn btn"><span>Get Appointment</span></a>
-                            </div>
-                            <!-- Banner Content End -->
-                        </div>
-                        <div class="col-lg-6">
-                            <!-- Banner Content Begin -->
-                            <div class="banner-image mt-50 mt-lg-0 text-center text-lg-right">
-                                <img src="{{asset('assets')}}/front/img/banner/slider-2.png" data-rjs="2" alt="">
-                            </div>
-                            <!-- Banner Content End -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Slide End -->
+                <!-- Single Slide End -->
+            @endforeach
         </div>
         <!-- Banner Slider End -->
     </section>
@@ -118,69 +88,31 @@
             <div class="row justify-content-center">
                 <div class="section-title text-center">
                     <h3>Rumah CreativePreneur Indonesia</h3>
-                    <h2>Mitra Yang Terlibat</h2>
+                    <h2>Program</h2>
                     <p>Delivered dejection necessary objection do mr prevailed. Mr feeling do chiefly cordial in do.
                         Water timed folly right
                         aware if oh truth. Imprudence attachment him his for sympathize.</p>
                 </div>
-    
-                <div class="col-lg-4 col-md-6">
-                    <!-- Single Feature Begin -->
-                    <div class="single-feature text-center">
-                        <!-- Feature Image Begin -->
-                        <div class="image">
-                            <img src="{{asset('assets')}}/front/img/umkm.png" style="width: 150px;" data-rjs="2" alt="">
+@foreach ($program as $item)
+                    <div class="col-lg-3 col-md-3">
+                        <!-- Single Feature Begin -->
+                        <div class="single-feature text-center">
+                            <!-- Feature Image Begin -->
+                            <div class="image">
+                                <img src="{{avatar($item->icon)}}" style="width: 150px;" data-rjs="2" alt="">
+                            </div>
+                            <!-- Feature Image End -->
+                    
+                            <!-- Feature Content Begin -->
+                            <div class="content">
+                                <h3>{{$item->nama_program}} </h3>
+                                <p>{{$item->tanda}}</p>
+                            </div>
+                            <!-- Feature Content End -->
                         </div>
-                        <!-- Feature Image End -->
-    
-                        <!-- Feature Content Begin -->
-                        <div class="content">
-                            <h3>Usaha Mikro, Kecil,& Menengah</h3>
-                            <p>Concerns greatest margaret him
-                                absolute entrance nay.</p>
-                        </div>
-                        <!-- Feature Content End -->
+                        <!-- Single Feature End -->
                     </div>
-                    <!-- Single Feature End -->
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <!-- Single Feature Begin -->
-                    <div class="single-feature text-center">
-                        <!-- Feature Image Begin -->
-                        <div class="image">
-                            <img src="{{asset('assets')}}/front/img/bisnis.png" style="width: 150px;" data-rjs="2" alt="">
-                        </div>
-                        <!-- Feature Image End -->
-    
-                        <!-- Feature Content Begin -->
-                        <div class="content">
-                            <h3>Business & Creative Partner</h3>
-                            <p>Concerns greatest margaret him
-                                absolute entrance nay.</p>
-                        </div>
-                        <!-- Feature Content End -->
-                    </div>
-                    <!-- Single Feature End -->
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <!-- Single Feature Begin -->
-                    <div class="single-feature text-center">
-                        <!-- Feature Image Begin -->
-                        <div class="image">
-                            <img src="{{asset('assets')}}/front/img/creative.png" style="width: 150px;" data-rjs="2" alt="">
-                        </div>
-                        <!-- Feature Image End -->
-    
-                        <!-- Feature Content Begin -->
-                        <div class="content">
-                            <h3>Creative Mover People</h3>
-                            <p>Concerns greatest margaret him
-                                absolute entrance nay.</p>
-                        </div>
-                        <!-- Feature Content End -->
-                    </div>
-                    <!-- Single Feature End -->
-                </div>
+                    @endforeach
             </div>
         </div>
     </section>
@@ -222,33 +154,17 @@
                         <div class="tab-content">
                             <!-- Mission Tab Begin -->
                             <div class="tab-pane fade show active" id="mission" role="tabpanel">
-                                <p>Surprise not wandered speedily husbands although yet end. Are court tiled cease young
-                                    built fat one man taken. We
-                                    highest ye friends is exposed equally in. Ignorant had too strictly followed.</p>
-    
-                                <ul class="list-unstyled list-check">
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Become successful & superior</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Provide quick & good solution for
-                                        business</li>
-                                </ul>
-    
-                                <a href="#" class="btn"><span>SEE MORE</span></a>
+                                {!! \Str::limit($profile->misi, 200) !!}
+                                <br>
+                                <a href="{{url('profile')}}" class="btn"><span>SEE MORE</span></a>
                             </div>
                             <!-- Mission Tab End -->
     
                             <!-- Vission Tab Begin -->
                             <div class="tab-pane fade" id="vission" role="tabpanel">
-                                <p>It is a long established fact that a reader will be distracted by the readable
-                                    content of a page when looking at its layout. The point of using Lorem Ipsum is that
-                                    it has a more-or-less normal distribution of letters.</p>
-    
-                                <ul class="list-unstyled list-check">
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Become successful & superior</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Provide quick & good solution for
-                                        business</li>
-                                </ul>
-    
-                                <a href="#" class="btn"><span>SEE MORE</span></a>
+                                {!! \Str::limit($profile->visi, 200) !!}
+                                <br>
+                                <a href="{{url('profile')}}" class="btn"><span>SEE MORE</span></a>
                             </div>
                             <!-- Vission Tab End -->
                         </div>
@@ -257,9 +173,9 @@
                     <!-- About Tabs End -->
                 </div>
                 <div class="col-lg-5 video-area mt-50 mt-lg-0">
-                    <img src="{{asset('assets')}}/front/img/section-bg/about-feature.png" data-rjs="2" alt="">
-                    <a href="#" class="vdo-btn popup-video"><img src="{{asset('assets')}}/front/img/icons/play.svg" class="svg" alt=""> Watch
-                        Video</a>
+                    <img src="{{avatar($profile->visi_img)}}" data-rjs="2" alt="" style="max-height: 500px;">
+                    {{-- <a href="#" class="vdo-btn popup-video"><img src="{{asset('assets')}}/front/img/icons/play.svg" class="svg" alt=""> Watch
+                        Video</a> --}}
                 </div>
             </div>
         </div>
@@ -469,13 +385,13 @@
     <!-- Service End -->
     
     <!-- Counter Begin -->
-    <section class="pt-120 pb-70 gradient-bg">
+<section class="pt-120 pb-70 gradient-bg">
         <div class="container">
             <div class="row align-items-center">
                 <!-- Single Counter -->
                 <div class="col-lg-4 col-sm-6">
                     <div class="single-counter text-center text-white">
-                        <h2 class="count"><span>15</span></h2>
+                        <h2 class="count">{{$umkm_c}}</h2>
                         <p>UMKM Binaan</p>
                     </div>
                 </div>
@@ -484,7 +400,7 @@
                 <!-- Single Counter -->
                 <div class="col-lg-4 col-sm-6">
                     <div class="single-counter text-center text-white">
-                        <h2 class="count"><span>1250</span>+</h2>
+                        <h2 class="count">{{$program_c}}</h2>
                         <p>Produk</p>
                     </div>
                 </div>
@@ -493,19 +409,19 @@
                 <!-- Single Counter -->
                 <div class="col-lg-4 col-sm-6">
                     <div class="single-counter text-center text-white">
-                        <h2 class="count"><span>1</span>k+</h2>
+                        <h2 class="count">{{$mitra->count()}}</h2>
                         <p>Mitra</p>
                     </div>
                 </div>
                 <!-- End Single Counter -->
     
                 <!-- Single Counter
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-counter text-center text-white">
-                            <h2 class="count"><span>100</span>+</h2>
-                            <p>Giving Consultancy</p>
-                        </div>
-                    </div> -->
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="single-counter text-center text-white">
+                                <h2 class="count"><span>100</span>+</h2>
+                                <p>Giving Consultancy</p>
+                            </div>
+                        </div> -->
                 <!-- End Single Counter -->
             </div>
         </div>
@@ -760,7 +676,7 @@
     <!-- Pricing Plan End -->
     
     <!-- Project Begin -->
-    <section class="pt-120 pb-90 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/case-study-pattern.png">
+    <section class="pt-120 pb-90 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/case-study-pattern.png" id="artikel">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -775,31 +691,20 @@
                     <!-- Section Title End -->
                 </div>
             </div>
-    
             <div class="row">
                 <div class="col-12">
                     <!-- Porject Nav Begin -->
                     <div class="project-nav text-center mb-30">
                         <div class="nav justify-content-center align-items-center">
                             <ul class="project_filter list-inline">
-                                <li class="active" data-filter="*">
-                                    <span class="filter-btn">All</span>
+                                <li class="{{(!isset($_GET['kategori'])) ? 'active' : null }}" >
+                                    <span class="filter-btn"><a href="/" style="all: unset">All</a></span>
                                 </li>
-                                <li class="" data-filter=".financial">
-                                    <span class="filter-btn">Financial</span>
-                                </li>
-                                <li class="" data-filter=".business">
-                                    <span class="filter-btn">Business</span>
-                                </li>
-                                <li class="" data-filter=".funds">
-                                    <span class="filter-btn">Funds</span>
-                                </li>
-                                <li class="" data-filter=".investment">
-                                    <span class="filter-btn">Investment</span>
-                                </li>
-                                <li class="" data-filter=".sales">
-                                    <span class="filter-btn">Sales</span>
-                                </li>
+                                @foreach ($kategoriArtikel as $kategori)
+                                    <li class="{{(isset($_GET['kategori'])) ? (($_GET['kategori'] == $kategori->nama) ? 'active' : null) : null }}">
+                                        <span class="filter-btn"><a href="?kategori={{ $kategori->nama }}" style="all: unset">{{ $kategori->nama }}</a></span>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -809,95 +714,26 @@
     
             <div class="row project-items grid">
                 <!-- Single Project Begin -->
-                <div class="col-lg-6 grid-item sales business">
-                    <div class="single-project-item">
-                        <!-- Project Image Begin -->
-                        <div class="image">
-                            <img src="{{asset('assets')}}/front/img/project/project-1.png" data-rjs="2" alt="">
+                @foreach ($artikel as $item)
+                        <div class="col-lg-6 grid-item {{ $item->category->name }}">
+                            <div class="single-project-item">
+                                <!-- Project Image Begin -->
+                                <div class="image">
+                                    <img src="{{ Storage::url($item->gambar) }}" data-rjs="2" alt="">
+                                </div>
+                                <!-- Project Image End -->
+                        
+                                <!-- Project Body Begin -->
+                                <div class="project-body">
+                                    <h3><a href="#">{{ $item->judul }}</a></h3>
+                                    <p class="project-meta">Penulis:<span>{{ $item->writer->name }}</span></p>
+                                    <p>{!! Str::limit($item->konten, 50) !!}</p>
+                                    <a href="#" class="btn-inline">Read More</a>
+                                </div>
+                                <!-- Project Body End -->
+                            </div>
                         </div>
-                        <!-- Project Image End -->
-    
-                        <!-- Project Body Begin -->
-                        <div class="project-body">
-                            <h3><a href="#">Business consultant finds more ways to bring business to light</a></h3>
-                            <p class="project-meta">Client:<span>Alto Palermo S.A.</span></p>
-                            <p>Imprudence attachment him his for sympathize. Large above be to means. Dashwood do
-                                provided stronger is. But discretion
-                                frequently.</p>
-                            <a href="#" class="btn-inline">Read More</a>
-                        </div>
-                        <!-- Project Body End -->
-                    </div>
-                </div>
-                <!-- Single Project End -->
-    
-                <!-- Single Project Begin -->
-                <div class="col-lg-6 grid-item sales financial">
-                    <div class="single-project-item">
-                        <!-- Project Image Begin -->
-                        <div class="image">
-                            <img src="{{asset('assets')}}/front/img/project/project-2.png" data-rjs="2" alt="">
-                        </div>
-                        <!-- Project Image End -->
-    
-                        <!-- Project Body Begin -->
-                        <div class="project-body">
-                            <h3><a href="#">Business consultant finds more ways to bring business to light</a></h3>
-                            <p class="project-meta">Client:<span>Alto Palermo S.A.</span></p>
-                            <p>Imprudence attachment him his for sympathize. Large above be to means. Dashwood do
-                                provided stronger is. But discretion
-                                frequently.</p>
-                            <a href="#" class="btn-inline">Read More</a>
-                        </div>
-                        <!-- Project Body End -->
-                    </div>
-                </div>
-                <!-- Single Project End -->
-    
-                <!-- Single Project Begin -->
-                <div class="col-lg-6 grid-item investment business">
-                    <div class="single-project-item">
-                        <!-- Project Image Begin -->
-                        <div class="image">
-                            <img src="{{asset('assets')}}/front/img/project/project-3.png" data-rjs="2" alt="">
-                        </div>
-                        <!-- Project Image End -->
-    
-                        <!-- Project Body Begin -->
-                        <div class="project-body">
-                            <h3><a href="#">Business consultant finds more ways to bring business to light</a></h3>
-                            <p class="project-meta">Client:<span>Alto Palermo S.A.</span></p>
-                            <p>Imprudence attachment him his for sympathize. Large above be to means. Dashwood do
-                                provided stronger is. But discretion
-                                frequently.</p>
-                            <a href="#" class="btn-inline">Read More</a>
-                        </div>
-                        <!-- Project Body End -->
-                    </div>
-                </div>
-                <!-- Single Project End -->
-    
-                <!-- Single Project Begin -->
-                <div class="col-lg-6 grid-item financial funds">
-                    <div class="single-project-item">
-                        <!-- Project Image Begin -->
-                        <div class="image">
-                            <img src="{{asset('assets')}}/front/img/project/project-4.png" data-rjs="2" alt="">
-                        </div>
-                        <!-- Project Image End -->
-    
-                        <!-- Project Body Begin -->
-                        <div class="project-body">
-                            <h3><a href="#">Business consultant finds more ways to bring business to light</a></h3>
-                            <p class="project-meta">Client:<span>Alto Palermo S.A.</span></p>
-                            <p>Imprudence attachment him his for sympathize. Large above be to means. Dashwood do
-                                provided stronger is. But discretion
-                                frequently.</p>
-                            <a href="#" class="btn-inline">Read More</a>
-                        </div>
-                        <!-- Project Body End -->
-                    </div>
-                </div>
+                @endforeach
                 <!-- Single Project End -->
             </div>
     
@@ -923,239 +759,50 @@
             </div>
     
             <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <!-- Single Team Begin -->
-                    <div class="single-team-member">
-                        <!-- Team Image Begin -->
-                        <div class="image position-relative">
-                            <img src="{{asset('assets')}}/front/img/shapes/team.svg" class="svg" alt="">
-                            <img src="{{asset('assets')}}/front/img/team/team-1.jpg" data-rjs="2" alt="">
-                        </div>
-                        <!-- Team Image End -->
-    
-                        <!-- Team Info Begin -->
-                        <div class="team-info">
-                            <div class="info-front text-center">
-                                <h4>Emillie Cole</h4>
-                                <p>CEO of Bizidea</p>
+@foreach ($struktur_tim as $item)
+                    <div class="col-lg-4 col-sm-6">
+                        <!-- Single Team Begin -->
+                        <div class="single-team-member">
+                            <!-- Team Image Begin -->
+                            <div class="image position-relative">
+                    
+                                <img src="{{avatar($item->foto)}}" data-rjs="2" alt="" style="width: 348px;height: 283px;object-fit: cover">
                             </div>
-    
-                            <div class="info-back">
-                                <ul class="social_icon_list list-inline text-center w-100 d-flex justify-content-around">
-                                    <li>
-                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                    </li>
-                                </ul>
+                            <!-- Team Image End -->
+                    
+                            <!-- Team Info Begin -->
+                            <div class="team-info">
+                                <div class="info-front text-center">
+                                    <h4>{{$item->nama}}</h4>
+                                    <p>{{$item->jabatan}}</p>
+                                </div>
+                    
+                                <div class="info-back">
+                                    <ul class="social_icon_list list-inline text-center w-100 d-flex justify-content-around">
+                                        <li>
+                                            <a href="https://facebook.com/{{$item->facebook}}"><i class="fa fa-facebook"
+                                                    aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://twitter.com/{{$item->facebook}}"><i class="fa fa-twitter"
+                                                    aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://linkedin.com/u/{{$item->facebook}}"><i class="fa fa-linkedin"
+                                                    aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://instagram.com/{{$item->instagram}}"><i class="fa fa-instagram"
+                                                    aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
+                            <!-- Team Info End -->
                         </div>
-                        <!-- Team Info End -->
+                        <!-- Single Team End -->
                     </div>
-                    <!-- Single Team End -->
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <!-- Single Team Begin -->
-                    <div class="single-team-member">
-                        <!-- Team Image Begin -->
-                        <div class="image position-relative">
-                            <img src="{{asset('assets')}}/front/img/shapes/team.svg" class="svg" alt="">
-                            <img src="{{asset('assets')}}/front/img/team/team-2.jpg" data-rjs="2" alt="">
-                        </div>
-                        <!-- Team Image End -->
-    
-                        <!-- Team Info Begin -->
-                        <div class="team-info">
-                            <div class="info-front text-center">
-                                <h4>Jack Reader</h4>
-                                <p>CEO of Bizidea</p>
-                            </div>
-    
-                            <div class="info-back">
-                                <ul class="social_icon_list list-inline text-center w-100 d-flex justify-content-around">
-                                    <li>
-                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Team Info End -->
-    
-                    </div>
-                    <!-- Single Team End -->
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <!-- Single Team Begin -->
-                    <div class="single-team-member">
-                        <!-- Team Image Begin -->
-                        <div class="image position-relative">
-                            <img src="{{asset('assets')}}/front/img/shapes/team.svg" class="svg" alt="">
-                            <img src="{{asset('assets')}}/front/img/team/team-3.jpg" data-rjs="2" alt="">
-                        </div>
-                        <!-- Team Image End -->
-    
-                        <!-- Team Info Begin -->
-                        <div class="team-info">
-                            <div class="info-front text-center">
-                                <h4>Mickle Jection</h4>
-                                <p>CEO of Bizidea</p>
-                            </div>
-    
-                            <div class="info-back">
-                                <ul class="social_icon_list list-inline text-center w-100 d-flex justify-content-around">
-                                    <li>
-                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Team Info End -->
-    
-                    </div>
-                    <!-- Single Team End -->
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <!-- Single Team Begin -->
-                    <div class="single-team-member">
-                        <!-- Team Image Begin -->
-                        <div class="image position-relative">
-                            <img src="{{asset('assets')}}/front/img/shapes/team.svg" class="svg" alt="">
-                            <img src="{{asset('assets')}}/front/img/team/team-4.jpg" data-rjs="2" alt="">
-                        </div>
-                        <!-- Team Image End -->
-    
-                        <!-- Team Info Begin -->
-                        <div class="team-info">
-                            <div class="info-front text-center">
-                                <h4>Jeson Roy</h4>
-                                <p>CEO of Bizidea</p>
-                            </div>
-    
-                            <div class="info-back">
-                                <ul class="social_icon_list list-inline text-center w-100 d-flex justify-content-around">
-                                    <li>
-                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Team Info End -->
-    
-                    </div>
-                    <!-- Single Team End -->
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <!-- Single Team Begin -->
-                    <div class="single-team-member">
-                        <!-- Team Image Begin -->
-                        <div class="image position-relative">
-                            <img src="{{asset('assets')}}/front/img/shapes/team.svg" class="svg" alt="">
-                            <img src="{{asset('assets')}}/front/img/team/team-5.jpg" data-rjs="2" alt="">
-                        </div>
-                        <!-- Team Image End -->
-    
-                        <!-- Team Info Begin -->
-                        <div class="team-info">
-                            <div class="info-front text-center">
-                                <h4>Andy Mare</h4>
-                                <p>CEO of Bizidea</p>
-                            </div>
-    
-                            <div class="info-back">
-                                <ul class="social_icon_list list-inline text-center w-100 d-flex justify-content-around">
-                                    <li>
-                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Team Info End -->
-    
-                    </div>
-                    <!-- Single Team End -->
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <!-- Single Team Begin -->
-                    <div class="single-team-member">
-                        <!-- Team Image Begin -->
-                        <div class="image position-relative">
-                            <img src="{{asset('assets')}}/front/img/shapes/team.svg" class="svg" alt="">
-                            <img src="{{asset('assets')}}/front/img/team/team-6.jpg" data-rjs="2" alt="">
-                        </div>
-                        <!-- Team Image End -->
-    
-                        <!-- Team Info Begin -->
-                        <div class="team-info">
-                            <div class="info-front text-center">
-                                <h4>John Snow</h4>
-                                <p>CEO of Bizidea</p>
-                            </div>
-    
-                            <div class="info-back">
-                                <ul class="social_icon_list list-inline text-center w-100 d-flex justify-content-around">
-                                    <li>
-                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Team Info End -->
-    
-                    </div>
-                    <!-- Single Team End -->
-                </div>
+                    @endforeach
             </div>
         </div>
     </section>
@@ -1167,45 +814,14 @@
             <div class="row">
                 <div class="col-12">
                     <!-- Partners -->
-                    <div class="brand-logo owl-carousel" data-owl-items="6" data-owl-autoplay="false"
-                        data-owl-responsive='{"0": {"items": "2"},"575":{"items": "3"},"768": {"items": "4"},"992": {"items": "6"}}'>
-                        <!-- Single Partner -->
-                        <a href="#" class="single-brand-logo">
-                            <img src="{{asset('assets')}}/front/img/brand/brand-1.png" data-rjs="2" alt="">
-                        </a>
-                        <!-- End Single Partner -->
-    
-                        <!-- Single Partner -->
-                        <a href="#" class="single-brand-logo">
-                            <img src="{{asset('assets')}}/front/img/brand/brand-2.png" data-rjs="2" alt="">
-                        </a>
-                        <!-- End Single Partner -->
-    
-                        <!-- Single Partner -->
-                        <a href="#" class="single-brand-logo">
-                            <img src="{{asset('assets')}}/front/img/brand/brand-3.png" data-rjs="2" alt="">
-                        </a>
-                        <!-- End Single Partner -->
-    
-                        <!-- Single Partner -->
-                        <a href="#" class="single-brand-logo">
-                            <img src="{{asset('assets')}}/front/img/brand/brand-4.png" data-rjs="2" alt="">
-                        </a>
-                        <!-- End Single Partner -->
-    
-                        <!-- Single Partner -->
-                        <a href="#" class="single-brand-logo">
-                            <img src="{{asset('assets')}}/front/img/brand/brand-5.png" data-rjs="2" alt="">
-                        </a>
-                        <!-- End Single Partner -->
-    
-                        <!-- Single Partner -->
-                        <a href="#" class="single-brand-logo">
-                            <img src="{{asset('assets')}}/front/img/brand/brand-6.png" data-rjs="2" alt="">
-                        </a>
-                        <!-- End Single Partner -->
-    
-                    </div>
+                         <div class="brand-logo owl-carousel" data-owl-items="{{$mitra->count()}}" data-owl-autoplay="false">
+                            @foreach ($mitra as $item)
+                                <a href="{{$item->link}}" class="single-brand-logo">
+                                    <img src="{{avatar($item->logo)}}" data-rjs="2" alt="" style="max-height: 100px; object-fit:cover;">
+                                </a>
+                            @endforeach
+        
+                        </div>
                     <!-- End of Partners -->
                 </div>
             </div>

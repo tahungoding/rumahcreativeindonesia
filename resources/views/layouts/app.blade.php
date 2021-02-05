@@ -10,7 +10,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('assets/back')}}/images/favicon.ico" />
+    <link rel="shortcut icon" href="{{asset('assets/front/favicon.png')}}" />
 
     <!-- Bootstrap Css -->
     <link href="{{asset('assets/back/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -59,7 +59,7 @@
 
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="rounded-circle header-profile-user" src="{{ profile_picture(Auth::user()->foto) }}" alt="Header Avatar">
+                                <img class="rounded-circle header-profile-user" src="{{ avatar(Auth::user()->foto) }}" alt="Header Avatar">
                                 <label style="cursor: pointer">&nbsp; Hai, {{Auth::user()->name}} !</label>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
@@ -136,6 +136,7 @@
                                             <i class="ti-briefcase"></i>Profil
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-left" aria-labelledby="topnav-email">
+                                            <a href="{{url('slider')}}" class="dropdown-item">Slider</a>
                                             <a href="{{url('profile')}}" class="dropdown-item">Profil Perusahaan</a>
                                             <a href="{{url('struktur_tim')}}" class="dropdown-item">Struktur Tim</a>
                                         </div>

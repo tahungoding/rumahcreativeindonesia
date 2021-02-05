@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Artikel;
 
 class ArtikelController extends Controller
 {
@@ -12,9 +13,12 @@ class ArtikelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $data['title'] = "Artikel";
+        $data['artikels'] = Artikel::where('status', '=', 'aktif')->orderBy('created_at', 'DESC')->paginate(6);
+
+        return view('guest.artikel.index', $data);
     }
 
     /**
@@ -46,7 +50,11 @@ class ArtikelController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['artikel'] = Artikel::where('slug', '=', $id)->first(); 
+        $data['artikels'] = Artikel::where('id_kategori_artikel', '=', $data['artikel']->id_kategori_artikel)->limit(5)->get();
+        $data['title'] =  $data['artikel']->judul;
+
+        return view('guest.artikel.detail', $data);
     }
 
     /**

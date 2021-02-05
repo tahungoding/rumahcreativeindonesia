@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('umkm', 'UmkmController');
     Route::resource('user', 'UserController');
     Route::resource('user_level', 'UserLevelController');
+    Route::resource('slider', 'SliderController');
 });
 
 Auth::routes();

@@ -53,7 +53,7 @@
                             <td>{{ $mitra->kategori_mitra['nama'] }}</td>
                             <td>{{ $mitra->nama }}</td>
                             <td>
-                                <img class="d-flex align-self-center rounded" src="{{ profile_picture($mitra->logo) }}"
+                                <img class="d-flex align-self-center rounded" src="{{ avatar($mitra->logo) }}"
                                 height="64">
                             </td>
                             <td>{{ $mitra->status }}</td>
