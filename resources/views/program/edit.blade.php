@@ -27,6 +27,25 @@
                     </div>
 
                     <div class="form-group">
+                        <label>Tanda</label>
+                        <input type="text" class="form-control" name="tanda" value="{{ $program->tanda ?? old('tanda') }}" required />
+                        @error('tanda')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label>Icon</label><br>
+                        <img class="rounded icon-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ isset($program) ? avatar($program->icon) : avatar() }}" data-holder-rendered="true">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="icon" value="{{ $program->icon ?? old('icon') }}" onchange="filePreview(this, '.icon-preview')">
+                        @error('icon')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
                         <label>Gambar</label><br>
                         <img class="rounded img-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ isset($program) ? avatar($program->gambar) : avatar() }}" data-holder-rendered="true">
                     </div>
@@ -40,7 +59,7 @@
                     <div class="form-group">
                         <label>Deskripsi</label>
                         <div>
-                            <textarea required class="form-control" rows="5" name="deskripsi">{{ $program->deskripsi ?? old('deskripsi') }}</textarea>
+                            <textarea required class="form-control tiny" rows="5" name="deskripsi">{{ $program->deskripsi ?? old('deskripsi') }}</textarea>
                             @error('deskripsi')
                             <span class="text-danger">{{ $message}}</span>
                             @enderror
@@ -86,4 +105,10 @@
 <script src="{{ asset('assets/back/libs/parsleyjs/parsley.min.js') }}"></script>
 <script src="{{ asset('assets/back/js/pages/form-validation.init.js') }}"></script>
 <script src="{{ asset('assets/back/libs/admin-resources/bootstrap-filestyle/bootstrap-filestyle.min.js') }}"></script>
+
+<!--tinymce js-->
+<script src="{{asset('assets/back/libs/tinymce/tinymce.min.js')}}"></script>
+
+<!-- init js -->
+<script src="{{asset('assets/back/js/pages/form-editor.init.js')}}"></script>
 @endsection

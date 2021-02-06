@@ -2,9 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'GuestController@landing_page')->name('landing_page');
+Route::get('/profiles', 'GuestController@profiles')->name('profiles');
+Route::resource('programs', 'Guest\ProgramController');
+Route::resource('agendas', 'Guest\AgendaController');
+Route::resource('umkms', 'Guest\UmkmController');
+Route::resource('articles', 'Guest\ArtikelController');
+Route::resource('mitras', 'Guest\MitraController');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('agenda', 'AgendaController');
@@ -21,6 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('umkm', 'UmkmController');
     Route::resource('user', 'UserController');
     Route::resource('user_level', 'UserLevelController');
+    Route::resource('slider', 'SliderController');
 });
 
 Auth::routes();

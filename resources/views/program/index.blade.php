@@ -31,8 +31,10 @@
 
                 <h4 class="card-title">{{ $title }}</h4>
                 <p class="card-title-desc">
-                    <a href="{{ route('program.create') }}" class="btn btn-primary waves-effect waves-light">
-                        <i class="ti-plus"></i> Tambah</a>
+                    @if (Auth::user()->userLevel->nama == 'Admin') 
+                        <a href="{{ route('program.create') }}" class="btn btn-primary waves-effect waves-light">
+                            <i class="ti-plus"></i> Tambah</a>
+                    @endif
                 </p>
 
                 <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -40,10 +42,14 @@
                         <tr>
                             <th>No.</th>
                             <th>Nama Program</th>
+                            <th>Icon</th>
                             <th>Gambar</th>
+                            <th>Tanda</th>
                             <th>Deskripsi</th>
                             <th>Status</th>
-                            <th>Aksi</th>
+                            @if (Auth::user()->userLevel->nama == 'Admin')
+                                <th>Aksi</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -54,21 +60,25 @@
                         <tr>
                             <td>{{ $number++ }}</td>
                             <td>{{ $prog->nama_program }}</td>
-                            <td><img class="d-flex align-self-center rounded" src="{{ profile_picture($prog->gambar) }}" height="64"></td>
+                            <td><img class="d-flex align-self-center rounded" src="{{ avatar($prog->icon) }}" height="64"></td>
+                            <td><img class="d-flex align-self-center rounded" src="{{ avatar($prog->gambar) }}" height="64"></td>
+                            <td>{{ $prog->tanda }}</td>
                             <td>{{ $prog->deskripsi }}</td>
                             <td>{{ $prog->status }}</td>
-                            <td>
-                                <div class="button-items">
-                                    <a href="{{ route('program.edit', $prog) }}" class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                                        <i class="ti-pencil"></i></a>
-                                    <form action="{{ route('program.destroy', $prog) }}" method="post" onsubmit="return confirm('Yakin hapus data ini?')" style="display: inline">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-outline-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Hapus">
-                                            <i class="ti-trash"></i></button>
-                                    </form>
-                                </div>
-                            </td>
+                            @if (Auth::user()->userLevel->nama == 'Admin')
+                                <td>
+                                    <div class="button-items">
+                                        <a href="{{ route('program.edit', $prog) }}" class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                            <i class="ti-pencil"></i></a>
+                                        <form action="{{ route('program.destroy', $prog) }}" method="post" onsubmit="return confirm('Yakin hapus data ini?')" style="display: inline">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-outline-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Hapus">
+                                                <i class="ti-trash"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

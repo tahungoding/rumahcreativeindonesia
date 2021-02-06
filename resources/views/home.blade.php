@@ -12,8 +12,13 @@
                 </div>
                 <div class="text-white">
                     <h6 class="text-uppercase mb-3 font-size-16">Pengguna</h6>
-                    <h2 class="mb-4">1,587</h2>
-                    <span class="badge badge-info"> +11% </span> <span class="ml-2">From previous period</span>
+                    <h2 class="mb-4">{{$user_count}}</h2>
+                    @if ($user_last_month)
+                        <span class="badge badge-success"> + {{$user_last_month}} </span>
+                    @else 
+                        <span class="badge badge-secondary"> + 0 </span>
+                    @endif
+                     <span class="ml-2">Dalam satu bulan terakhir</span>
                 </div>
             </div>
         </div>
@@ -26,8 +31,13 @@
                 </div>
                 <div class="text-white">
                     <h6 class="text-uppercase mb-3 font-size-16">Program</h6>
-                    <h2 class="mb-4">46,782</h2>
-                    <span class="badge badge-danger"> -29% </span> <span class="ml-2">From previous period</span>
+                    <h2 class="mb-4">{{$program_count}}</h2>
+                    @if ($program_last_month)
+                        <span class="badge badge-success"> + {{$program_last_month}} </span>
+                    @else 
+                        <span class="badge badge-secondary"> + 0 </span>
+                    @endif
+                     <span class="ml-2">Dalam satu bulan terakhir</span>
                 </div>
             </div>
         </div>
@@ -40,8 +50,13 @@
                 </div>
                 <div class="text-white">
                     <h6 class="text-uppercase mb-3 font-size-16">UMKM</h6>
-                    <h2 class="mb-4">15.9</h2>
-                    <span class="badge badge-warning"> 0% </span> <span class="ml-2">From previous period</span>
+                    <h2 class="mb-4">{{$umkm_count}}</h2>
+                    @if ($umkm_last_month)
+                        <span class="badge badge-success"> + {{$umkm_last_month}} </span>
+                    @else 
+                        <span class="badge badge-secondary"> + 0 </span>
+                    @endif
+                     <span class="ml-2">Dalam satu bulan terakhir</span>
                 </div>
             </div>
         </div>
@@ -54,8 +69,13 @@
                 </div>
                 <div class="text-white">
                     <h6 class="text-uppercase mb-3 font-size-16">MITRA</h6>
-                    <h2 class="mb-4">1890</h2>
-                    <span class="badge badge-info"> +89% </span> <span class="ml-2">From previous period</span>
+                    <h2 class="mb-4">{{$mitra_count}}</h2>
+                    @if ($mitra_last_month)
+                        <span class="badge badge-success"> + {{$mitra_last_month}} </span>
+                    @else 
+                        <span class="badge badge-secondary"> + 0 </span>
+                    @endif
+                     <span class="ml-2">Dalam satu bulan terakhir</span>
                 </div>
             </div>
         </div>

@@ -24,7 +24,9 @@
                 <h4 class="card-title">{{ $title }}</h4>
                 <p class="card-title-desc">
                     <a href="{{ route('user_level.create') }}" class="btn btn-primary waves-effect waves-light">
-                        <i class="ti-plus"></i> Tambah</a>
+                        @if (Auth::user()->userLevel->nama == 'Admin')
+                            <i class="ti-plus"></i> Tambah</a>
+                        @endif
 
                     @if (session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">

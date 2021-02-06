@@ -2,15 +2,15 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>@yield('title') - RCI</title>
 
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('assets/back')}}/images/favicon.ico">
+    <link rel="shortcut icon" href="{{asset('assets/front/favicon.png')}}" />
 
     <!-- Bootstrap Css -->
     <link href="{{asset('assets/back/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -33,10 +33,10 @@
                         <div class="navbar-brand-box">
                             <a href="index.html" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="{{asset('assets/back')}}/images/logo-sm.png" alt="" height="22">
+                                    <img src="{{asset('assets/front')}}/img/logo.png" alt="" height="70">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{asset('assets/back')}}/images/logo-dark.png" alt="" height="19">
+                                    <img src="{{asset('assets/front')}}/img/logo.png" alt="" height="67">
                                 </span>
                             </a>
 
@@ -136,6 +136,7 @@
                                             <i class="ti-briefcase"></i>Profil
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-left" aria-labelledby="topnav-email">
+                                            <a href="{{url('slider')}}" class="dropdown-item">Slider</a>
                                             <a href="{{url('profile')}}" class="dropdown-item">Profil Perusahaan</a>
                                             <a href="{{url('struktur_tim')}}" class="dropdown-item">Struktur Tim</a>
                                         </div>

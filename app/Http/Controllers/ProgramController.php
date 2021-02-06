@@ -45,17 +45,25 @@ class ProgramController extends Controller
     {
         $request->validate([
             'nama_program'  => 'required',
-            'gambar'        => 'nullable|mimes:png,jpg|max:2048',
+            'gambar'        => 'nullable|mimes:png,jpg|max:4048',
+            'icon'          => 'nullable|mimes:png,jpg|max:2048',
+            'tanda'         => 'nullable',
             'deskripsi'     => 'required',
             'status'        => 'required'
         ]);
 
-        $path = ($request->gambar)
+        $path_gambar = ($request->gambar)
             ? $request->file('gambar')->store("/public/images/programs")
             : null;
 
+        $path_icon = ($request->icon)
+            ? $request->file('icon')->store("/public/images/programs/icon")
+            : null;
+
         $data['nama_program'] = $request->nama_program;
-        $data['gambar'] = $path;
+        $data['gambar'] = $path_gambar;
+        $data['icon'] = $path_icon;
+        $data['tanda'] = $request->tanda;
         $data['deskripsi'] = $request->deskripsi;
         $data['status'] = $request->status;
 
@@ -103,14 +111,24 @@ class ProgramController extends Controller
     {
         $request->validate([
             'nama_program'  => 'required',
-            'gambar'        => 'nullable|mimes:png,jpg|max:2048',
+            'icon'          => 'nullable|mimes:png,jpg|max:2048',
+            'gambar'        => 'nullable|mimes:png,jpg|max:4048',
+            'tanda'         => 'nullable',
             'deskripsi'     => 'required',
             'status'        => 'required'
         ]);
 
         $program = Program::findOrFail($id);
 
-        $path = ($request->gambar)
+        $path_icon = ($request->icon)
+            ? $request->file('icon')->store("/public/images/programs/icon")
+            : $program->icon;
+
+        if ($request->icon) {
+            Storage::delete($program->icon);
+        }
+
+        $path_gambar = ($request->gambar)
             ? $request->file('gambar')->store("/public/images/programs")
             : $program->gambar;
 
@@ -119,7 +137,8 @@ class ProgramController extends Controller
         }
 
         $data['nama_program'] = $request->nama_program;
-        $data['gambar'] = $path;
+        $data['icon'] = $path_icon;
+        $data['gambar'] = $path_gambar;
         $data['deskripsi'] = $request->deskripsi;
         $data['status'] = $request->status;
 
@@ -140,6 +159,7 @@ class ProgramController extends Controller
     {
         if ($program->delete()) {
             Storage::delete($program->gambar);
+            Storage::delete($program->icon);
             return redirect(route('program.index'))->with('success', 'Data berhasil dihapus!');
         } else {
             return redirect(route('program.index'))->with('error', 'Data gagal dihapus!');

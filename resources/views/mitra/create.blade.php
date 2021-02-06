@@ -50,6 +50,13 @@
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <label for="">Alamat Website</label>
+                        <input type="text" name="link" class="form-control" value="{{ $mitra->link ?? old('link') }}">
+                        @error('link')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
                     <div class="form-group mb-0">
                         <div>
                             <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">

@@ -31,8 +31,10 @@
 
                 <h4 class="card-title">{{ $title }}</h4>
                 <p class="card-title-desc">
-                    <a href="{{ route('testimoni.create') }}" class="btn btn-primary waves-effect waves-light">
-                        <i class="ti-plus"></i> Tambah</a>
+                    @if (Auth::user()->userLevel->nama == 'Admin') 
+                        <a href="{{ route('testimoni.create') }}" class="btn btn-primary waves-effect waves-light">
+                            <i class="ti-plus"></i> Tambah</a>
+                    @endif
                 </p>
 
                 <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -43,7 +45,9 @@
                             <th>Asal</th>
                             <th>Isi</th>
                             <th>Gambar</th>
-                            <th>Aksi</th>
+                            @if (Auth::user()->userLevel->nama == 'Admin')
+                                <th>Aksi</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -56,19 +60,21 @@
                             <td>{{ $testi->responden }}</td>
                             <td>{{ $testi->asal }}</td>
                             <td>{{ $testi->isi }}</td>
-                            <td><img class="d-flex align-self-center rounded" src="{{ profile_picture($testi->gambar) }}" height="64"></td>
-                            <td>
-                                <div class="button-items">
-                                    <a href="{{ route('testimoni.edit', $testi) }}" class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                                        <i class="ti-pencil"></i></a>
-                                    <form action="{{ route('testimoni.destroy', $testi) }}" method="post" onsubmit="return confirm('Yakin hapus data ini?')" style="display: inline">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-outline-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Hapus">
-                                            <i class="ti-trash"></i></button>
-                                    </form>
-                                </div>
-                            </td>
+                            <td><img class="d-flex align-self-center rounded" src="{{ avatar($testi->gambar) }}" height="64"></td>
+                            @if (Auth::user()->userLevel->nama == 'Admin')
+                                <td>
+                                    <div class="button-items">
+                                        <a href="{{ route('testimoni.edit', $testi) }}" class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                            <i class="ti-pencil"></i></a>
+                                        <form action="{{ route('testimoni.destroy', $testi) }}" method="post" onsubmit="return confirm('Yakin hapus data ini?')" style="display: inline">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-outline-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Hapus">
+                                                <i class="ti-trash"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

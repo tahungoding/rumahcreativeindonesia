@@ -110,7 +110,7 @@ We may release future updates so it will overwrite this file. it's better and sa
             animateIn: checkData($t.data('owl-animate-in'), false),
             animateOut: checkData($t.data('owl-animate-out'), false),
             nav: checkData($t.data('owl-nav'), false),
-            navText: ['<img src="assets/img/icons/angle-left.svg" class="svg">', '<img src="assets/img/icons/angle-right.svg" class="svg">'],
+            navText: ['<img src="assets/front/img/icons/angle-left.svg" class="svg">', '<img src="assets/front/img/icons/angle-right.svg" class="svg">'],
             dots: checkData($t.data('owl-dots'), false),
             responsive: checkData($t.data('owl-responsive'), {})
         });

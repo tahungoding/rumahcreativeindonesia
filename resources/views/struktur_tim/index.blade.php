@@ -31,8 +31,10 @@
 
                 <h4 class="card-title">{{ $title }}</h4>
                 <p class="card-title-desc">
-                    <a href="{{ route('struktur_tim.create') }}" class="btn btn-primary waves-effect waves-light">
-                        <i class="ti-plus"></i> Tambah</a>
+                    @if (Auth::user()->userLevel->nama == 'Admin')
+                        <a href="{{ route('struktur_tim.create') }}" class="btn btn-primary waves-effect waves-light">
+                            <i class="ti-plus"></i> Tambah</a>
+                    @endif
                 </p>
 
                 <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -40,9 +42,12 @@
                         <tr>
                             <th>No.</th>
                             <th>Nama</th>
+                            <th>Foto</th>
                             <th>Jabatan</th>
                             <th>Status</th>
+                            @if (Auth::user()->userLevel->nama == 'Admin')
                             <th>Aksi</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -53,20 +58,23 @@
                         <tr>
                             <td>{{ $number++ }}</td>
                             <td>{{ $tm->nama }}</td>
+                            <td><img class="d-flex align-self-center rounded" src="{{ avatar($tm->foto) }}" height="64"></td>
                             <td>{{ $tm->jabatan }}</td>
                             <td>{{ $tm->status }}</td>
-                            <td>
-                                <div class="button-items">
-                                    <a href="{{ route('struktur_tim.edit', $tm) }}" class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                                        <i class="ti-pencil"></i></a>
-                                    <form action="{{ route('struktur_tim.destroy', $tm) }}" method="post" onsubmit="return confirm('Yakin hapus data ini?')" style="display: inline">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-outline-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Hapus">
-                                            <i class="ti-trash"></i></button>
-                                    </form>
-                                </div>
-                            </td>
+                            @if (Auth::user()->userLevel->nama == 'Admin')
+                                <td>
+                                    <div class="button-items">
+                                        <a href="{{ route('struktur_tim.edit', $tm) }}" class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
+                                            <i class="ti-pencil"></i></a>
+                                        <form action="{{ route('struktur_tim.destroy', $tm) }}" method="post" onsubmit="return confirm('Yakin hapus data ini?')" style="display: inline">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-outline-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Hapus">
+                                                <i class="ti-trash"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

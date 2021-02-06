@@ -11,6 +11,7 @@ class Mitra extends Model
         'id_kategori_mitra',
         'nama',
         'logo',
+        'link',
         'status',
     ];
 
