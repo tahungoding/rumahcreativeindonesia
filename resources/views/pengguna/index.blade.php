@@ -63,8 +63,8 @@
                         <tr>
                             <td>{{ $number++ }}</td>
                             <td>
-                                <img class="d-flex align-self-center rounded" src="{{ avatar($user->foto) }}"
-                                    height="64">
+                                <img class="rounded-circle" alt="70x70" src="{{ avatar($user->foto) }}" width="70"
+                                        height="70" data-holder-rendered="true">
                             </td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>

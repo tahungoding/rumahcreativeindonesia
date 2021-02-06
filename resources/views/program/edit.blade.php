@@ -27,8 +27,11 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Gambar</label>
-                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="gambar" value="{{ $program->gambar ?? old('gambar') }}">
+                        <label>Gambar</label><br>
+                        <img class="rounded img-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ isset($program) ? avatar($program->gambar) : avatar() }}" data-holder-rendered="true">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="gambar" value="{{ $program->gambar ?? old('gambar') }}" onchange="filePreview(this)">
                         @error('gambar')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror

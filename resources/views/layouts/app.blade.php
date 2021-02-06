@@ -59,7 +59,7 @@
 
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="rounded-circle header-profile-user" src="{{ profile_picture(Auth::user()->foto) }}" alt="Header Avatar">
+                                <img class="rounded-circle header-profile-user" src="{{ avatar(Auth::user()->foto) }}" alt="Header Avatar">
                                 <label style="cursor: pointer">&nbsp; Hai, {{Auth::user()->name}} !</label>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">

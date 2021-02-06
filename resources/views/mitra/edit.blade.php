@@ -23,7 +23,7 @@
                     @isset($mitra)
                     @method('put')
                     @endisset
-                    
+
                     <div class="form-group">
                         <label>Nama</label>
                         <input type="text" class="form-control" name="nama" value="{{ $mitra->nama ?? old('nama') }}"
@@ -44,10 +44,14 @@
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
+
                     <div class="form-group">
-                        <label>Logo</label>
+                        <label>Logo</label><br>
+                        <img class="rounded img-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ isset($mitra) ? avatar($mitra->logo) : avatar() }}" data-holder-rendered="true">
+                    </div>
+                    <div class="form-group">
                         <input type="file" class="filestyle" data-buttonname="btn-secondary" name="logo"
-                            value="{{ $mitra->logo ?? old('logo') }}">
+                            value="{{ $mitra->logo ?? old('logo') }}" onchange="filePreview(this)">
                         @error('logo')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
