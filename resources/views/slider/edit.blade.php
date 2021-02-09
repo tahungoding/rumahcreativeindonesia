@@ -4,6 +4,11 @@
 {{ $title }}
 @endsection
 
+@section('breadcrumb')
+    {{Breadcrumbs::render('slider.edit', $slider->id)}}
+@endsection
+
+
 @section('content')
 <div class="row">
     <div class="col-lg-12">

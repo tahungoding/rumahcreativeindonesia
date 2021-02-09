@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddGambarToSlideTable extends Migration
+class AddGambarToUmkmTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddGambarToSlideTable extends Migration
      */
     public function up()
     {
-        Schema::table('slide', function (Blueprint $table) {
+        Schema::table('umkm', function (Blueprint $table) {
             $table->string('gambar');
         });
     }
@@ -25,7 +25,7 @@ class AddGambarToSlideTable extends Migration
      */
     public function down()
     {
-        Schema::table('slide', function (Blueprint $table) {
+        Schema::table('umkm', function (Blueprint $table) {
             //
         });
     }

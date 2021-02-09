@@ -2,6 +2,11 @@
 @section('title')
     UMKM - Edit
 @endsection
+
+@section('breadcrumb')
+    {{Breadcrumbs::render('umkm.edit', $umkm->id)}}
+@endsection
+
 @section('css')
 <!-- Isi Library CSS -->
 @endsection
@@ -38,6 +43,13 @@
                             required />
                         @error('nama')
                         <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="">Gambar</label>
+                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="gambar" id="" >
+                        @error('gambar')
+                            <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
                     <div class="form-group">

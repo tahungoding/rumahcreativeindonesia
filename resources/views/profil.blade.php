@@ -4,6 +4,10 @@
 {{ $title }}
 @endsection
 
+@section('breadcrumb')
+    {{Breadcrumbs::render('profile.index', $profile->id)}}
+@endsection
+
 @section('content')
 <div class="row">
     <div class="col-lg-12">

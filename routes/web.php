@@ -10,7 +10,11 @@ Route::resource('umkms', 'Guest\UmkmController');
 Route::resource('articles', 'Guest\ArtikelController');
 Route::resource('mitras', 'Guest\MitraController');
 
+
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('/setting', 'GuestController@setting')->name('setting.index');
+    Route::patch('/setting', 'GuestController@setting_update')->name('setting.update');
+    Route::put('/setting', 'GuestController@setting_password')->name('setting.password');
     Route::resource('agenda', 'AgendaController');
     Route::resource('artikel', 'ArtikelController');
     Route::resource('home', 'HomeController');

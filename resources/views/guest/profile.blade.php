@@ -8,7 +8,7 @@
                         <div class="page-title text-center">
                             <h2>Profil</h2>
                             <ul class="list-inline">
-                                <li><a href="index.html">beranda</a></li>
+                                <li><a href="{{url('/')}}">Beranda</a></li>
                                 <li>Profil</li>
                             </ul>
                         </div>

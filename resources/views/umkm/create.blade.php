@@ -2,6 +2,11 @@
 @section('title')
     UMKM - Tambah
 @endsection
+
+@section('breadcrumb')
+    {{Breadcrumbs::render('umkm.create')}}
+@endsection
+
 @section('css')
 <!-- Isi Library CSS -->
 @endsection
@@ -27,7 +32,7 @@
                     <div class="form-group">
                         <label>Kategori Mitra</label>
                         <select id="kategori_umkm" name="id_kategori_umkm" class="form-control">
-                        <option value="">- Pilih Kategori Mitra -</option>
+                        <option value="">- Pilih Kategori UMKM -</option>
                             @foreach ($kategori_umkms as $kategori_umkm)
                             <option value="{{ $kategori_umkm->id }}">{{ $kategori_umkm->nama }}</option>
                             @endforeach
@@ -42,6 +47,13 @@
                             required />
                         @error('nama')
                         <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="">Gambar</label>
+                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="gambar" id="" required>
+                        @error('gambar')
+                            <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
                     <div class="form-group">

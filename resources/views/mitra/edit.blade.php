@@ -2,6 +2,11 @@
 @section('title')
     Mitra - Edit
 @endsection
+
+@section('breadcrumb')
+    {{Breadcrumbs::render('mitra.edit', $mitra->id)}}
+@endsection
+
 @section('css')
 <!-- Isi Library CSS -->
 @endsection

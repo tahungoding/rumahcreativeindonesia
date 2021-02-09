@@ -76,23 +76,27 @@
                         <!-- Main Menu Begin -->
                         <div class="main-menu d-flex align-items-center justify-content-end">
                             <ul class="nav align-items-center">
-                                <li>
+                                @php
+                                    $activeMenu = "current-menu-parent";
+                                    $uris = Request::segment(1);
+                                @endphp
+                                <li class="{{(!$uris) ? $activeMenu : null}}">
                                     <a href="/">Beranda</a>
                                 </li>
-                                <li>
+                                <li class="{{($uris == 'profiles') ? $activeMenu : null}}">
                                     <a href="{{url('profiles')}}">Profil</a>
                                 </li>
-                                <li>
+                                <li class="{{($uris == 'programs') ? $activeMenu : null}}">
                                     <a href="{{url('programs')}}">Program</a>
                                 </li>
-                                <li>
+                                <li class="{{($uris == 'agendas') ? $activeMenu : null}}">
                                     <a href="{{url('agendas')}}">Agenda</a>
                                 </li>
-                                <li>
+                                <li class="{{($uris == 'umkms') ? $activeMenu : null}}">
                                     <a href="{{url('umkms')}}">Komunitas UMKM</a>
                                 </li>
-                                <li><a href="{{url('articles')}}">Artikel</a></li>
-                                <li><a href="{{url('mitras')}}">Mitra</a></li>
+                                <li class="{{($uris == 'articles') ? $activeMenu : null}}"><a href="{{url('articles')}}">Artikel</a></li>
+                                <li class="{{($uris == 'mitras') ? $activeMenu : null}}"><a href="{{url('mitras')}}">Mitra</a></li>
                             </ul>
                             <!-- Offcanvas Holder Trigger -->
                             <span class="offcanvas-trigger text-right d-none d-lg-block">
@@ -204,7 +208,7 @@
                             <!-- Menu Begin -->
                             <ul class="menu">
                                 <li><a href="{{url('/')}}">Beranda</a></li>
-                                <li><a href="{{url('profile')}}">Profile</a></li>
+                                <li><a href="{{url('profiles')}}">Profile</a></li>
                                 <li><a href="{{url('agendas')}}">Agenda</a></li>
                                 <li><a href="{{url('umkms')}}">UMKM</a></li>
                                 <li><a href="{{url('articles')}}">Artikel</a></li>

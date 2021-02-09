@@ -3,6 +3,10 @@
     Mitra - Tambah
 @endsection
 
+@section('breadcrumb')
+    {{Breadcrumbs::render('mitra.create')}}
+@endsection
+
 @section('content')
 <div class="row">
     <div class="col-lg-12">

@@ -3,6 +3,10 @@
     Kategori UMKM
 @endsection
 
+@section('breadcrumb')
+    {{Breadcrumbs::render('kategori_umkm.index')}}
+@endsection
+
 @section('css')
     <!-- Isi Library CSS -->
     <!-- DataTables -->

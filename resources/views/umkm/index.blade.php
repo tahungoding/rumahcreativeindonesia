@@ -3,6 +3,11 @@
 @section('title')
     UMKM
 @endsection
+
+@section('breadcrumb')
+    {{Breadcrumbs::render('umkm.index')}}
+@endsection
+
 @section('css')
     <!-- Isi Library CSS -->
     <!-- DataTables -->
@@ -39,6 +44,7 @@
                             <th>No.</th>
                             <th>Kategori UMKM</th>
                             <th>Nama</th>
+                            <th>Gambar</th>
                             <th>Alamat</th>
                             <th>Telepon</th>
                             <th>Instagram</th>
@@ -58,6 +64,7 @@
                             <td>{{ $number++ }}</td>
                             <td>{{ $umkm->kategori_umkm['nama'] }}</td>
                             <td>{{ $umkm->nama }}</td>
+                            <td><img class="d-flex align-self-center rounded" src="{{ avatar($umkm->gambar) }}" height="64"></td>
                             <td>{{ $umkm->alamat }}</td>
                             <td>{{ $umkm->telepon }}</td>
                             <td>{{ $umkm->instagram }}</td>

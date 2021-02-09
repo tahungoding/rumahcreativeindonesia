@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Umkm;
 use App\KategoriUmkm;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UmkmController extends Controller
 {
@@ -53,8 +54,12 @@ class UmkmController extends Controller
             'pemilik'          => "required",
             'shopee'           => "required",
             'tokopedia'        => "required",
-            'bukalapak'        => "required"
+            'bukalapak'        => "required",
+            'gambar'           => 'required|mimes:png,jpg|max:2048'
         ]);
+
+        $path = ($request->gambar)
+        ? $request->file('gambar')->store("/public/images/umkm") : Null;
             
         $umkmData['id_kategori_umkm'] = $request->id_kategori_umkm;
         $umkmData['nama']             = $request->nama;
@@ -65,6 +70,7 @@ class UmkmController extends Controller
         $umkmData['shopee']           = $request->shopee;
         $umkmData['tokopedia']        = $request->tokopedia;
         $umkmData['bukalapak']        = $request->bukalapak;
+        $umkmData['gambar']           = $path;
 
         if (Umkm::create($umkmData)) {
             return redirect('umkm')->with('success', 'Data UMKM berhasil ditambahkan!');
@@ -81,7 +87,9 @@ class UmkmController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['umkm'] = Umkm::findOrFail($id);
+
+        return view('guest.umkm.detail_modal', $data);
     }
 
     /**
@@ -118,11 +126,18 @@ class UmkmController extends Controller
             'pemilik'          => "required",
             'shopee'           => "required",
             'tokopedia'        => "required",
-            'bukalapak'        => "required"
+            'bukalapak'        => "required",
+            'gambar'           => 'required|mimes:png,jpg|max:2048'
         ]);
 
         $umkm = Umkm::findOrFail($id);
         
+        $path = ($request->gambar)
+        ? $request->file('gambar')->store("/public/images/umkm") : $umkm->gambar;
+
+        if ($request->gambar) {
+            Storage::delete($umkm->gambar);
+        }
 
         $umkmData['id_kategori_umkm'] = $request->id_kategori_umkm;
         $umkmData['nama']             = $request->nama;
@@ -133,6 +148,7 @@ class UmkmController extends Controller
         $umkmData['shopee']           = $request->shopee;
         $umkmData['tokopedia']        = $request->tokopedia;
         $umkmData['bukalapak']        = $request->bukalapak;
+        $umkmData['gambar']           = $path;
 
 
         if ($umkm->update($umkmData)) {

@@ -725,10 +725,10 @@
                         
                                 <!-- Project Body Begin -->
                                 <div class="project-body">
-                                    <h3><a href="#">{{ $item->judul }}</a></h3>
+                                    <h3><a href="{{url('articles', $item->judul)}}">{{ $item->judul }}</a></h3>
                                     <p class="project-meta">Penulis:<span>{{ $item->writer->name }}</span></p>
                                     <p>{!! Str::limit($item->konten, 50) !!}</p>
-                                    <a href="#" class="btn-inline">Read More</a>
+                                    <a href="{{url('articles', $item->judul)}}" class="btn-inline">Read More</a>
                                 </div>
                                 <!-- Project Body End -->
                             </div>

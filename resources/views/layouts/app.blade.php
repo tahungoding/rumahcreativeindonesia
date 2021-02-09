@@ -67,7 +67,7 @@
                                 <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle font-size-17 text-muted align-middle mr-1"></i>
                                     Profile</a>
 
-                                <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings font-size-17 text-muted align-middle mr-1"></i> Settings</a>
+                                <a class="dropdown-item d-block" href="{{url('setting')}}"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings font-size-17 text-muted align-middle mr-1"></i> Settings</a>
 
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -97,11 +97,7 @@
                             <div class="col-sm-6">
                                 <div class="page-title-box">
                                     <h4>Dashboard</h4>
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">RCI</a></li>
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                        <li class="breadcrumb-item active">Dashboard</li>
-                                    </ol>
+                                    @yield('breadcrumb')
                                 </div>
                             </div>
                         </div>

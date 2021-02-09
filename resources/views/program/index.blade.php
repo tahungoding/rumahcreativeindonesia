@@ -4,6 +4,10 @@
 {{ $title }}
 @endsection
 
+@section('breadcrumb')
+    {{Breadcrumbs::render('program.index')}}
+@endsection
+
 @section('css')
 <!-- DataTables -->
 <link href="{{ asset('assets/back/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
@@ -63,7 +67,7 @@
                             <td><img class="d-flex align-self-center rounded" src="{{ avatar($prog->icon) }}" height="64"></td>
                             <td><img class="d-flex align-self-center rounded" src="{{ avatar($prog->gambar) }}" height="64"></td>
                             <td>{{ $prog->tanda }}</td>
-                            <td>{{ $prog->deskripsi }}</td>
+                            <td>{!! $prog->deskripsi !!}</td>
                             <td>{{ $prog->status }}</td>
                             @if (Auth::user()->userLevel->nama == 'Admin')
                                 <td>
