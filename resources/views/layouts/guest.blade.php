@@ -139,7 +139,7 @@
                 <div class="offcanvas-btn btn-block">
                     <a href="{{url('home')}}" class="btn"><span>Dashboard</span></a>
                 </div>
-            @else 
+            @else
                 <div class="offcanvas-btn btn-block">
                     <a href="{{url('login')}}" class="btn"><span>Login</span></a>
                 </div>
@@ -164,8 +164,8 @@
                                 <img src="{{asset('assets/front/img/logo.png')}}" data-rjs="2" alt="" width="150px">
                             </div>
                             <!-- Widget Logo End -->
-    
-    
+
+
                         </div>
                         <!-- About Widget End -->
                     </div>
@@ -204,7 +204,7 @@
                                 <h4>Menu</h4>
                             </div>
                             <!-- Widget Title End  -->
-    
+
                             <!-- Menu Begin -->
                             <ul class="menu">
                                 <li><a href="{{url('/')}}">Beranda</a></li>
@@ -233,24 +233,24 @@
                             <div class="info-content">
                                 <div class="single-info">
                                     <span><i class="fa fa-home"></i> Lokasi Kantor</span>
-                                    <p>{{$profile->alamat}}</p>
+                                    <p>{{$profile['alamat']}}</p>
                                 </div>
                                 <div class="single-info">
                                     <span><i class="fa fa-phone"></i> Telepon</span>
-                                    <p>{{$profile->telepon}}</p>
+                                    <p>{{$profile['telepon']}}</p>
                                 </div>
                                 <div class="single-info">
                                     <span><i class="fa fa-envelope"></i> Support mail</span>
                                     <p>
-                                        {{$profile->email}}
+                                        {{$profile['email']}}
                                     </p>
                                 </div>
                             </div>
                             <!-- Widget Content End -->
-    
+
                         </div>
                         <!-- Widget Newsletter End -->
-    
+
                         <!-- Widget Social Icon Begin -->
                         <div class="widget widget_social_icon">
                             <ul class="social_icon_list list-inline">
@@ -274,7 +274,7 @@
             </div>
         </div>
         <!-- Footer Top End -->
-    
+
         <!-- Footer Bottom Begin -->
         <div class="footer-bottom">
             <div class="container">
@@ -289,10 +289,10 @@
             </div>
         </div>
         <!-- Footer Bottom End -->
-    
+
     </footer>
     <!-- Footer End -->
-    
+
     <!-- Back to Top Begin -->
     <a href="#" class="back-to-top position-fixed">
         <div class="back-toop-tooltip"><span>Back To Top</span></div>
@@ -300,48 +300,48 @@
         <div class="top-line"></div>
     </a>
     <!-- Back to Top End -->
-    
+
     <!-- ======= jQuery Library ======= -->
     <script src="{{asset('assets/front/js/jquery.min.j')}}s"></script>
-    
+
     <!-- ======= Bootstrap Bundle JS ======= -->
     <script src="{{asset('assets/front/js/bootstrap.bundle.min.js')}}"></script>
-    
+
     <!-- =======  Mobile Menu JS ======= -->
     <script src="{{asset('assets/front/js/menu.min.js')}}"></script>
-    
+
     <!-- ======= Waypoints JS ======= -->
     <script src="{{asset('assets/front/plugins/waypoints/jquery.waypoints.min.js')}}"></script>
-    
+
     <!-- ======= Counter Up JS ======= -->
     <script src="{{asset('assets/front/plugins/waypoints/jquery.counterup.min.js')}}"></script>
-    
+
     <!-- ======= Owl Carousel JS ======= -->
     <script src="{{asset('assets/front/plugins/owlcarousel/owl.carousel.min.j')}}s"></script>
-    
+
     <!-- ======= Isotope JS ====== -->
     <script src="{{asset('assets/front/plugins/isotope/isotope.pkgd.min.js')}}"></script>
-    
+
     <!-- ======= Magnific Popup JS ======= -->
     <script src="{{asset('assets/front/plugins/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
-    
+
     <!-- ======= Countdown JS ======= -->
     <script src="{{asset('assets/front/plugins/countdown/countdown.min.js')}}"></script>
-    
+
     <!-- ======= Retina JS ======= -->
     <script src="{{asset('assets/front/plugins/retinajs/retina.min.js')}}"></script>
-    
+
     <!-- ======= Google API ======= -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjkssBA3hMeFtClgslO2clWFR6bRraGz0"></script>
-    
+
     <!-- ======= Main JS ======= -->
     <script src="{{asset('assets/front/js/main.js')}}"></script>
-    
+
     <!-- ======= Custom JS ======= -->
     <script src="{{asset('assets/front/js/custom.js')}}"></script>
 
     @yield('js')
 
     </body>
-    
+
     </html>

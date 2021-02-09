@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('content')
-    
+
 <!-- Slider Begin -->
     <section class="banner section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/slider-pattern.png">
         <!-- Banner Slider Begin -->
@@ -39,7 +39,7 @@
         <!-- Banner Slider End -->
     </section>
     <!-- Slider End -->
-    
+
     <!-- Modal Form Begin -->
     <div class="appointment-modal modal fade" id="appointmentModalForm" tabindex="1" role="dialog"
         aria-labelledby="appointmentModalForm" aria-hidden="true">
@@ -54,22 +54,22 @@
                                 <img src="{{asset('assets')}}/front/img/icons/close.svg" alt="">
                             </button>
                             <!-- End Modal Close End -->
-    
+
                             <!-- Appointment Form Begin -->
                             <form action="#" method="POST" class="appointment-form">
                                 <h2 class="form-title">Request Appoinment</h2>
                                 <input class="theme-input-style" type="text" placeholder="Full Name">
                                 <input class="theme-input-style" type="email" placeholder="Email">
                                 <input class="theme-input-style" type="tel" placeholder="Phone">
-    
+
                                 <select class="theme-input-style clearfix">
                                     <option value="" disabled="" selected="">Select purpose</option>
                                     <option value="01">Business</option>
                                     <option value="01">Consultancy</option>
                                 </select>
-    
+
                                 <textarea class="theme-input-style" placeholder="Message"></textarea>
-    
+
                                 <button class="btn" type="submit"><span>Send request</span></button>
                             </form>
                             <!-- End Appointment Form End -->
@@ -81,7 +81,7 @@
         </div>
     </div>
     <!-- Modal Form End -->
-    
+
     <!-- Feature Begin -->
     <section class="pt-120 pb-90 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/feature-pattern.png">
         <div class="container">
@@ -102,7 +102,7 @@
                                 <img src="{{avatar($item->icon)}}" style="width: 150px;" data-rjs="2" alt="">
                             </div>
                             <!-- Feature Image End -->
-                    
+
                             <!-- Feature Content Begin -->
                             <div class="content">
                                 <h3>{{$item->nama_program}} </h3>
@@ -117,7 +117,7 @@
         </div>
     </section>
     <!-- Feature End -->
-    
+
     <!-- About Begin -->
     <section class="pt-120 pb-120 section-pattern ov-hidden" data-bg-img="{{asset('assets')}}/front/img/section-pattern/about-pattern.png">
         <div class="container">
@@ -134,7 +134,7 @@
                             to shortly.</p>
                     </div>
                     <!-- Section Title End -->
-    
+
                     <!-- About Tabs Begin -->
                     <div class="about-nav-tab">
                         <!-- Nav Tabs Begin -->
@@ -149,20 +149,20 @@
                             </li>
                         </ul>
                         <!-- Nav Tabs End -->
-    
+
                         <!-- Tab Contents Begin -->
                         <div class="tab-content">
                             <!-- Mission Tab Begin -->
                             <div class="tab-pane fade show active" id="mission" role="tabpanel">
-                                {!! \Str::limit($profile->misi, 200) !!}
+                                {!! \Str::limit($profile['misi'], 200) !!}
                                 <br>
                                 <a href="{{url('profile')}}" class="btn"><span>SEE MORE</span></a>
                             </div>
                             <!-- Mission Tab End -->
-    
+
                             <!-- Vission Tab Begin -->
                             <div class="tab-pane fade" id="vission" role="tabpanel">
-                                {!! \Str::limit($profile->visi, 200) !!}
+                                {!! \Str::limit($profile['visi'], 200) !!}
                                 <br>
                                 <a href="{{url('profile')}}" class="btn"><span>SEE MORE</span></a>
                             </div>
@@ -173,7 +173,7 @@
                     <!-- About Tabs End -->
                 </div>
                 <div class="col-lg-5 video-area mt-50 mt-lg-0">
-                    <img src="{{avatar($profile->visi_img)}}" data-rjs="2" alt="" style="max-height: 500px;">
+                    <img src="{{avatar($profile['visi_img'])}}" data-rjs="2" alt="" style="max-height: 500px;">
                     {{-- <a href="#" class="vdo-btn popup-video"><img src="{{asset('assets')}}/front/img/icons/play.svg" class="svg" alt=""> Watch
                         Video</a> --}}
                 </div>
@@ -181,7 +181,7 @@
         </div>
     </section>
     <!-- About End -->
-    
+
     <!-- Work Process Begin -->
     <section class="pt-120 pb-70 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/work-process-pattern.png">
         <div class="container">
@@ -198,7 +198,7 @@
                     <!-- Section Title End -->
                 </div>
             </div>
-    
+
             <div class="row process-bg" data-bg-img="{{asset('assets')}}/front/img/process_shape.png">
                 <div class="col-lg-3 col-sm-6 single-process-wrapper">
                     <!-- Single Work Process Begin -->
@@ -208,7 +208,7 @@
                             <img src="{{asset('assets')}}/front/img/process/process-1.png" data-rjs="2" alt="">
                         </div>
                         <!-- Image End -->
-    
+
                         <!-- Content Begin -->
                         <div class="content">
                             <h3>Office</h3>
@@ -226,7 +226,7 @@
                             <img src="{{asset('assets')}}/front/img/process/process-2.png" data-rjs="2" alt="">
                         </div>
                         <!-- Image End -->
-    
+
                         <!-- Content Begin -->
                         <div class="content">
                             <h3>Connection</h3>
@@ -244,7 +244,7 @@
                             <img src="{{asset('assets')}}/front/img/process/process-3.png" data-rjs="2" alt="">
                         </div>
                         <!-- Image End -->
-    
+
                         <!-- Content Begin -->
                         <div class="content">
                             <h3>People</h3>
@@ -262,7 +262,7 @@
                             <img src="{{asset('assets')}}/front/img/process/process-4.png" data-rjs="2" alt="">
                         </div>
                         <!-- Image End -->
-    
+
                         <!-- Content Begin -->
                         <div class="content">
                             <h3>System</h3>
@@ -276,7 +276,7 @@
         </div>
     </section>
     <!-- Work Process End -->
-    
+
     <!-- Service Begin -->
     <section class="pt-120 pb-90 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/service-pattern.png">
         <div class="container">
@@ -293,12 +293,12 @@
                             unreserved oh pianoforte ye.</p>
                     </div>
                     <!-- Section Title End -->
-    
+
                     <!-- Button Begin -->
                     <a href="#" class="btn"><span>view All</span></a>
                     <!-- Button End -->
                 </div>
-    
+
                 <div class="col-lg-6">
                     <div class="row mt-40 mt-lg-0">
                         <div class="col-sm-6 single-service-wrapper">
@@ -309,7 +309,7 @@
                                     <img src="{{asset('assets')}}/front/img/icons/service-1.png" data-rjs="2" alt="">
                                 </div>
                                 <!-- Icon End  -->
-    
+
                                 <!-- Content Begin -->
                                 <div class="content">
                                     <h4>Aplikasi</h4>
@@ -328,7 +328,7 @@
                                     <img src="{{asset('assets')}}/front/img/icons/service-2.png" data-rjs="2" alt="">
                                 </div>
                                 <!-- Icon End  -->
-    
+
                                 <!-- Content Begin -->
                                 <div class="content">
                                     <h4>Event & Creative Media</h4>
@@ -347,7 +347,7 @@
                                     <img src="{{asset('assets')}}/front/img/icons/service-3.png" data-rjs="2" alt="">
                                 </div>
                                 <!-- Icon End  -->
-    
+
                                 <!-- Content Begin -->
                                 <div class="content">
                                     <h4>Creative Mover Academy</h4>
@@ -366,7 +366,7 @@
                                     <img src="{{asset('assets')}}/front/img/icons/service-4.png" data-rjs="2" alt="">
                                 </div>
                                 <!-- Icon End  -->
-    
+
                                 <!-- Content Begin -->
                                 <div class="content">
                                     <h4>Sistem Korporasi</h4>
@@ -383,7 +383,7 @@
         </div>
     </section>
     <!-- Service End -->
-    
+
     <!-- Counter Begin -->
 <section class="pt-120 pb-70 gradient-bg">
         <div class="container">
@@ -396,7 +396,7 @@
                     </div>
                 </div>
                 <!-- End Single Counter -->
-    
+
                 <!-- Single Counter -->
                 <div class="col-lg-4 col-sm-6">
                     <div class="single-counter text-center text-white">
@@ -405,7 +405,7 @@
                     </div>
                 </div>
                 <!-- End Single Counter -->
-    
+
                 <!-- Single Counter -->
                 <div class="col-lg-4 col-sm-6">
                     <div class="single-counter text-center text-white">
@@ -414,7 +414,7 @@
                     </div>
                 </div>
                 <!-- End Single Counter -->
-    
+
                 <!-- Single Counter
                         <div class="col-lg-3 col-sm-6">
                             <div class="single-counter text-center text-white">
@@ -427,7 +427,7 @@
         </div>
     </section>
     <!-- Counter End -->
-    
+
     <!-- Pricing Plan Begin -->
     <section class="pt-120 pb-120 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/price-pattern.png">
         <div class="container">
@@ -444,7 +444,7 @@
                     <!-- Section Title End -->
                 </div>
             </div>
-    
+
             <!-- Pricing NavTab Begin -->
             <div class="pricing-navtab">
                 <!-- Pricing Nav Begin -->
@@ -456,9 +456,9 @@
                             <h3>Usaha Mikro, Kecil, dan Menengah</h3>
                         </a>
                     </li>
-    
+
                     <!-- Single Nav End -->
-    
+
                     <!-- Single Nav Begin -->
                     <li class="nav-item col-lg-4 col-sm-6">
                         <a href="#startup" class="nav-link text-center" data-toggle="tab" role="tab">
@@ -468,7 +468,7 @@
                         </a>
                     </li>
                     <!-- Single Nav End -->
-    
+
                     <!-- Single Nav Begin -->
                     <li class="nav-item col-lg-4 col-sm-6">
                         <a href="#business" class="nav-link text-center" data-toggle="tab" role="tab">
@@ -478,12 +478,12 @@
                         </a>
                     </li>
                     <!-- Single Nav End -->
-    
-    
-    
+
+
+
                 </ul>
                 <!-- Pricing Nav End -->
-    
+
                 <!-- Pricing Tab Content Begin -->
                 <div class="tab-content">
                     <!-- Single Content Begin -->
@@ -529,7 +529,7 @@
                         </div>
                     </div>
                     <!-- Single Content End -->
-    
+
                     <!-- Single Content Begin -->
                     <div class="tab-pane fadeInUp animated" id="startup" role="tabpanel">
                         <div class="row">
@@ -575,7 +575,7 @@
                         </div>
                     </div>
                     <!-- Single Content End -->
-    
+
                     <!-- Single Content Begin -->
                     <div class="tab-pane fadeInUp animated" id="business" role="tabpanel">
                         <div class="row">
@@ -621,7 +621,7 @@
                         </div>
                     </div>
                     <!-- Single Content End -->
-    
+
                     <!-- Single Content Begin -->
                     <div class="tab-pane fadeInUp animated" id="entrepreneur" role="tabpanel">
                         <div class="row">
@@ -674,7 +674,7 @@
         </div>
     </section>
     <!-- Pricing Plan End -->
-    
+
     <!-- Project Begin -->
     <section class="pt-120 pb-90 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/case-study-pattern.png" id="artikel">
         <div class="container">
@@ -711,7 +711,7 @@
                     <!-- Project Nav End -->
                 </div>
             </div>
-    
+
             <div class="row project-items grid">
                 <!-- Single Project Begin -->
                 @foreach ($artikel as $item)
@@ -722,7 +722,7 @@
                                     <img src="{{ Storage::url($item->gambar) }}" data-rjs="2" alt="">
                                 </div>
                                 <!-- Project Image End -->
-                        
+
                                 <!-- Project Body Begin -->
                                 <div class="project-body">
                                     <h3><a href="{{url('articles', $item->judul)}}">{{ $item->judul }}</a></h3>
@@ -736,11 +736,11 @@
                 @endforeach
                 <!-- Single Project End -->
             </div>
-    
+
         </div>
     </section>
     <!-- Project End -->
-    
+
     <!-- Team Begin -->
     <section class="pt-120 pb-70 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/testimonial-pattern.png">
         <div class="container">
@@ -757,7 +757,7 @@
                     <!-- Section Title End -->
                 </div>
             </div>
-    
+
             <div class="row">
 @foreach ($struktur_tim as $item)
                     <div class="col-lg-4 col-sm-6">
@@ -765,18 +765,18 @@
                         <div class="single-team-member">
                             <!-- Team Image Begin -->
                             <div class="image position-relative">
-                    
+
                                 <img src="{{avatar($item->foto)}}" data-rjs="2" alt="" style="width: 348px;height: 283px;object-fit: cover">
                             </div>
                             <!-- Team Image End -->
-                    
+
                             <!-- Team Info Begin -->
                             <div class="team-info">
                                 <div class="info-front text-center">
                                     <h4>{{$item->nama}}</h4>
                                     <p>{{$item->jabatan}}</p>
                                 </div>
-                    
+
                                 <div class="info-back">
                                     <ul class="social_icon_list list-inline text-center w-100 d-flex justify-content-around">
                                         <li>
@@ -807,7 +807,7 @@
         </div>
     </section>
     <!-- Team End -->
-    
+
     <!-- Brand Slider Begin -->
     <section class="pt-120 pb-120">
         <div class="container">
@@ -820,7 +820,7 @@
                                     <img src="{{avatar($item->logo)}}" data-rjs="2" alt="" style="max-height: 100px; object-fit:cover;">
                                 </a>
                             @endforeach
-        
+
                         </div>
                     <!-- End of Partners -->
                 </div>
