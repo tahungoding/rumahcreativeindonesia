@@ -47,3 +47,15 @@
             t("#status").fadeOut(), t("#preloader").delay(350).fadeOut("slow")
         }), Waves.init(
 )}(jQuery);
+
+function filePreview(input, previewField = '.img-preview') {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $(previewField).attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
