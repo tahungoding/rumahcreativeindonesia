@@ -28,7 +28,7 @@
                     @isset($umkm)
                     @method('POST')
                     @endisset
-                    
+
                     <div class="form-group">
                         <label>Kategori Mitra</label>
                         <select id="kategori_umkm" name="id_kategori_umkm" class="form-control">
@@ -50,8 +50,11 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="">Gambar</label>
-                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="gambar" id="" required>
+                        <label>Gambar</label><br>
+                        <img class="rounded img-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ avatar() }}" data-holder-rendered="true">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="gambar" id="" required onchange="filePreview(this)">
                         @error('gambar')
                             <span class="text-danger">{{ $message}}</span>
                         @enderror
