@@ -131,7 +131,7 @@
             <!-- About Widget Begin -->
             <div class="widget widget_about">
                 <div class="widget-logo">
-                    <img src="{{asset('assets/front/img/logo.png')}}" data-rjs="2" alt="">
+                    <img src="{{asset('assets/front/img/logo.png')}}"  alt="">
                 </div>
 
             <!-- Offcanvas Button Begin -->
@@ -161,7 +161,7 @@
                         <div class="widget widget_contact_info">
                             <!-- Widget Logo Begin -->
                             <div class="widget-logo">
-                                <img src="{{asset('assets/front/img/logo.png')}}" data-rjs="2" alt="" width="150px">
+                                <img src="{{asset('assets/front/img/logo.png')}}" alt="" width="150px">
                             </div>
                             <!-- Widget Logo End -->
 
