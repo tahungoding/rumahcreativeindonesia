@@ -63,9 +63,9 @@
                         <!-- Logo Begin -->
                         <div class="logo">
                             <a href="index.html">
-                                <img class="default-logo" src="{{asset('assets/front/img/logo.png')}}" data-rjs="2" alt=""
+                                <img class="default-logo" src="{{asset('assets/front/img/logo.png')}}"  alt=""
                                     style="width: 100px;">
-                                <img class="sticky-logo" src="{{asset('assets/front/img/logo.png')}}" style="width: 100px;" data-rjs="2"
+                                <img class="sticky-logo" src="{{asset('assets/front/img/logo.png')}}" style="width: 100px;" 
                                     alt="">
                             </a>
                         </div>
