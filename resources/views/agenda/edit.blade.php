@@ -33,7 +33,7 @@
                     <div class="form-group">
                         <label>Tanggal Awal</label>
 
-                        <input class="form-control" type="date" name="tanggal_awal" value="{{ strftime('%m-%d-%Y', strtotime($agenda->tanggal_awal)) }}" id="example-date-input">
+                        <input class="form-control" type="date" name="tanggal_awal" value="{{ date('Y-m-d', strtotime($agenda->tanggal_awal)) ?? date('Y-m-d', strtotime(old('tanggal_awal')))  }}" id="example-date-input">
                         @error('tanggal_awal')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
@@ -41,7 +41,7 @@
 
                     <div class="form-group">
                         <label>Tanggal Akhir</label>
-                        <input class="form-control" type="date" name="tanggal_akhir" value="{{ $agenda->tanggal_akhir ?? old('tanggal_akhir') }}" id="example-date-input">
+                        <input class="form-control" type="date" name="tanggal_akhir" value="{{ date('Y-m-d', strtotime($agenda->tanggal_akhir)) ?? date('Y-m-d', strtotime(old('tanggal_akhir')))  }}" id="example-date-input">
                         @error('tanggal_akhir')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror

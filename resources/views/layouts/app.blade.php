@@ -64,10 +64,10 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <!-- item-->
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle font-size-17 text-muted align-middle mr-1"></i>
-                                    Profile</a>
+                                {{-- <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle font-size-17 text-muted align-middle mr-1"></i>
+                                    Profile</a> --}}
 
-                                <a class="dropdown-item d-block" href="{{url('setting')}}"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings font-size-17 text-muted align-middle mr-1"></i> Settings</a>
+                                <a class="dropdown-item d-block" href="{{url('setting')}}"><i class="mdi mdi-settings font-size-17 text-muted align-middle mr-1"></i> Settings</a>
 
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -264,14 +264,6 @@
             <script src="{{asset('assets/back/libs/simplebar/simplebar.min.js')}}"></script>
             <script src="{{asset('assets/back/libs/node-waves/waves.min.js')}}"></script>
             <script src="{{asset('assets/back/libs/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
-
-            <script type="text/javascript">
-                window.base_url = {
-                    {
-                        json_encode(url())
-                    }
-                }
-            </script>
 
 
             @yield('js')
