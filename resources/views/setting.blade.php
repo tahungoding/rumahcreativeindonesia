@@ -34,9 +34,12 @@
                     @endisset
 
                     <div class="form-group">
-                        <label>Foto</label>
+                        <label>Foto</label><br>
+                        <img class="rounded img-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ isset($user) ? avatar($user->foto) : avatar() }}" data-holder-rendered="true">
+                    </div>
+                    <div class="form-group">
                         <input type="file" class="filestyle" data-buttonname="btn-secondary" name="foto"
-                            value="{{ $user->foto ?? old('foto') }}">
+                            value="{{ $user->foto ?? old('foto') }}" onchange="filePreview(this)">
                         @error('foto')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror

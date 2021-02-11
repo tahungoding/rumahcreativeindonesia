@@ -29,9 +29,9 @@
 
                 <form class="custom-validation" action="{{ $actionUrl }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    
+
                     @method('put')
-                    
+
 
                     <div class="form-group">
                         <label>Latar Belakang</label>
@@ -42,10 +42,14 @@
                             @enderror
                         </div>
                     </div>
+
                     <div class="form-group">
-                        <label>Latar Belakang Gambar</label>
+                        <label>Latar Belakang Gambar</label><br>
+                        <img class="rounded img-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ isset($umkm) ? avatar($umkm->gambar) : avatar() }}" data-holder-rendered="true">
+                    </div>
+                    <div class="form-group">
                         <input type="file" class="filestyle" data-buttonname="btn-secondary" name="latar_belakang_img"
-                            value="{{ $profile->latar_belakang_img ?? old('latar_belakang_img') }}" @empty($profile) required @endempty>
+                            value="{{ $profile->latar_belakang_img ?? old('latar_belakang_img') }}" @empty($profile) required @endempty onchange="filePreview(this)">
                         @error('latar_belakang_img')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
@@ -59,10 +63,14 @@
                             @enderror
                         </div>
                     </div>
+
                     <div class="form-group">
-                        <label>Visi Gambar</label>
+                        <label>Visi Gambar</label><br>
+                        <img class="rounded visi-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ isset($umkm) ? avatar($umkm->gambar) : avatar() }}" data-holder-rendered="true">
+                    </div>
+                    <div class="form-group">
                         <input type="file" class="filestyle" data-buttonname="btn-secondary" name="visi_img"
-                            value="{{ $profile->visi_img ?? old('visi_img') }}" @empty($profile) required @endempty>
+                            value="{{ $profile->visi_img ?? old('visi_img') }}" @empty($profile) required @endempty onchange="filePreview(this, '.visi-preview')">
                         @error('visi_img')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
@@ -76,10 +84,14 @@
                             @enderror
                         </div>
                     </div>
+
                     <div class="form-group">
-                        <label>Misi Gambar</label>
+                        <label>Misi Gambar</label><br>
+                        <img class="rounded misi-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ isset($umkm) ? avatar($umkm->gambar) : avatar() }}" data-holder-rendered="true">
+                    </div>
+                    <div class="form-group">
                         <input type="file" class="filestyle" data-buttonname="btn-secondary" name="misi_img"
-                            value="{{ $profile->misi_img ?? old('misi_img') }}" @empty($profile) required @endempty>
+                            value="{{ $profile->misi_img ?? old('misi_img') }}" @empty($profile) required @endempty onchange="filePreview(this, '.misi-preview')">
                         @error('misi_img')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
@@ -93,10 +105,14 @@
                             @enderror
                         </div>
                     </div>
+
                     <div class="form-group">
-                        <label>Model Konsep Gambar</label>
+                        <label>Model Konsep Gambar</label><br>
+                        <img class="rounded konsep-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ isset($umkm) ? avatar($umkm->gambar) : avatar() }}" data-holder-rendered="true">
+                    </div>
+                    <div class="form-group">
                         <input type="file" class="filestyle" data-buttonname="btn-secondary" name="model_konsep_img"
-                            value="{{ $profile->model_konsep_img ?? old('model_konsep_img') }}" @empty($profile) required @endempty>
+                            value="{{ $profile->model_konsep_img ?? old('model_konsep_img') }}" @empty($profile) required @endempty onchange="filePreview(this, '.konsep-preview')">
                         @error('model_konsep_img')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
@@ -191,7 +207,7 @@
                             </a>
                         </div>
                     </div>
-                    
+
                 </form>
             </div>
         </div>
