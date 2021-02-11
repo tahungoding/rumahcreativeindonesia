@@ -725,10 +725,10 @@
 
                                 <!-- Project Body Begin -->
                                 <div class="project-body">
-                                    <h3><a href="{{url('articles', $item->judul)}}">{{ $item->judul }}</a></h3>
+                                    <h3><a href="{{url('articles', $item->slug)}}">{{ $item->judul }}</a></h3>
                                     <p class="project-meta">Penulis:<span>{{ $item->writer->name }}</span></p>
                                     <p>{!! Str::limit($item->konten, 50) !!}</p>
-                                    <a href="{{url('articles', $item->judul)}}" class="btn-inline">Read More</a>
+                                    <a href="{{url('articles', $item->slug)}}" class="btn-inline">Read More</a>
                                 </div>
                                 <!-- Project Body End -->
                             </div>
@@ -758,7 +758,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row text-center">
 @foreach ($struktur_tim as $item)
                     <div class="col-lg-4 col-sm-6">
                         <!-- Single Team Begin -->
@@ -814,10 +814,10 @@
             <div class="row">
                 <div class="col-12">
                     <!-- Partners -->
-                         <div class="brand-logo owl-carousel" data-owl-items="{{$mitra->count()}}" data-owl-autoplay="false">
+                         <div class="brand-logo owl-carousel" data-owl-items="4" data-owl-autoplay="true">
                             @foreach ($mitra as $item)
                                 <a href="{{$item->link}}" class="single-brand-logo">
-                                    <img src="{{avatar($item->logo)}}" data-rjs="2" alt="" style="max-height: 100px; object-fit:cover;">
+                                    <img src="{{avatar($item->logo)}}" alt="" style="max-height: 100px; object-fit:cover;">
                                 </a>
                             @endforeach
 
