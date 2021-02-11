@@ -62,7 +62,7 @@
                     <div class="form-group">
                         <label>Deskripsi</label>
                         <div>
-                            <textarea required class="form-control tiny" {{old('deskripsi')}} rows="5" name="deskripsi"></textarea>
+                            <textarea class="form-control tiny" rows="5" name="deskripsi">{{old('deskripsi')}}</textarea>
                             @error('deskripsi')
                             <span class="text-danger">{{ $message}}</span>
                             @enderror
