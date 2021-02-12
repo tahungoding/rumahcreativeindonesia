@@ -152,7 +152,7 @@
                         <div class="tab-pane fade show active" id="mission" role="tabpanel">
                             {!! \Str::limit($profile->misi, 200) !!}
                             <br>
-                            <a href="{{url('profile')}}" class="btn"><span>SEE MORE</span></a>
+                            <a href="{{url('profile')}}" class="btn"><span>SELENGKAPNYA</span></a>
                         </div>
                         <!-- Mission Tab End -->
 
@@ -291,7 +291,7 @@
                 <!-- Section Title End -->
 
                 <!-- Button Begin -->
-                <a href="#" class="btn"><span>view All</span></a>
+                <a href="#" class="btn"><span>SELENGKAPNYA</span></a>
                 <!-- Button End -->
             </div>
 
@@ -309,7 +309,7 @@
                             <!-- Content Begin -->
                             <div class="content">
                                 <h4>Aplikasi</h4>
-                                <p>Saved he do fruit woody of to. Met defective are allowance two.</p>
+                                <p>Aplikasi ini akan menyediakan semua fitur kebutuhan para mitra UMKM binaan.</p>
                                 <a href="#" class="btn-inline">Read More</a>
                             </div>
                             <!-- Content End -->
@@ -328,7 +328,7 @@
                             <!-- Content Begin -->
                             <div class="content">
                                 <h4>Event & Creative Media</h4>
-                                <p> Simplicity the far admiration preference thing.Up home head.</p>
+                                <p> Menciptakan perluasan pasar bagi seluruh mitra melalui event-event kreatif dan media kreatif.</p>
                                 <a href="#" class="btn-inline">Read More</a>
                             </div>
                             <!-- Content End -->
@@ -347,7 +347,7 @@
                             <!-- Content Begin -->
                             <div class="content">
                                 <h4>Creative Mover Academy</h4>
-                                <p>Front no party young abode state up. Saved he do fruit woody of to.</p>
+                                <p>Sekolah Kreatif yang sebagian besar diperuntukan bagi mereka yang memiliki concern di dunia kreatif.</p>
                                 <a href="#" class="btn-inline">Read More</a>
                             </div>
                             <!-- Content End -->
@@ -366,7 +366,7 @@
                             <!-- Content Begin -->
                             <div class="content">
                                 <h4>Sistem Korporasi</h4>
-                                <p>He improve started no we manners however effects. Prospect humoured.</p>
+                                <p>Rumah Creativepreneur Indonesia berstatus sebagai yayasan yang mana akan ada beberapa perusahaan turunan yang dikelola dan dijalankan sebagai satu perusahaan besar.</p>
                                 <a href="#" class="btn-inline">Read More</a>
                             </div>
                             <!-- Content End -->
@@ -488,40 +488,18 @@
                         <div class="col-lg-6">
                             <!-- Tab Pane Text Begin -->
                             <div class="tab-pane-text">
-                                <h3>What’s included in this package</h3>
+                                <h3>Diantaranya sebagai berikut :</h3>
                                 <ul class="list-unstyled list-check">
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Market sizing and share
-                                        analysis</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Product value proposition
-                                        analysis</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Identify strategic
-                                        partnership</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Implementation milestone
-                                        review</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Innovation opportunities</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Distribution channel
-                                        opportunities</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Permodalan</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Pemasaran Produk</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Pelatihan Manajemen dan Skill</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Pendampingan Usaha</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Kemitraan</li>
                                 </ul>
                             </div>
                             <!-- Tab Pane Text End -->
                         </div>
-                        <div class="col-lg-6">
-                            <!-- Tab Pane Text Begin -->
-                            <div class="tab-pane-text mt-50 mt-lg-0">
-                                <h3>Business approach -</h3>
-                                <p>Our experts follow the business strategy to grow up your business and engage more
-                                    customers to your door.</p>
-                                <ul class="list-unstyled list-check">
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Getting to know your business
-                                        vision and the key strategic drivers.</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Detailed research of the
-                                        business environment, target market, and marketing as well as growth
-                                        opportunities.</li>
-                                </ul>
-                                <a href="#" class="btn"><span>purchase</span></a>
-                            </div>
-                            <!-- Tab Pane Text End -->
-                        </div>
+
                     </div>
                 </div>
                 <!-- Single Content End -->
@@ -532,42 +510,18 @@
                         <div class="col-lg-6">
                             <!-- Tab Pane Text Begin -->
                             <div class="tab-pane-text">
-                                <h3>What’s included in this package</h3>
+                                <h3>Diantaranya sebagai berikut :</h3>
                                 <ul class="list-unstyled list-check">
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Market sizing and share
-                                        analysis</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Product value proposition
-                                        analysis</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Identify strategic
-                                        partnership</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Implementation milestone
-                                        review</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Innovation opportunities</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Distribution channel
-                                        opportunities</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Akses Pasar (UMKM)</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Jaringan Kemitraan</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Penyediaan SDM Kreatif</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Infrastruktur (Office) dan Sistem di daerah</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Akses Peluang Bisnis</li>
                                 </ul>
                             </div>
                             <!-- Tab Pane Text End -->
                         </div>
-                        <div class="col-lg-6">
-                            <!-- Tab Pane Text Begin -->
-                            <div class="tab-pane-text mt-50 mt-lg-0">
-                                <h3>Business approach -</h3>
-                                <p>Our experts follow the business strategy to grow up your business and engage more
-                                    customers to your door.
-                                </p>
-                                <ul class="list-unstyled list-check">
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Getting to know your business
-                                        vision and the key
-                                        strategic drivers.</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Detailed research of the
-                                        business environment, target
-                                        market, and marketing as well as growth opportunities.</li>
-                                </ul>
-                                <a href="#" class="btn"><span>purchase</span></a>
-                            </div>
-                            <!-- Tab Pane Text End -->
-                        </div>
+
                     </div>
                 </div>
                 <!-- Single Content End -->
@@ -578,91 +532,22 @@
                         <div class="col-lg-6">
                             <!-- Tab Pane Text Begin -->
                             <div class="tab-pane-text">
-                                <h3>What’s included in this package</h3>
+                                <h3>Diantaranya sebagai berikut :</h3>
                                 <ul class="list-unstyled list-check">
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Market sizing and share
-                                        analysis</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Product value proposition
-                                        analysis</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Identify strategic
-                                        partnership</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Implementation milestone
-                                        review</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Innovation opportunities</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Distribution channel
-                                        opportunities</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Pelatihan Karakter dan Skills Kreatif</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Akses lapangan kerja dan
+                                        aktualisasi diri</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Jaringan</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Peluang Wirausaha</li>
                                 </ul>
                             </div>
                             <!-- Tab Pane Text End -->
                         </div>
-                        <div class="col-lg-6">
-                            <!-- Tab Pane Text Begin -->
-                            <div class="tab-pane-text mt-50 mt-lg-0">
-                                <h3>Business approach -</h3>
-                                <p>Our experts follow the business strategy to grow up your business and engage more
-                                    customers to your door.
-                                </p>
-                                <ul class="list-unstyled list-check">
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Getting to know your business
-                                        vision and the key
-                                        strategic drivers.</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Detailed research of the
-                                        business environment, target
-                                        market, and marketing as well as growth opportunities.</li>
-                                </ul>
-                                <a href="#" class="btn"><span>purchase</span></a>
-                            </div>
-                            <!-- Tab Pane Text End -->
-                        </div>
+
                     </div>
                 </div>
                 <!-- Single Content End -->
 
-                <!-- Single Content Begin -->
-                <div class="tab-pane fadeInUp animated" id="entrepreneur" role="tabpanel">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <!-- Tab Pane Text Begin -->
-                            <div class="tab-pane-text">
-                                <h3>What’s included in this package</h3>
-                                <ul class="list-unstyled list-check">
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Market sizing and share
-                                        analysis</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Product value proposition
-                                        analysis</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Identify strategic
-                                        partnership</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Implementation milestone
-                                        review</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Innovation opportunities</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Distribution channel
-                                        opportunities</li>
-                                </ul>
-                            </div>
-                            <!-- Tab Pane Text End -->
-                        </div>
-                        <div class="col-lg-6">
-                            <!-- Tab Pane Text Begin -->
-                            <div class="tab-pane-text mt-50 mt-lg-0">
-                                <h3>Business approach -</h3>
-                                <p>Our experts follow the business strategy to grow up your business and engage more
-                                    customers to your door.
-                                </p>
-                                <ul class="list-unstyled list-check">
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Getting to know your business
-                                        vision and the key
-                                        strategic drivers.</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Detailed research of the
-                                        business environment, target
-                                        market, and marketing as well as growth opportunities.</li>
-                                </ul>
-                                <a href="#" class="btn"><span>purchase</span></a>
-                            </div>
-                            <!-- Tab Pane Text End -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Content End -->
             </div>
             <!-- Pricing Tab Content End -->
         </div>
