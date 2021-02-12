@@ -62,7 +62,7 @@
                     <div class="col-lg-3 col-sm-4 col-8">
                         <!-- Logo Begin -->
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="{{url('/')}}">
                                 <img class="default-logo" src="{{asset('assets/front/img/logo.png')}}"  alt=""
                                     style="width: 100px;">
                                 <img class="sticky-logo" src="{{asset('assets/front/img/logo.png')}}" style="width: 100px;" 
@@ -281,7 +281,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="copyright-text text-center">
-                            <span><a href="#">Rumah CreativePreneur Indonesia</a> &copy; Copyright 2021.All rights
+                            <span><a href="{{url('/')}}">Rumah CreativePreneur Indonesia</a> &copy; Copyright 2021.All rights
                                 reserved.</span>
                         </div>
                     </div>

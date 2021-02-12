@@ -83,7 +83,7 @@
         
                 <div class="row">
                     @foreach ($umkm as $item)
-                        <div class="col-lg-3 col-sm-4 text-center">
+                        <div class="col-lg-3 col-sm-4 text-center mb-3">
                             <!-- Single Team Begin -->
                             <div class="single-team-member ">
                                 <!-- Team Image Begin -->

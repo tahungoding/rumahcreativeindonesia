@@ -287,10 +287,10 @@
                 <div class="row">
                     <div class="col-12">
                         <!-- Partners -->
-                        <div class="brand-logo owl-carousel" data-owl-items="{{$mitra->count()}}" data-owl-autoplay="false">
+                        <div class="brand-logo owl-carousel" data-owl-items="4" data-owl-autoplay="false">
                             @foreach ($mitra as $item)
                                 <a href="{{$item->link}}" class="single-brand-logo">
-                                    <img src="{{avatar($item->logo)}}" data-rjs="2" alt="" style="max-height: 100px; object-fit:cover;">
+                                    <img src="{{avatar($item->logo)}}" alt="" style="max-height: 100px; object-fit:cover;">
                                 </a>
                             @endforeach
 
@@ -352,7 +352,7 @@
                                 <!-- Single Contact Info -->
                                 <div class="col-sm-6 col-lg-12 single-contact-info media align-items-center">
                                     <div class="image">
-                                        <img src="{{asset('assets/front/img/icons/email.svg')}}" class="svg" alt="">
+                                        <img src="{{asset('assets/front/img/icons/clock.svg')}}" class="svg" alt="">
                                     </div>
                                     <div class="media-body">
                                         <h4>Jam Kerja</h4>
