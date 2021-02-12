@@ -62,10 +62,10 @@
                     <div class="col-lg-3 col-sm-4 col-8">
                         <!-- Logo Begin -->
                         <div class="logo">
-                            <a href="index.html">
-                                <img class="default-logo" src="{{asset('assets/front/img/logo.png')}}" data-rjs="2" alt=""
+                            <a href="{{url('/')}}">
+                                <img class="default-logo" src="{{asset('assets/front/img/logo.png')}}"  alt=""
                                     style="width: 100px;">
-                                <img class="sticky-logo" src="{{asset('assets/front/img/logo.png')}}" style="width: 100px;" data-rjs="2"
+                                <img class="sticky-logo" src="{{asset('assets/front/img/logo.png')}}" style="width: 100px;" 
                                     alt="">
                             </a>
                         </div>
@@ -76,23 +76,27 @@
                         <!-- Main Menu Begin -->
                         <div class="main-menu d-flex align-items-center justify-content-end">
                             <ul class="nav align-items-center">
-                                <li>
+                                @php
+                                    $activeMenu = "current-menu-parent";
+                                    $uris = Request::segment(1);
+                                @endphp
+                                <li class="{{(!$uris) ? $activeMenu : null}}">
                                     <a href="/">Beranda</a>
                                 </li>
-                                <li>
+                                <li class="{{($uris == 'profiles') ? $activeMenu : null}}">
                                     <a href="{{url('profiles')}}">Profil</a>
                                 </li>
-                                <li>
+                                <li class="{{($uris == 'programs') ? $activeMenu : null}}">
                                     <a href="{{url('programs')}}">Program</a>
                                 </li>
-                                <li>
+                                <li class="{{($uris == 'agendas') ? $activeMenu : null}}">
                                     <a href="{{url('agendas')}}">Agenda</a>
                                 </li>
-                                <li>
+                                <li class="{{($uris == 'umkms') ? $activeMenu : null}}">
                                     <a href="{{url('umkms')}}">Komunitas UMKM</a>
                                 </li>
-                                <li><a href="{{url('articles')}}">Artikel</a></li>
-                                <li><a href="{{url('mitras')}}">Mitra</a></li>
+                                <li class="{{($uris == 'articles') ? $activeMenu : null}}"><a href="{{url('articles')}}">Artikel</a></li>
+                                <li class="{{($uris == 'mitras') ? $activeMenu : null}}"><a href="{{url('mitras')}}">Mitra</a></li>
                             </ul>
                             <!-- Offcanvas Holder Trigger -->
                             <span class="offcanvas-trigger text-right d-none d-lg-block">
@@ -127,7 +131,7 @@
             <!-- About Widget Begin -->
             <div class="widget widget_about">
                 <div class="widget-logo">
-                    <img src="{{asset('assets/front/img/logo.png')}}" data-rjs="2" alt="">
+                    <img src="{{asset('assets/front/img/logo.png')}}"  alt="">
                 </div>
 
             <!-- Offcanvas Button Begin -->
@@ -135,7 +139,7 @@
                 <div class="offcanvas-btn btn-block">
                     <a href="{{url('home')}}" class="btn"><span>Dashboard</span></a>
                 </div>
-            @else 
+            @else
                 <div class="offcanvas-btn btn-block">
                     <a href="{{url('login')}}" class="btn"><span>Login</span></a>
                 </div>
@@ -157,11 +161,11 @@
                         <div class="widget widget_contact_info">
                             <!-- Widget Logo Begin -->
                             <div class="widget-logo">
-                                <img src="{{asset('assets/front/img/logo.png')}}" data-rjs="2" alt="" width="150px">
+                                <img src="{{asset('assets/front/img/logo.png')}}" alt="" width="150px">
                             </div>
                             <!-- Widget Logo End -->
-    
-    
+
+
                         </div>
                         <!-- About Widget End -->
                     </div>
@@ -200,11 +204,11 @@
                                 <h4>Menu</h4>
                             </div>
                             <!-- Widget Title End  -->
-    
+
                             <!-- Menu Begin -->
                             <ul class="menu">
                                 <li><a href="{{url('/')}}">Beranda</a></li>
-                                <li><a href="{{url('profile')}}">Profile</a></li>
+                                <li><a href="{{url('profiles')}}">Profile</a></li>
                                 <li><a href="{{url('agendas')}}">Agenda</a></li>
                                 <li><a href="{{url('umkms')}}">UMKM</a></li>
                                 <li><a href="{{url('articles')}}">Artikel</a></li>
@@ -229,24 +233,24 @@
                             <div class="info-content">
                                 <div class="single-info">
                                     <span><i class="fa fa-home"></i> Lokasi Kantor</span>
-                                    <p>{{$profile->alamat}}</p>
+                                    <p>{{$profile['alamat']}}</p>
                                 </div>
                                 <div class="single-info">
                                     <span><i class="fa fa-phone"></i> Telepon</span>
-                                    <p>{{$profile->telepon}}</p>
+                                    <p>{{$profile['telepon']}}</p>
                                 </div>
                                 <div class="single-info">
                                     <span><i class="fa fa-envelope"></i> Support mail</span>
                                     <p>
-                                        {{$profile->email}}
+                                        {{$profile['email']}}
                                     </p>
                                 </div>
                             </div>
                             <!-- Widget Content End -->
-    
+
                         </div>
                         <!-- Widget Newsletter End -->
-    
+
                         <!-- Widget Social Icon Begin -->
                         <div class="widget widget_social_icon">
                             <ul class="social_icon_list list-inline">
@@ -270,25 +274,24 @@
             </div>
         </div>
         <!-- Footer Top End -->
-    
+
         <!-- Footer Bottom Begin -->
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="copyright-text text-center">
-                            <span><a href="#">Rumah CreativePreneur Indonesia</a> &copy; Copyright 2021.All rights
-                                reserved.</span>
+                            <span><a href="{{url('/')}}">Rumah CreativePreneur Indonesia</a> &copy; Copyright 2021. <br> Crafted with <i class="fa fa-heart text-warning"></i> by <a href="https://tahungoding.com/">TAHUNGODING.</a> </span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Footer Bottom End -->
-    
+
     </footer>
     <!-- Footer End -->
-    
+
     <!-- Back to Top Begin -->
     <a href="#" class="back-to-top position-fixed">
         <div class="back-toop-tooltip"><span>Back To Top</span></div>
@@ -296,48 +299,48 @@
         <div class="top-line"></div>
     </a>
     <!-- Back to Top End -->
-    
+
     <!-- ======= jQuery Library ======= -->
     <script src="{{asset('assets/front/js/jquery.min.j')}}s"></script>
-    
+
     <!-- ======= Bootstrap Bundle JS ======= -->
     <script src="{{asset('assets/front/js/bootstrap.bundle.min.js')}}"></script>
-    
+
     <!-- =======  Mobile Menu JS ======= -->
     <script src="{{asset('assets/front/js/menu.min.js')}}"></script>
-    
+
     <!-- ======= Waypoints JS ======= -->
     <script src="{{asset('assets/front/plugins/waypoints/jquery.waypoints.min.js')}}"></script>
-    
+
     <!-- ======= Counter Up JS ======= -->
     <script src="{{asset('assets/front/plugins/waypoints/jquery.counterup.min.js')}}"></script>
-    
+
     <!-- ======= Owl Carousel JS ======= -->
     <script src="{{asset('assets/front/plugins/owlcarousel/owl.carousel.min.j')}}s"></script>
-    
+
     <!-- ======= Isotope JS ====== -->
     <script src="{{asset('assets/front/plugins/isotope/isotope.pkgd.min.js')}}"></script>
-    
+
     <!-- ======= Magnific Popup JS ======= -->
     <script src="{{asset('assets/front/plugins/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
-    
+
     <!-- ======= Countdown JS ======= -->
     <script src="{{asset('assets/front/plugins/countdown/countdown.min.js')}}"></script>
-    
+
     <!-- ======= Retina JS ======= -->
     <script src="{{asset('assets/front/plugins/retinajs/retina.min.js')}}"></script>
-    
+
     <!-- ======= Google API ======= -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjkssBA3hMeFtClgslO2clWFR6bRraGz0"></script>
-    
+
     <!-- ======= Main JS ======= -->
     <script src="{{asset('assets/front/js/main.js')}}"></script>
-    
+
     <!-- ======= Custom JS ======= -->
     <script src="{{asset('assets/front/js/custom.js')}}"></script>
 
     @yield('js')
 
     </body>
-    
+
     </html>

@@ -17,6 +17,7 @@ class Umkm extends Model
         'shopee',
         'tokopedia',
         'bukalapak',
+        'gambar'
     ];
 
     public function kategori_umkm()

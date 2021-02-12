@@ -2,6 +2,11 @@
 @section('title')
     Mitra - Edit
 @endsection
+
+@section('breadcrumb')
+    {{Breadcrumbs::render('mitra.edit', $mitra->id)}}
+@endsection
+
 @section('css')
 <!-- Isi Library CSS -->
 @endsection
@@ -23,7 +28,7 @@
                     @isset($mitra)
                     @method('put')
                     @endisset
-                    
+
                     <div class="form-group">
                         <label>Nama</label>
                         <input type="text" class="form-control" name="nama" value="{{ $mitra->nama ?? old('nama') }}"
@@ -44,10 +49,14 @@
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
+
                     <div class="form-group">
-                        <label>Logo</label>
+                        <label>Logo</label><br>
+                        <img class="rounded img-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ isset($mitra) ? avatar($mitra->logo) : avatar() }}" data-holder-rendered="true">
+                    </div>
+                    <div class="form-group">
                         <input type="file" class="filestyle" data-buttonname="btn-secondary" name="logo"
-                            value="{{ $mitra->logo ?? old('logo') }}">
+                            value="{{ $mitra->logo ?? old('logo') }}" onchange="filePreview(this)">
                         @error('logo')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
@@ -62,12 +71,12 @@
                     </div>
                     <div class="form-group">
                         <label>Status</label>
-                        <select id="kategori_mitra" name="id_kategori_mitra" class="form-control">
+                        <select id="kategori_mitra" name="status" class="form-control">
                         <option value="">- Pilih Status -</option>
                             <option value="aktif" {{($mitra->status == 'aktif') ? 'selected' : null}}>Aktif</option>
                             <option value="tidak aktif" {{($mitra->status == 'tidak aktif') ? 'selected' : null}}>Tidak Aktif</option>
                         </select>
-                        @error('id_kategori_mitra')
+                        @error('status')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>

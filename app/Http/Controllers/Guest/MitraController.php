@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Mitra;
 
 class MitraController extends Controller
 {
@@ -14,7 +15,10 @@ class MitraController extends Controller
      */
     public function index()
     {
-        //
+        $data['title'] = "Mitra";
+        $data['mitra'] = Mitra::all();
+
+        return view('guest.mitra.index', $data);
     }
 
     /**
@@ -46,7 +50,9 @@ class MitraController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['mitra'] = Mitra::findOrFail($id);
+
+        return view('guest.mitra.detail_modal', $data);
     }
 
     /**

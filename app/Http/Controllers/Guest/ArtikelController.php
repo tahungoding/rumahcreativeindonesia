@@ -53,6 +53,9 @@ class ArtikelController extends Controller
         $data['artikel'] = Artikel::where('slug', '=', $id)->first(); 
         $data['artikels'] = Artikel::where('id_kategori_artikel', '=', $data['artikel']->id_kategori_artikel)->limit(5)->get();
         $data['title'] =  $data['artikel']->judul;
+        $data['count_view'] = views($data['artikel'])->unique()->count();
+
+        views($data['artikel'])->record();
 
         return view('guest.artikel.detail', $data);
     }

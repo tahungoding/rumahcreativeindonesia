@@ -2,6 +2,9 @@
 @section('title')
     Dashboard
 @endsection
+@section('breadcrumb')
+    {{Breadcrumbs::render('home')}}
+@endsection
 @section('content')
 <div class="row">
     <div class="col-xl-3 col-md-6">

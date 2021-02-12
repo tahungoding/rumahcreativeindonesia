@@ -4,6 +4,10 @@
 {{ $title }}
 @endsection
 
+@section('breadcrumb')
+    {{Breadcrumbs::render('struktur_tim.edit', $tim->id)}}
+@endsection
+
 @section('content')
 <div class="row">
     <div class="col-lg-12">
@@ -27,8 +31,11 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="">Foto</label>
-                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="foto" id="" >
+                        <label>Foto</label><br>
+                        <img class="rounded img-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ isset($tim) ? avatar($tim->foto) : avatar() }}" data-holder-rendered="true">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="foto" id="" onchange="filePreview(this)">
                         @error('foto')
                             <span class="text-danger">{{ $message}}</span>
                         @enderror
@@ -50,7 +57,7 @@
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
-                    
+
                     <div class="form-group">
                         <label><i class="fab fa-twitter"></i> Twitter</label>
                         <input type="text" class="form-control" name="twitter" placeholder="Masukan username twitter"
@@ -59,7 +66,7 @@
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
-                    
+
                     <div class="form-group">
                         <label><i class="fab fa-linkedin"></i> Linkedin</label>
                         <input type="text" class="form-control" name="linkedin" placeholder="Masukan username linkedin"
@@ -68,7 +75,7 @@
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
-                    
+
                     <div class="form-group">
                         <label><i class="fab fa-instagram"></i> Instagram</label>
                         <input type="text" class="form-control" name="instagram" placeholder="Masukan username instagram"

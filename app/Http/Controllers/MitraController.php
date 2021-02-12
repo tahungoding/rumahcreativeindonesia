@@ -108,6 +108,7 @@ class MitraController extends Controller
         if (isset($request->id_kategori_mitra) == '') {
             $request->id_kategori_mitra = null;
         }
+        // print_r($request->all());die;
         $request->validate([
             'nama'             => "required",
             'logo'             => "nullable|mimes:png,jpg|max:2048",

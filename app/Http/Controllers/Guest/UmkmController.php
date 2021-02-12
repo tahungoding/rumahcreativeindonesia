@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Umkm;
 
 class UmkmController extends Controller
 {
@@ -14,7 +15,10 @@ class UmkmController extends Controller
      */
     public function index()
     {
-        //
+        $data['title'] = "UMKM";
+        $data['umkm'] = Umkm::all();
+
+        return view('guest.umkm.index', $data);
     }
 
     /**
@@ -46,7 +50,9 @@ class UmkmController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['umkm'] = Umkm::findOrFail($id);
+
+        return view('guest.umkm.detail_modal', $data);
     }
 
     /**

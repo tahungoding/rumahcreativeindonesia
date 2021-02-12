@@ -4,6 +4,10 @@
 {{ $title }}
 @endsection
 
+@section('breadcrumb')
+    {{Breadcrumbs::render('program.create')}}
+@endsection
+
 @section('content')
 <div class="row">
     <div class="col-lg-12">
@@ -24,16 +28,22 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Icon</label>
-                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="icon">
+                        <label>Icon</label><br>
+                        <img class="rounded icon-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ avatar() }}" data-holder-rendered="true">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="icon" onchange="filePreview(this, '.icon-preview')">
                         @error('icon')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
 
                     <div class="form-group">
-                        <label>Gambar</label>
-                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="gambar">
+                        <label>Gambar</label><br>
+                        <img class="rounded img-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ avatar() }}" data-holder-rendered="true">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="gambar" onchange="filePreview(this)">
                         @error('gambar')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
@@ -52,7 +62,7 @@
                     <div class="form-group">
                         <label>Deskripsi</label>
                         <div>
-                            <textarea required class="form-control tiny" {{old('deskripsi')}} rows="5" name="deskripsi"></textarea>
+                            <textarea class="form-control tiny" rows="5" name="deskripsi">{{old('deskripsi')}}</textarea>
                             @error('deskripsi')
                             <span class="text-danger">{{ $message}}</span>
                             @enderror

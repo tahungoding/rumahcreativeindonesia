@@ -9,7 +9,7 @@
                         <div class="page-title text-center">
                             <h2>Blog</h2>
                             <ul class="list-inline">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="{{url('/')}}">Beranda</a></li>
                                 <li>Blog</li>
                             </ul>
                         </div>

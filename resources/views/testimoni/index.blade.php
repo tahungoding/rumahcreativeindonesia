@@ -4,6 +4,10 @@
 {{ $title }}
 @endsection
 
+@section('breadcrumb')
+    {{Breadcrumbs::render('testimoni.index')}}
+@endsection
+
 @section('css')
 <!-- DataTables -->
 <link href="{{ asset('assets/back/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />

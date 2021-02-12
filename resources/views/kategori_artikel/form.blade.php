@@ -4,6 +4,14 @@
 {{ $title }}
 @endsection
 
+@section('breadcrumb')
+    @if (Request::segment(2) == 'create')
+        {{Breadcrumbs::render('kategori_artikel.create')}}
+    @else
+        {{Breadcrumbs::render('kategori_artikel.edit', $kategoriArtikel->id)}}
+    @endif
+@endsection
+
 @section('content')
 <div class="row">
     <div class="col-lg-12">

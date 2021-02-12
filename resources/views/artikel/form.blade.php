@@ -4,6 +4,14 @@
 {{ $title }}
 @endsection
 
+@section('breadcrumb')
+    @if (Request::segment(2) == 'create')
+        {{Breadcrumbs::render('artikel.create')}}
+    @else
+        {{Breadcrumbs::render('artikel.edit', $article->id)}}
+    @endif
+@endsection
+
 @section('content')
 <div class="row">
     <div class="col-lg-12">
@@ -37,9 +45,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Gambar</label>
+                        <label>Gambar</label><br>
+                        <img class="rounded img-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ isset($article) ? avatar($article->gambar) : avatar() }}" data-holder-rendered="true">
+                    </div>
+                    <div class="form-group">
                         <input type="file" class="filestyle" data-buttonname="btn-secondary" name="image"
-                            value="{{ $article->gambar ?? old('image') }}" @empty($article) required @endempty>
+                            value="{{ $article->gambar ?? old('image') }}" @empty($article) required @endempty onchange="filePreview(this)">
                         @error('image')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror

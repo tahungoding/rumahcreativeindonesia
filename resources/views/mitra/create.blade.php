@@ -3,6 +3,10 @@
     Mitra - Tambah
 @endsection
 
+@section('breadcrumb')
+    {{Breadcrumbs::render('mitra.create')}}
+@endsection
+
 @section('content')
 <div class="row">
     <div class="col-lg-12">
@@ -17,7 +21,7 @@
                 @endif
                 <form class="custom-validation" action="{{ $actionUrl }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    
+
                     <div class="form-group">
                         <label>Nama</label>
                         <input type="text" class="form-control" name="nama" value="{{ $mitra->nama ?? old('nama') }}"
@@ -38,10 +42,14 @@
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
+
                     <div class="form-group">
-                        <label>Logo</label>
+                        <label>Logo</label><br>
+                        <img class="rounded img-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ avatar() }}" data-holder-rendered="true">
+                    </div>
+                    <div class="form-group">
                         <input type="file" class="filestyle" data-buttonname="btn-secondary" name="logo"
-                            value="{{ $mitra->logo ?? old('logo') }}">
+                            value="{{ $mitra->logo ?? old('logo') }}" onchange="filePreview(this)">
                         @error('logo')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror

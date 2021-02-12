@@ -2,6 +2,11 @@
 @section('title')
     UMKM - Edit
 @endsection
+
+@section('breadcrumb')
+    {{Breadcrumbs::render('umkm.edit', $umkm->id)}}
+@endsection
+
 @section('css')
 <!-- Isi Library CSS -->
 @endsection
@@ -19,7 +24,7 @@
                     @isset($umkm)
                     @method('put')
                     @endisset
-                    
+
                     <div class="form-group">
                         <label>Kategori Mitra</label>
                         <select id="kategori_umkm" name="id_kategori_umkm" class="form-control">
@@ -38,6 +43,16 @@
                             required />
                         @error('nama')
                         <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label>Gambar</label><br>
+                        <img class="rounded img-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ isset($umkm) ? avatar($umkm->gambar) : avatar() }}" data-holder-rendered="true">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="gambar" id=""  onchange="filePreview(this)">
+                        @error('gambar')
+                            <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
                     <div class="form-group">

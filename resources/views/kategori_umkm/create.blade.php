@@ -2,6 +2,11 @@
 @section('title')
     Kategori UMKM - Tambah
 @endsection
+
+@section('breadcrumb')
+    {{Breadcrumbs::render('kategori_umkm.create')}}
+@endsection
+
 @section('css')
 <!-- Isi Library CSS -->
 @endsection

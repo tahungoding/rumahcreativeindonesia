@@ -63,6 +63,9 @@ class AgendaController extends Controller
         $data['agenda'] = Agenda::where('slug', $id)->first();
         $data['agendas'] = Agenda::whereDate('created_at', '<', date('Y-m-d H:i:s', strtotime(($data['agenda']->created_at))))->limit(5)->get();
         $data['title'] = $data['agenda']->nama_agenda;
+        $data['count_view'] = views($data['agenda'])->unique()->count();
+
+        views($data['agenda'])->record();
 
         return view('guest.agenda.detail', $data);
     }

@@ -4,6 +4,10 @@
 {{ $title }}
 @endsection
 
+@section('breadcrumb')
+    {{Breadcrumbs::render('kategori_artikel.index')}}
+@endsection
+
 @section('css')
 <!-- DataTables -->
 <link href="{{ asset('assets/back/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"
@@ -67,7 +71,15 @@
                         <tr>
                             <td>{{ $number++ }}</td>
                             <td>{{ $category->nama }}</td>
-                            <td>{{ $category->status }}</td>
+                            <td>
+                            @php
+                                if($category->status == 'aktif'){
+                                    echo '<span class="badge badge-success">Aktif</span>';
+                                }else{
+                                    echo '<span class="badge badge-danger">Tidak Aktif</span>';
+                                }
+                            @endphp   
+                            </td>
                             @if (Auth::user()->userLevel->nama == 'Admin')   
                                 <td>
                                     <div class="button-items">

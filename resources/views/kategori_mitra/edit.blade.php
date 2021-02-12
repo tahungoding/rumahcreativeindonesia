@@ -2,6 +2,11 @@
 @section('title')
     Kategori Mitra - Edit
 @endsection
+
+@section('breadcrumb')
+    {{Breadcrumbs::render('kategori_mitra.edit', $kategori_mitra->id)}}
+@endsection
+
 @section('css')
 <!-- Isi Library CSS -->
 @endsection

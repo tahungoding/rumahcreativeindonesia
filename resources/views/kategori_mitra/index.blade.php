@@ -2,6 +2,11 @@
 @section('title')
     Kategori Mitra
 @endsection
+
+@section('breadcrumb')
+    {{Breadcrumbs::render('kategori_mitra.index')}}
+@endsection
+
 @section('css')
     <!-- Isi Library CSS -->
     <!-- DataTables -->

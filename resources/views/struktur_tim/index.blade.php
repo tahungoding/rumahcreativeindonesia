@@ -4,6 +4,10 @@
 {{ $title }}
 @endsection
 
+@section('breadcrumb')
+    {{Breadcrumbs::render('struktur_tim.index')}}
+@endsection
+
 @section('css')
 <!-- DataTables -->
 <link href="{{ asset('assets/back/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
@@ -45,6 +49,7 @@
                             <th>Foto</th>
                             <th>Jabatan</th>
                             <th>Status</th>
+                            <th>Urutan</th>
                             @if (Auth::user()->userLevel->nama == 'Admin')
                             <th>Aksi</th>
                             @endif
@@ -60,7 +65,16 @@
                             <td>{{ $tm->nama }}</td>
                             <td><img class="d-flex align-self-center rounded" src="{{ avatar($tm->foto) }}" height="64"></td>
                             <td>{{ $tm->jabatan }}</td>
-                            <td>{{ $tm->status }}</td>
+                            <td>
+                            @php
+                                if($tm->status == 'aktif'){
+                                    echo '<span class="badge badge-success">Aktif</span>';
+                                }else{
+                                    echo '<span class="badge badge-danger">Tidak Aktif</span>';
+                                }
+                            @endphp   
+                            </td>
+                            <td>{{$tm->urutan}}</td>
                             @if (Auth::user()->userLevel->nama == 'Admin')
                                 <td>
                                     <div class="button-items">

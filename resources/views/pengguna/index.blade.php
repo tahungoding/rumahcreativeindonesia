@@ -4,6 +4,10 @@
 {{ $title }}
 @endsection
 
+@section('breadcrumb')
+    {{Breadcrumbs::render('user.index')}}
+@endsection
+
 @section('css')
 <!-- DataTables -->
 <link href="{{ asset('assets/back/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
@@ -66,14 +70,22 @@
                         <tr>
                             <td>{{ $number++ }}</td>
                             <td>
-                                <img class="d-flex align-self-center rounded" src="{{ avatar($user->foto) }}"
-                                    height="64">
+                                <img class="rounded-circle" alt="70x70" src="{{ avatar($user->foto) }}" width="70"
+                                        height="70" data-holder-rendered="true">
                             </td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->username }}</td>
                             <td>{{ $user->userLevel->nama }}</td>
-                            <td>{{ $user->status }}</td>
+                            <td>
+                            @php
+                                if($user->status == 'aktif'){
+                                    echo '<span class="badge badge-success">Aktif</span>';
+                                }else{
+                                    echo '<span class="badge badge-danger">Tidak Aktif</span>';
+                                }
+                            @endphp   
+                            </td>
                             @if (Auth::user()->userLevel->nama == 'Admin')
                                 <td>
                                     <div class="button-items">
