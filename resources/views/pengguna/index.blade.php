@@ -77,7 +77,15 @@
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->username }}</td>
                             <td>{{ $user->userLevel->nama }}</td>
-                            <td>{{ $user->status }}</td>
+                            <td>
+                            @php
+                                if($user->status == 'aktif'){
+                                    echo '<span class="badge badge-success">Aktif</span>';
+                                }else{
+                                    echo '<span class="badge badge-danger">Tidak Aktif</span>';
+                                }
+                            @endphp   
+                            </td>
                             @if (Auth::user()->userLevel->nama == 'Admin')
                                 <td>
                                     <div class="button-items">

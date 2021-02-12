@@ -71,7 +71,15 @@
                         <tr>
                             <td>{{ $number++ }}</td>
                             <td>{{ $category->nama }}</td>
-                            <td>{{ $category->status }}</td>
+                            <td>
+                            @php
+                                if($category->status == 'aktif'){
+                                    echo '<span class="badge badge-success">Aktif</span>';
+                                }else{
+                                    echo '<span class="badge badge-danger">Tidak Aktif</span>';
+                                }
+                            @endphp   
+                            </td>
                             @if (Auth::user()->userLevel->nama == 'Admin')   
                                 <td>
                                     <div class="button-items">

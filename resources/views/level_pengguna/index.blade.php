@@ -69,7 +69,15 @@
                         <tr>
                             <td>{{ $number++ }}</td>
                             <td>{{ $userLevel->nama }}</td>
-                            <td>{{ $userLevel->status }}</td>
+                            <td>
+                            @php
+                                if($userLevel->status == 'aktif'){
+                                    echo '<span class="badge badge-success">Aktif</span>';
+                                }else{
+                                    echo '<span class="badge badge-danger">Tidak Aktif</span>';
+                                }
+                            @endphp       
+                            </td>
                             <td>
                                 <div class="button-items">
                                     <a href="{{ route('user_level.edit', $userLevel) }}"

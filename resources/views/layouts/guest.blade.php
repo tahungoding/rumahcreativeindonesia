@@ -281,8 +281,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="copyright-text text-center">
-                            <span><a href="{{url('/')}}">Rumah CreativePreneur Indonesia</a> &copy; Copyright 2021.All rights
-                                reserved.</span>
+                            <span><a href="{{url('/')}}">Rumah CreativePreneur Indonesia</a> &copy; Copyright 2021. <br> Crafted with <i class="fa fa-heart text-warning"></i> by <a href="https://tahungoding.com/">TAHUNGODING.</a> </span>
                         </div>
                     </div>
                 </div>

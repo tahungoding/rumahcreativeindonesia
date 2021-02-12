@@ -178,6 +178,8 @@ return [
         // TinyMCE dengan File Manager
         UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+
+        CyrildeWit\EloquentViewable\EloquentViewableServiceProvider::class,
     ],
 
     /*

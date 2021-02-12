@@ -3,9 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use CyrildeWit\EloquentViewable\InteractsWithViews;
+use CyrildeWit\EloquentViewable\Contracts\Viewable;
 
-class Artikel extends Model
+class Artikel extends Model implements Viewable
 {
+
+    use InteractsWithViews;
+
     protected $table = "artikel";
     protected $fillable = [
         'judul',

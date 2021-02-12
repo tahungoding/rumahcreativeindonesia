@@ -59,7 +59,6 @@
                             <th>Judul</th>
                             <th>Kategori</th>
                             <th>Penulis</th>
-                            <th>Dilihat</th>
                             <th>Status</th>
                             <th>Tanggal Dibuat</th>
                             <th>Terakhir Diubah</th>
@@ -78,8 +77,15 @@
                             <td><a href="#">{{ $article->judul }}</a></td>
                             <td>{{ $article->category->nama }}</td>
                             <td>{{ $article->writer->name }}</td>
-                            <td>{{ $article->hits }}</td>
-                            <td>{{ $article->status }}</td>
+                            <td>
+                                @php
+                                    if($article->status == 'aktif'){
+                                        echo '<span class="badge badge-success">Aktif</span>';
+                                    }else{
+                                        echo '<span class="badge badge-danger">Tidak Aktif</span>';
+                                    }
+                                @endphp
+                            </td>
                             <td>{{ tgl_indo($article->created_at, true) }}</td>
                             <td>{{ tgl_indo($article->updated_at, true) }}</td>
                             @if (Auth::user()->userLevel->nama == 'Admin')

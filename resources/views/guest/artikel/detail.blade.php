@@ -55,8 +55,8 @@
                             <div class="post-tags mb-30">
                                 <ul class="list-inline">
                                     <br>
-                                    <li style="color: black">Status: </li>
-                                    <li><a href="#">{{$artikel->status}}</a></li>
+                                    <li style="color: black">Pengunjung: </li>
+                                    <li><a href="#">{{$count_view}} x dilihat</a></li>
                                 </ul>
                             </div>
                             <!-- Post Tags End -->

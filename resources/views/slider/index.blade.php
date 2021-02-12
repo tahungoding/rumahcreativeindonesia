@@ -57,7 +57,15 @@
                             <td><img class="d-flex align-self-center rounded" src="{{ avatar($tm->gambar) }}" height="64"></td>
                             <td>{{ $tm->deskripsi }}</td>
                             <td>{{ $tm->link }}</td>
-                            <td>{{ $tm->status }}</td>
+                            <td>
+                            @php
+                                if($tm->status == 'aktif'){
+                                    echo '<span class="badge badge-success">Aktif</span>';
+                                }else{
+                                    echo '<span class="badge badge-danger">Tidak Aktif</span>';
+                                }
+                            @endphp   
+                            </td>
                             <td>
                                 <div class="button-items">
                                     <a href="{{ route('slider.edit', $tm) }}" class="btn btn-outline-warning waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">

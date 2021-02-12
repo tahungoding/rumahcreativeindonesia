@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use CyrildeWit\EloquentViewable\InteractsWithViews;
+use CyrildeWit\EloquentViewable\Contracts\Viewable;
 
-class Agenda extends Model
+class Agenda extends Model implements Viewable
 {
-    use Sluggable;
+    use Sluggable, InteractsWithViews;
 
     protected $table = "agenda";
     

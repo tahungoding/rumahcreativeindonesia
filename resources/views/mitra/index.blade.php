@@ -61,7 +61,15 @@
                                 <img class="d-flex align-self-center rounded" src="{{ avatar($mitra->logo) }}"
                                 height="64">
                             </td>
-                            <td>{{ $mitra->status }}</td>
+                            <td>
+                            @php
+                                if($mitra->status == 'aktif'){
+                                    echo '<span class="badge badge-success">Aktif</span>';
+                                }else{
+                                    echo '<span class="badge badge-danger">Tidak Aktif</span>';
+                                }
+                            @endphp   
+                            </td>
                             <td>
                                 <div class="button-items">
                                     <a href="{{ route('mitra.edit', $mitra) }}"
