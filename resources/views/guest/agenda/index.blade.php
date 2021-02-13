@@ -21,7 +21,7 @@
         
         <section class="pt-120 pb-120">
             <div class="container">
-                <div class="row">
+                <div class="row" id="agenda-list">
                     <div class="col-12">
                         <div class="section-title text-center">
                             <h3>Rumah CreativePreneur Indonesia</h3>
@@ -36,9 +36,9 @@
                         <div class="project-nav text-center mb-30">
                             <div class="nav justify-content-center align-items-center">
                                 <ul class="project_filter list-inline">
-                                    <li class="{{(!isset($_GET['status'])) ? 'active' : null }}"><a href="/agendas" style="all: unset"><span class="filter-btn">Semua</span></a></li>
-                                    <li class="{{(isset($_GET['status'])) ? (($_GET['status'] == 'aktif') ? 'active' : null) : null }}"><a href="?status=aktif" style="all: unset"><span class="filter-btn">Yang Akan datang</span></a></li>
-                                    <li class="{{(isset($_GET['status'])) ? (($_GET['status'] == 'tidak aktif') ? 'active' : null) : null }}"><a href="?status=tidak aktif" style="all: unset"><span class="filter-btn">Selesai </span></a></li>
+                                    <li class="{{(!isset($_GET['status'])) ? 'active' : null }}"><a href="/agendas#agenda-list" style="all: unset"><span class="filter-btn">Semua</span></a></li>
+                                    <li class="{{(isset($_GET['status'])) ? (($_GET['status'] == 'aktif') ? 'active' : null) : null }}"><a href="?status=aktif#agenda-list" style="all: unset"><span class="filter-btn">Yang Akan datang</span></a></li>
+                                    <li class="{{(isset($_GET['status'])) ? (($_GET['status'] == 'tidak aktif') ? 'active' : null) : null }}"><a href="?status=tidak aktif#agenda-list" style="all: unset"><span class="filter-btn">Selesai </span></a></li>
         
                                 </ul>
                             </div>

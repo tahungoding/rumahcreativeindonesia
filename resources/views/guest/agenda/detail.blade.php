@@ -145,7 +145,7 @@
                             @foreach ($agendas as $item)
                             <div class="single-post">
                                 <div class="post-content">
-                                    <span class="posted-on">{{tgl_indo($item->created_at)}}</span>
+                                    <span class="posted-on">{{tgl_indo($item->tanggal_awal)}}</span>
                                     <h5><a href="{{url('agendas/'.$item->slug)}}">{{$item->nama_agenda}}</a></h5>
                                 </div>
                             </div>

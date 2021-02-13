@@ -5,7 +5,7 @@
 <!-- Slider Begin -->
 <section class="banner section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/slider-pattern.png">
     <!-- Banner Slider Begin -->
-    <div class="banner-slider owl-carousel d-flex align-items-center justify-content-center" data-owl-animate-in="fadeIn" data-owl-animate-Out="fadeOut" data-owl-autoplay="false" data-owl-dots="true">
+    <div class="banner-slider owl-carousel d-flex align-items-center justify-content-center" data-owl-animate-in="fadeIn" data-owl-animate-Out="fadeOut" data-owl-autoplay="true" data-owl-dots="true">
         @foreach ($slider as $item)
         <!-- Single Slide Begin -->
         <div class="single-banner-slider">
@@ -559,7 +559,7 @@
 <!-- Project Begin -->
 <section class="pt-120 pb-90 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/case-study-pattern.png" id="artikel">
     <div class="container">
-        <div class="row">
+        <div class="row" id="article-landing-page">
             <div class="col-12">
                 <!-- Section Title Begin -->
                 <div class="section-title text-center">
@@ -579,11 +579,11 @@
                     <div class="nav justify-content-center align-items-center">
                         <ul class="project_filter list-inline">
                             <li class="{{(!isset($_GET['kategori'])) ? 'active' : null }}">
-                                <span class="filter-btn"><a href="/" style="all: unset">All</a></span>
+                                <span class="filter-btn"><a href="/#article-landing-page" style="all: unset">All</a></span>
                             </li>
                             @foreach ($kategoriArtikel as $kategori)
                             <li class="{{(isset($_GET['kategori'])) ? (($_GET['kategori'] == $kategori->nama) ? 'active' : null) : null }}">
-                                <span class="filter-btn"><a href="?kategori={{ $kategori->nama }}" style="all: unset">{{ $kategori->nama }}</a></span>
+                                <span class="filter-btn"><a href="?kategori={{ $kategori->nama }}#article-landing-page" style="all: unset">{{ $kategori->nama }}</a></span>
                             </li>
                             @endforeach
                         </ul>
@@ -691,10 +691,10 @@
         <div class="row">
             <div class="col-12">
                 <!-- Partners -->
-                <div class="brand-logo owl-carousel" data-owl-items="{{$mitra->count()}}" data-owl-autoplay="false">
+                <div class="brand-logo owl-carousel" data-owl-items="4" data-owl-autoplay="true">
                     @foreach ($mitra as $item)
                     <a href="{{$item->link}}" class="single-brand-logo">
-                        <img src="{{avatar($item->logo)}}" data-rjs="2" alt="" style="max-height: 100px; object-fit:cover;">
+                        <img src="{{avatar($item->logo)}}" alt="" style="max-height: 100px; object-fit:cover;">
                     </a>
                     @endforeach
 

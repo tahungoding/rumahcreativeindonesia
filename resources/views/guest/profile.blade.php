@@ -287,7 +287,7 @@
                 <div class="row">
                     <div class="col-12">
                         <!-- Partners -->
-                        <div class="brand-logo owl-carousel" data-owl-items="4" data-owl-autoplay="false">
+                        <div class="brand-logo owl-carousel" data-owl-items="4" data-owl-autoplay="true">
                             @foreach ($mitra as $item)
                                 <a href="{{$item->link}}" class="single-brand-logo">
                                     <img src="{{avatar($item->logo)}}" alt="" style="max-height: 100px; object-fit:cover;">

@@ -89,7 +89,9 @@
                                 <!-- Team Image Begin -->
                                 <div class="image position-relative">
                         
-                                    <img src="{{avatar($item->logo)}} " data-rjs="2" alt="" style="width: 200px;height: 200px;object-fit: cover">
+                                    <button data-toggle="modal" id="detailUmkm" data-target="#modalUmkm" data-url="{{ url('mitras',['id'=>$item->id])}}">
+                                        <img src="{{avatar($item->logo)}} " data-rjs="2" alt="" style="width: 200px;height: 200px;object-fit: cover">
+                                      </button>
                                 </div>
                                 <!-- Team Image End -->
                                 
@@ -97,9 +99,6 @@
                                 <!-- Team Info End -->
                             </div>
                             
-                                <button data-toggle="modal" id="detailUmkm" data-target="#modalUmkm" data-url="{{ url('mitras',['id'=>$item->id])}}">
-                                    <h3>{{$item->nama}}</h3>
-                                  </button>
                              
                             <!-- Single Team End -->
                         </div>
