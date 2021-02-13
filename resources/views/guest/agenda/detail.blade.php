@@ -141,14 +141,22 @@
                         <!-- Widget Title End  -->
 
                         <!-- Single Related Post Begin -->
-                        @foreach ($agendas as $item)
-                        <div class="single-post">
-                            <div class="post-content">
-                                <span class="posted-on">{{tgl_indo($item->created_at)}}</span>
-                                <h5><a href="{{url('agendas/'.$item->slug)}}">{{$item->nama_agenda}}</a></h5>
+                        @if (!$agendas->isEmpty())
+                            @foreach ($agendas as $item)
+                            <div class="single-post">
+                                <div class="post-content">
+                                    <span class="posted-on">{{tgl_indo($item->created_at)}}</span>
+                                    <h5><a href="{{url('agendas/'.$item->slug)}}">{{$item->nama_agenda}}</a></h5>
+                                </div>
                             </div>
-                        </div>
-                        @endforeach
+                            @endforeach
+                        @else 
+                            <div class="single-post">
+                                <div class="post-content">
+                                    <i>Belum ada agenda selanjutnya</i>
+                                </div>
+                            </div>
+                        @endif
                         <!-- Single Related Post End -->
                     </div>
                     <!-- Widget Related Post End -->

@@ -102,7 +102,7 @@
 
                     <!-- Feature Content Begin -->
                     <div class="content">
-                        <h3>{{$item->nama_program}} </h3>
+                        <h3>{{$item->nama_program}}  </h3>
                         <p>{{$item->tanda}}</p>
                     </div>
                     <!-- Feature Content End -->
@@ -152,7 +152,7 @@
                         <div class="tab-pane fade show active" id="mission" role="tabpanel">
                             {!! \Str::limit($profile->misi, 200) !!}
                             <br>
-                            <a href="{{url('profile')}}" class="btn"><span>SELENGKAPNYA</span></a>
+                            <a href="{{url('profiles')}}" class="btn"><span>SELENGKAPNYA</span></a>
                         </div>
                         <!-- Mission Tab End -->
 
@@ -160,7 +160,7 @@
                         <div class="tab-pane fade" id="vission" role="tabpanel">
                             {!! \Str::limit($profile->visi, 200) !!}
                             <br>
-                            <a href="{{url('profile')}}" class="btn"><span>SEE MORE</span></a>
+                            <a href="{{url('profiles')}}" class="btn"><span>SEE MORE</span></a>
                         </div>
                         <!-- Vission Tab End -->
                     </div>

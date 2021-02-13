@@ -61,7 +61,7 @@ class AgendaController extends Controller
     public function show($id)
     {
         $data['agenda'] = Agenda::where('slug', $id)->first();
-        $data['agendas'] = Agenda::whereDate('created_at', '<', date('Y-m-d H:i:s', strtotime(($data['agenda']->created_at))))->limit(5)->get();
+        $data['agendas'] = Agenda::whereDate('created_at', '<', date('Y-m-d H:i:s', strtotime(($data['agenda']->created_at))))->where('status', '=', 'aktif')->limit(5)->get();
         $data['title'] = $data['agenda']->nama_agenda;
         $data['count_view'] = views($data['agenda'])->unique()->count();
 

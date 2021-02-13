@@ -143,7 +143,7 @@
         <div class="single-post">
             <div class="post-content">
                 <span class="posted-on">{{tgl_indo($item->created_at)}}</span>
-                <h5><a href="{{url('agendas/'.$item->slug)}}">{{$item->judul}}</a></h5>
+                <h5><a href="{{url('articles/'.$item->slug)}}">{{$item->judul}}</a></h5>
             </div>
         </div>
         @endforeach
