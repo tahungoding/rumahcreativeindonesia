@@ -639,7 +639,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row text-center">
             @foreach ($struktur_tim as $item)
             <div class="col-lg-4 col-sm-6">
                 <!-- Single Team Begin -->

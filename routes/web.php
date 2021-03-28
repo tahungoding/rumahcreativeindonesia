@@ -15,6 +15,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/setting', 'GuestController@setting')->name('setting.index');
     Route::patch('/setting', 'GuestController@setting_update')->name('setting.update');
     Route::put('/setting', 'GuestController@setting_password')->name('setting.password');
+    Route::post('/pelaku_umkm/import_excel', 'PelakuUmkmController@import_excel')->name('pelaku_umkm.import_excel');
+    Route::post('/pelaku_umkm/kabupaten_kota', 'PelakuUmkmController@kabupaten_kota')->name('pelaku_umkm.kabupaten_kota');
+    Route::post('/pelaku_umkm/kecamatan', 'PelakuUmkmController@kecamatan')->name('pelaku_umkm.kecamatan');
+    Route::post('/pelaku_umkm/desa_kelurahan', 'PelakuUmkmController@desa_kelurahan')->name('pelaku_umkm.desa_kelurahan');
     Route::resource('agenda', 'AgendaController');
     Route::resource('artikel', 'ArtikelController');
     Route::resource('home', 'HomeController');
@@ -27,6 +31,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('struktur_tim', 'StrukturTimController');
     Route::resource('testimoni', 'TestimoniController');
     Route::resource('umkm', 'UmkmController');
+    Route::resource('pelaku_umkm', 'PelakuUmkmController');
     Route::resource('user', 'UserController');
     Route::resource('user_level', 'UserLevelController');
     Route::resource('slider', 'SliderController');

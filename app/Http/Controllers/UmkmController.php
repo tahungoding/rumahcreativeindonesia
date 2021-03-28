@@ -167,9 +167,9 @@ class UmkmController extends Controller
     public function destroy(Umkm $umkm)
     {
         if ($umkm->delete()) {
-            return redirect('umkm')->with('success', 'Data Mitra berhasil dihapus!');
+            return redirect('umkm')->with('success', 'Data UMKM berhasil dihapus!');
         } else {
-            return redirect('umkm/create')->with('error', 'Data Mitra gagal dihapus!');
+            return redirect('umkm/create')->with('error', 'Data UMKM gagal dihapus!');
         }
     }
 }

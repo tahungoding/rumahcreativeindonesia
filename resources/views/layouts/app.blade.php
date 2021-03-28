@@ -154,7 +154,8 @@
                                             <i class="ti-rocket"></i>UMKM
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-left" aria-labelledby="topnav-email">
-                                            <a href="{{url('umkm')}}" class="dropdown-item">Data UMKM</a>
+                                            <a href="{{url('pelaku_umkm')}}" class="dropdown-item">Pelaku UMKM</a>
+                                            <a href="{{url('umkm')}}" class="dropdown-item">UMKM</a>
                                             <a href="{{url('kategori_umkm')}}" class="dropdown-item">Kategori UMKM</a>
                                         </div>
                                     </li>
