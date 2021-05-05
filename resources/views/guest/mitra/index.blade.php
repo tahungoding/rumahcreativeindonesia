@@ -55,11 +55,9 @@
                     <div class="col-12">
                         <!-- Section Title Begin -->
                         <div class="section-title text-center">
-                            <h3>List Mitra</h3>
+                            <h3>Mitra</h3>
                             <h2>Daftar Mitra</h2>
-                            <p>Ferrars all spirits his imagine effects amongst neither. It bachelor cheerful of mistaken. Tore
-                                has sons put upon wife
-                                use bred seen. Its dissimilar invitation ten has discretion unreserved.</p>
+                            <p>Dengan mengusung semangat kolaborasi dalam setiap langkah yang ditempuh, berikut adalah tim kolaborator yang telah menjadi mitra Rumah Creativepreneur Indonesia.</p>
                         </div>
                         <!-- Section Title End -->
                     </div>

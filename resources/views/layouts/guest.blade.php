@@ -215,6 +215,7 @@
                                 <li><a href="{{url('umkms')}}">UMKM</a></li>
                                 <li><a href="{{url('articles')}}">Artikel</a></li>
                                 <li><a href="{{url('mitras')}}">Mitra</a></li>
+                                <li><a href="{{url('campaign')}}">Donasi</a></li>
                             </ul>
                             <!-- Menu End -->
                         </div>

@@ -24,10 +24,9 @@
                 <div class="row" id="agenda-list">
                     <div class="col-12">
                         <div class="section-title text-center">
-                            <h3>Rumah CreativePreneur Indonesia</h3>
+                            <h3>Agenda</h3>
                             <h2>Daftar Agenda Kami</h2>
-                            <p>Mutual has cannot beauty indeed now sussex merely you. It possible no husbands jennings ye
-                                offended packages pleasant he. Remainder recommend who applauded departure joy.</p>
+                            <p>Kami percaya bahwa hanya dengan bergerak dan melakukan aksi nyata maka ide dan cita-cita akan terwujud. Berikut adalah kegiatan-kegiatan yang telah dan akan dilaksanakan oleh Rumah Creativeprenur Indonesia.</p>
                         </div>
                     </div>
                 </div>

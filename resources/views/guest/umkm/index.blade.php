@@ -55,11 +55,9 @@
                     <div class="col-12">
                         <!-- Section Title Begin -->
                         <div class="section-title text-center">
-                            <h3>List UMKM</h3>
+                            <h3>Usaha Mikro, Kecil, & Menengah (UMKM)</h3>
                             <h2>Daftar UMKM Binaan</h2>
-                            <p>Ferrars all spirits his imagine effects amongst neither. It bachelor cheerful of mistaken. Tore
-                                has sons put upon wife
-                                use bred seen. Its dissimilar invitation ten has discretion unreserved.</p>
+                            <p>UMKM adalah salah satu sektor yang menjadi penopang kuat dalam aspek kemajuan perekonomian negara. Rumah Creativepreneur Indonesia (RCI) sadar betul akan potensi yang bisa dikembangkan lebih jauh oleh para pelaku UMKM di Indonesia. Dengan demikan, RCI bertekad untuk bisa mendampingi para pelaku UMKM yang memerlukan pendampingan. Berikut adalah anggota UMKM Binaan RCI yang telah lolos melalui serangkaian tahapan seleksi.</p>
                         </div>
                         <!-- Section Title End -->
                     </div>

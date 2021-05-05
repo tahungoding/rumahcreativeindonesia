@@ -339,7 +339,7 @@
                         </div>
     
                         <div class="form-group">
-                            <label>Pesan</label><sup>(Optional)</sup>
+                            <label>Pesan untuk kampanye ini</label><sup>(Optional)</sup>
                             <input name="message" type="text" class="form-control">{{ $campaign_donor->message ?? old('message') }}
                             @error('amount')
                             <span class="text-danger">{{ $message }}</span>

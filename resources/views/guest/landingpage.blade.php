@@ -81,12 +81,8 @@
                 <!-- Section Title Begin -->
                 <div class="section-title">
                     <h3>Tentang Kami</h3>
-                    <h2>We’re Expertise & <br>
-                        Strategic Agency To Take <br>
-                        Care Of Your Business</h2>
-                    <p>Met defective are allowance two perceived listening consulted contained. It chicken oh
-                        colonel pressed excited suppose
-                        to shortly.</p>
+                    <h2>Berawal dari sebuah gagasan untuk berkontribusi membangun Indonesia melalui ekonomi kreatif</h2>
+                    <p>Kami melihat bahwa pemberdayaan Usaha Mikro, Kecil, & Menengah (UMKM) serta memaksimalkan potensi bonus demografi adalah jalan untuk mewujudkan hal tersebut.</p>
                 </div>
                 <!-- Section Title End -->
 
@@ -118,7 +114,7 @@
                         <div class="tab-pane fade" id="vission" role="tabpanel">
                             {!! \Str::limit($profile->visi, 200) !!}
                             <br>
-                            <a href="{{url('profiles')}}" class="btn"><span>SEE MORE</span></a>
+                            <a href="{{url('profiles')}}" class="btn"><span>SELENGKAPNYA</span></a>
                         </div>
                         <!-- Vission Tab End -->
                     </div>
@@ -348,17 +344,13 @@
                 <!-- Section Title Begin -->
                 <div class="section-title">
                     <h3>PRODUK</h3>
-                    <h2>We’re Providing <br>
-                        Best Solutions <br>
-                        For Your Business</h2>
-                    <p>We highest ye friends is exposed equally in. Ignorant had too strictly followed. Astonished
-                        as travelling assistance or
-                        unreserved oh pianoforte ye.</p>
+                    <h2>Menghadirkan Solusi adalah Salah Satu Semangat Nilai yang Selalu Kami Peruangkan</h2>
+                    <p>Kami menyediakan beberapa muara produk yang tentunya akan bermanfaat bagi seluruh pihak terkait yang terlibat.</p>
                 </div>
                 <!-- Section Title End -->
 
                 <!-- Button Begin -->
-                <a href="#" class="btn"><span>SELENGKAPNYA</span></a>
+                {{-- <a href="#" class="btn"><span>SELENGKAPNYA</span></a> --}}
                 <!-- Button End -->
             </div>
 
@@ -377,7 +369,7 @@
                             <div class="content">
                                 <h4>Aplikasi</h4>
                                 <p>Aplikasi ini akan menyediakan semua fitur kebutuhan para mitra UMKM binaan.</p>
-                                <a href="#" class="btn-inline">Read More</a>
+                                {{-- <a href="#" class="btn-inline">Read More</a> --}}
                             </div>
                             <!-- Content End -->
                         </div>
@@ -396,7 +388,7 @@
                             <div class="content">
                                 <h4>Event & Creative Media</h4>
                                 <p> Menciptakan perluasan pasar bagi seluruh mitra melalui event-event kreatif dan media kreatif.</p>
-                                <a href="#" class="btn-inline">Read More</a>
+                                {{-- <a href="#" class="btn-inline">Read More</a> --}}
                             </div>
                             <!-- Content End -->
                         </div>
@@ -415,7 +407,7 @@
                             <div class="content">
                                 <h4>Creative Mover Academy</h4>
                                 <p>Sekolah Kreatif yang sebagian besar diperuntukan bagi mereka yang memiliki concern di dunia kreatif.</p>
-                                <a href="#" class="btn-inline">Read More</a>
+                                {{-- <a href="#" class="btn-inline">Read More</a> --}}
                             </div>
                             <!-- Content End -->
                         </div>
@@ -434,7 +426,7 @@
                             <div class="content">
                                 <h4>Sistem Korporasi</h4>
                                 <p>Rumah Creativepreneur Indonesia berstatus sebagai yayasan yang mana akan ada beberapa perusahaan turunan yang dikelola dan dijalankan sebagai satu perusahaan besar.</p>
-                                <a href="#" class="btn-inline">Read More</a>
+                                {{-- <a href="#" class="btn-inline">Read More</a> --}}
                             </div>
                             <!-- Content End -->
                         </div>
@@ -501,11 +493,9 @@
             <div class="col-12">
                 <!-- Section Title Begin -->
                 <div class="section-title text-center">
-                    <h3>Case Studies</h3>
-                    <h2>Our Recent Project</h2>
-                    <p>Mutual has cannot beauty indeed now sussex merely you. It possible no husbands jennings ye
-                        offended packages pleasant
-                        he. Remainder recommend who applauded departure joy.</p>
+                    <h3>Artikel & Berita</h3>
+                    <h2>Agenda dan Kegiatan yang Telah Dilaksanakan</h2>
+                    <p>Berikut adalah beberapa berita serta tulisan yang memuat kegiatan-kegiatan yang telah dilaksanakan. </p>
                 </div>
                 <!-- Section Title End -->
             </div>
@@ -567,11 +557,9 @@
             <div class="col-12">
                 <!-- Section Title Begin -->
                 <div class="section-title text-center">
-                    <h3>Team Members</h3>
-                    <h2>Our Experts Team Members</h2>
-                    <p>Ferrars all spirits his imagine effects amongst neither. It bachelor cheerful of mistaken. Tore
-                        has sons put upon wife
-                        use bred seen. Its dissimilar invitation ten has discretion unreserved.</p>
+                    <h3>Founder</h3>
+                    <h2>Struktur Tim</h2>
+                    <p>Para pendiri terdiri dari kalangan pemerharti, profesional, & ahli di Bidang Ekonomi Kreatif dan Pemberdayaan Manusia.</p>
                 </div>
                 <!-- Section Title End -->
             </div>
