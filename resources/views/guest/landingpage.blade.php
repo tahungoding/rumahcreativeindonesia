@@ -38,57 +38,15 @@
 </section>
 <!-- Slider End -->
 
-<!-- Modal Form Begin -->
-<div class="appointment-modal modal fade" id="appointmentModalForm" tabindex="1" role="dialog" aria-labelledby="appointmentModalForm" aria-hidden="true">
-    <div class="modal-dialog d-flex align-items-center" role="document">
-        <div class="container">
-            <div class=" row justify-content-center">
-                <div class="col-lg-8 col-12">
-                    <!-- Modal Content Begin -->
-                    <div class="modal-content">
-                        <!-- Modal Close Button Begin -->
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <img src="{{asset('assets')}}/front/img/icons/close.svg" alt="">
-                        </button>
-                        <!-- End Modal Close End -->
-
-                        <!-- Appointment Form Begin -->
-                        <form action="#" method="POST" class="appointment-form">
-                            <h2 class="form-title">Request Appoinment</h2>
-                            <input class="theme-input-style" type="text" placeholder="Full Name">
-                            <input class="theme-input-style" type="email" placeholder="Email">
-                            <input class="theme-input-style" type="tel" placeholder="Phone">
-
-                            <select class="theme-input-style clearfix">
-                                <option value="" disabled="" selected="">Select purpose</option>
-                                <option value="01">Business</option>
-                                <option value="01">Consultancy</option>
-                            </select>
-
-                            <textarea class="theme-input-style" placeholder="Message"></textarea>
-
-                            <button class="btn" type="submit"><span>Send request</span></button>
-                        </form>
-                        <!-- End Appointment Form End -->
-                    </div>
-                    <!-- Modal Content End -->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal Form End -->
 
 <!-- Feature Begin -->
 <section class="pt-120 pb-90 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/feature-pattern.png">
     <div class="container">
         <div class="row justify-content-center">
             <div class="section-title text-center">
-                <h3>Rumah CreativePreneur Indonesia</h3>
+                <h3>Rumah Creativepreneur Indonesia</h3>
                 <h2>Program</h2>
-                <p>Delivered dejection necessary objection do mr prevailed. Mr feeling do chiefly cordial in do.
-                    Water timed folly right
-                    aware if oh truth. Imprudence attachment him his for sympathize.</p>
+                <p>Berikut adalah program-program Rumah Creativepreneur Indonesia yang berlandaskan pada konsep CSV <i>(Created Shared Value)</i>  dan CSR <i>(Corporate Social Responsibility)</i> </p>
             </div>
             @foreach ($program as $item)
             <div class="col-lg-3 col-md-3">
@@ -185,11 +143,9 @@
             <div class="col-12">
                 <!-- Section Title Begin -->
                 <div class="section-title text-center">
-                    <h3>Steps</h3>
+                    <h3>Rumah Creativepreneur Indonesia</h3>
                     <h2>Manfaat Bagi Mitra</h2>
-                    <p>Delivered dejection necessary objection do mr prevailed. Mr feeling do chiefly cordial in do.
-                        Water timed folly right
-                        aware if oh truth. Imprudence attachment him his for sympathize.</p>
+                    <p>Kami percaya bahwa dengan mengedepankan kolaborasi maka ekonomi kreatif akan menjadi bagian penting dalam mendongkrak ekonomi kerakyatan</p>
                 </div>
                 <!-- Section Title End -->
             </div>
@@ -269,6 +225,117 @@
                 <!-- Single Work Process End -->
             </div>
         </div>
+        <!-- Pricing NavTab Begin -->
+        <div class="pricing-navtab">
+            <!-- Pricing Nav Begin -->
+            <ul class="row nav nav-tabs" role="tablist">
+                <!-- Single Nav Begin -->
+                <li class="nav-item col-lg-4 col-sm-6">
+                    <a href="#personal" class="nav-link text-center active" data-toggle="tab" role="tab">
+                        <h4>Untuk</h4>
+                        <h3>Usaha Mikro, Kecil, dan Menengah</h3>
+                    </a>
+                </li>
+
+                <!-- Single Nav End -->
+
+                <!-- Single Nav Begin -->
+                <li class="nav-item col-lg-4 col-sm-6">
+                    <a href="#startup" class="nav-link text-center" data-toggle="tab" role="tab">
+                        <h4>Untuk</h4>
+                        <h3>Creative & Business
+                            Partner</h3>
+                    </a>
+                </li>
+                <!-- Single Nav End -->
+
+                <!-- Single Nav Begin -->
+                <li class="nav-item col-lg-4 col-sm-6">
+                    <a href="#business" class="nav-link text-center" data-toggle="tab" role="tab">
+                        <h4>Untuk</h4>
+                        <h3>Creative People
+                            Mover</h3>
+                    </a>
+                </li>
+                <!-- Single Nav End -->
+
+
+
+            </ul>
+            <!-- Pricing Nav End -->
+
+            <!-- Pricing Tab Content Begin -->
+            <div class="tab-content">
+                <!-- Single Content Begin -->
+                <div class="tab-pane fadeInUp animated show active" id="personal" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- Tab Pane Text Begin -->
+                            <div class="tab-pane-text">
+                                <h3>Diantaranya sebagai berikut :</h3>
+                                <ul class="list-unstyled list-check">
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Permodalan</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Pemasaran Produk</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Pelatihan Manajemen dan Skill</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Pendampingan Usaha</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Kemitraan</li>
+                                </ul>
+                            </div>
+                            <!-- Tab Pane Text End -->
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Single Content End -->
+
+                <!-- Single Content Begin -->
+                <div class="tab-pane fadeInUp animated" id="startup" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- Tab Pane Text Begin -->
+                            <div class="tab-pane-text">
+                                <h3>Diantaranya sebagai berikut :</h3>
+                                <ul class="list-unstyled list-check">
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Akses Pasar (UMKM)</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Jaringan Kemitraan</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Penyediaan SDM Kreatif</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Infrastruktur (Office) dan Sistem di daerah</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Akses Peluang Bisnis</li>
+                                </ul>
+                            </div>
+                            <!-- Tab Pane Text End -->
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Single Content End -->
+
+                <!-- Single Content Begin -->
+                <div class="tab-pane fadeInUp animated" id="business" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- Tab Pane Text Begin -->
+                            <div class="tab-pane-text">
+                                <h3>Diantaranya sebagai berikut :</h3>
+                                <ul class="list-unstyled list-check">
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Pelatihan Karakter dan Skills Kreatif</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Akses lapangan kerja dan
+                                        aktualisasi diri</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Jaringan</li>
+                                    <li><i class="fa fa-check" aria-hidden="true"></i> Peluang Wirausaha</li>
+                                </ul>
+                            </div>
+                            <!-- Tab Pane Text End -->
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Single Content End -->
+
+            </div>
+            <!-- Pricing Tab Content End -->
+        </div>
+        <!-- Pricing NavTab End -->
     </div>
 </section>
 <!-- Work Process End -->
@@ -425,135 +492,6 @@
 <!-- Counter End -->
 
 <!-- Pricing Plan Begin -->
-<section class="pt-120 pb-120 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/price-pattern.png">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <!-- Section Title Begin -->
-                <div class="section-title text-center">
-                    <h3>Rumah CreativePreneur Indonesia</h3>
-                    <h2>Manfaat Bagi Mitra</h2>
-                    <p>On recommend tolerably my belonging or am. Mutual has cannot beauty indeed now sussex merely
-                        you. It possible no
-                        husbands jennings ye offended packages pleasant he.</p>
-                </div>
-                <!-- Section Title End -->
-            </div>
-        </div>
-
-        <!-- Pricing NavTab Begin -->
-        <div class="pricing-navtab">
-            <!-- Pricing Nav Begin -->
-            <ul class="row nav nav-tabs" role="tablist">
-                <!-- Single Nav Begin -->
-                <li class="nav-item col-lg-4 col-sm-6">
-                    <a href="#personal" class="nav-link text-center active" data-toggle="tab" role="tab">
-                        <h4>Untuk</h4>
-                        <h3>Usaha Mikro, Kecil, dan Menengah</h3>
-                    </a>
-                </li>
-
-                <!-- Single Nav End -->
-
-                <!-- Single Nav Begin -->
-                <li class="nav-item col-lg-4 col-sm-6">
-                    <a href="#startup" class="nav-link text-center" data-toggle="tab" role="tab">
-                        <h4>Untuk</h4>
-                        <h3>Creative & Business
-                            Partner</h3>
-                    </a>
-                </li>
-                <!-- Single Nav End -->
-
-                <!-- Single Nav Begin -->
-                <li class="nav-item col-lg-4 col-sm-6">
-                    <a href="#business" class="nav-link text-center" data-toggle="tab" role="tab">
-                        <h4>Untuk</h4>
-                        <h3>Creative People
-                            Mover</h3>
-                    </a>
-                </li>
-                <!-- Single Nav End -->
-
-
-
-            </ul>
-            <!-- Pricing Nav End -->
-
-            <!-- Pricing Tab Content Begin -->
-            <div class="tab-content">
-                <!-- Single Content Begin -->
-                <div class="tab-pane fadeInUp animated show active" id="personal" role="tabpanel">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <!-- Tab Pane Text Begin -->
-                            <div class="tab-pane-text">
-                                <h3>Diantaranya sebagai berikut :</h3>
-                                <ul class="list-unstyled list-check">
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Permodalan</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Pemasaran Produk</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Pelatihan Manajemen dan Skill</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Pendampingan Usaha</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Kemitraan</li>
-                                </ul>
-                            </div>
-                            <!-- Tab Pane Text End -->
-                        </div>
-
-                    </div>
-                </div>
-                <!-- Single Content End -->
-
-                <!-- Single Content Begin -->
-                <div class="tab-pane fadeInUp animated" id="startup" role="tabpanel">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <!-- Tab Pane Text Begin -->
-                            <div class="tab-pane-text">
-                                <h3>Diantaranya sebagai berikut :</h3>
-                                <ul class="list-unstyled list-check">
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Akses Pasar (UMKM)</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Jaringan Kemitraan</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Penyediaan SDM Kreatif</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Infrastruktur (Office) dan Sistem di daerah</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Akses Peluang Bisnis</li>
-                                </ul>
-                            </div>
-                            <!-- Tab Pane Text End -->
-                        </div>
-
-                    </div>
-                </div>
-                <!-- Single Content End -->
-
-                <!-- Single Content Begin -->
-                <div class="tab-pane fadeInUp animated" id="business" role="tabpanel">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <!-- Tab Pane Text Begin -->
-                            <div class="tab-pane-text">
-                                <h3>Diantaranya sebagai berikut :</h3>
-                                <ul class="list-unstyled list-check">
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Pelatihan Karakter dan Skills Kreatif</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Akses lapangan kerja dan
-                                        aktualisasi diri</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Jaringan</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i> Peluang Wirausaha</li>
-                                </ul>
-                            </div>
-                            <!-- Tab Pane Text End -->
-                        </div>
-
-                    </div>
-                </div>
-                <!-- Single Content End -->
-
-            </div>
-            <!-- Pricing Tab Content End -->
-        </div>
-        <!-- Pricing NavTab End -->
-    </div>
-</section>
 <!-- Pricing Plan End -->
 
 <!-- Project Begin -->

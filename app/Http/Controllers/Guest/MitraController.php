@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Mitra;
+use App\PrologMitra;
 
 class MitraController extends Controller
 {
@@ -17,6 +18,7 @@ class MitraController extends Controller
     {
         $data['title'] = "Mitra";
         $data['mitra'] = Mitra::all();
+        $data['prolog_mitra'] = PrologMitra::all();
 
         return view('guest.mitra.index', $data);
     }

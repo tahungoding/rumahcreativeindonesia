@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.2.5|^8.0",
         "azishapidin/indoregion": "2.2.2",
+        "ckeditor/ckeditor": "^4.16",
         "cviebrock/eloquent-sluggable": "^7.0",
         "cyrildewit/eloquent-viewable": "^6.0",
         "davejamesmiller/laravel-breadcrumbs": "5.x",
@@ -17,6 +18,7 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3.1|^7.0.1",
+        "jorenvanhocht/laravel-share": "^4.0",
         "laravel/framework": "^7.29",
         "laravel/helpers": "^1.4",
         "laravel/tinker": "^2.5",

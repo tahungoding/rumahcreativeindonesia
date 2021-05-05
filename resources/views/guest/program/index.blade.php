@@ -24,11 +24,9 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="section-title text-center">
-                        <h3>Rumah CreativePreneur Indonesia</h3>
+                        <h3>Rumah Creativepreneur Indonesia</h3>
                         <h2> Program Kami</h2>
-                        <p>Delivered dejection necessary objection do mr prevailed. Mr feeling do chiefly cordial in do.
-                            Water timed folly right
-                            aware if oh truth. Imprudence attachment him his for sympathize.</p>
+                        <p>Berikut adalah program-program Rumah Creativepreneur Indonesia yang berlandaskan pada konsep CSV <i>(Created Shared Value)</i>  dan CSR <i>(Corporate Social Responsibility)</i> </p>
                     </div>
                     
                     @foreach ($program as $item)

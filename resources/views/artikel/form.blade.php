@@ -58,7 +58,7 @@
                    
                     <div class="form-group">
                         <label>Konten</label>
-                        <textarea class="form-control my-editor" rows="10" name="content">{{ $article->konten ?? old('content') }}</textarea>
+                        <textarea class="form-control" id="my-ckeditor" rows="10" name="content">{{ $article->konten ?? old('content') }}</textarea>
                         @error('content')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -119,48 +119,37 @@
 <!-- end row -->
 @endsection
 
+@section('css')
+    <script type="text/javascript" src="{{ asset('ckeditor/ckeditor.js')}}"></script>
+@endsection
+
 @section('js')
 <script src="{{ asset('assets/back/libs/parsleyjs/parsley.min.js') }}"></script>
 <script src="{{ asset('assets/back/js/pages/form-validation.init.js') }}"></script>
 <script src="{{ asset('assets/back/libs/admin-resources/bootstrap-filestyle/bootstrap-filestyle.min.js') }}"></script>
-<!--tinymce js-->
-{{-- <script src="{{ asset('assets/back/libs/tinymce/tinymce.min.js') }}"></script> --}}
-<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+
+<script>CKEDITOR.replace( 'my-ckeditor', {
+    filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+    filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+    filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+    filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+});</script>
 <script>
-    var editor_config = {
-    path_absolute : "/",
-    selector: "textarea.my-editor",
-    plugins: [
-      "advlist autolink lists link image charmap print preview hr anchor pagebreak",
-      "searchreplace wordcount visualblocks visualchars code fullscreen",
-      "insertdatetime media nonbreaking save table contextmenu directionality",
-      "emoticons template paste textcolor colorpicker textpattern"
-    ],
-    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
-    relative_urls: false,
-    file_browser_callback : function(field_name, url, type, win) {
-      var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
-      var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
- 
-      var cmsURL = editor_config.path_absolute + 'laravel-filemanager?field_name=' + field_name;
-      if (type == 'image') {
-        cmsURL = cmsURL + "&type=Images";
-      } else {
-        cmsURL = cmsURL + "&type=Files";
-      }
- 
-      tinyMCE.activeEditor.windowManager.open({
-        file : cmsURL,
-        title : 'Filemanager',
-        width : x * 0.8,
-        height : y * 0.8,
-        resizable : "yes",
-        close_previous : "no"
-      });
+        function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('#thumbnail-preview').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
     }
-  };
- 
-  tinymce.init(editor_config);
+    
+    $("#thumbnail").change(function(){
+        readURL(this);
+    });
 </script>
 <!-- init js -->
 <script src="{{ asset('assets/back/js/pages/form-editor.init.js') }}"></script>

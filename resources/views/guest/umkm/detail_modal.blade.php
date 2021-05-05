@@ -21,26 +21,36 @@
 <div>
     {{$umkm->telepon}}
 </div>
-<h4 for="">Instagram</h4>
-<div>
-    {{$umkm->instagram}}
-</div>
-<h4 for="">Pemilik</h4>
-<div>
-    {{$umkm->pemilik}}
-</div>
-<h4 for="">Shopee</h4>
-<div>
-    {{$umkm->shopee}}
-</div>
-<h4 for="">Tokopedia</h4>
-<div>
-    {{$umkm->tokopedia}}
-</div>
-<h4 for="">Bukalapak</h4>
-<div>
-    {{$umkm->bukalapak}}
-</div>
+@if (!empty($umkm->instagram))
+    <h4 for="">Instagram</h4>
+    <div>
+        {{$umkm->instagram}}
+    </div>
+@endif
+@if (!empty($umkm->pemilik))
+    <h4 for="">Pemilik</h4>
+    <div>
+        {{$umkm->pemilik}}
+    </div>
+@endif
+@if (!empty($umkm->shopee))
+    <h4 for="">Shopee</h4>
+    <div>
+        {{$umkm->shopee}}
+    </div>
+@endif
+@if (!empty($umkm->tokopedia))
+    <h4 for="">Tokopedia</h4>
+    <div>
+        {{$umkm->tokopedia}}
+    </div>
+@endif
+@if (!empty($umkm->bukalapak))
+    <h4 for="">Bukalapak</h4>
+    <div>
+        {{$umkm->bukalapak}}
+    </div>
+@endif
 </div>
 <div class="modal-footer">
 <button type="button" data-dismiss="modal">Close</button>

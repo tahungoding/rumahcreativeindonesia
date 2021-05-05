@@ -74,7 +74,7 @@
                         @foreach ($articles as $article)
                         <tr>
                             <td>{{ $number++ }}</td>
-                            <td><a href="#">{{ $article->judul }}</a></td>
+                            <td><a href="{{route('articles.show',$article->slug)}}">{{ $article->judul }}</a></td>
                             <td>{{ $article->category->nama }}</td>
                             <td>{{ $article->writer->name }}</td>
                             <td>

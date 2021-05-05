@@ -32,7 +32,7 @@
 
                     <div class="form-group">
                         <label>Foto</label><br>
-                        <img class="rounded img-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ isset($tim) ? avatar($tim->foto) : avatar() }}" data-holder-rendered="true">
+                        <img class="rounded img-preview mr-2 mo-mb-2"  style="width:200px;height:200px;object-fit:cover;" src="{{ isset($tim) ? avatar($tim->foto) : avatar() }}" data-holder-rendered="true">
                     </div>
                     <div class="form-group">
                         <input type="file" class="filestyle" data-buttonname="btn-secondary" name="foto" id="" onchange="filePreview(this)">
@@ -52,7 +52,7 @@
                     <div class="form-group">
                         <label><i class="fab fa-facebook"></i> Facebook</label>
                         <input type="text" class="form-control" name="facebook" placeholder="Masukan username facebook"
-                            value="{{ $tim->facebook ?? old('facebook') }}" required />
+                            value="{{ $tim->facebook ?? old('facebook') }}" />
                         @error('facebook')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
@@ -61,7 +61,7 @@
                     <div class="form-group">
                         <label><i class="fab fa-twitter"></i> Twitter</label>
                         <input type="text" class="form-control" name="twitter" placeholder="Masukan username twitter"
-                            value="{{ $tim->twitter ?? old('twitter') }}" required />
+                            value="{{ $tim->twitter ?? old('twitter') }}" />
                         @error('twitter')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
@@ -70,7 +70,7 @@
                     <div class="form-group">
                         <label><i class="fab fa-linkedin"></i> Linkedin</label>
                         <input type="text" class="form-control" name="linkedin" placeholder="Masukan username linkedin"
-                            value="{{ $tim->linkedin ?? old('linkedin') }}" required />
+                            value="{{ $tim->linkedin ?? old('linkedin') }}" />
                         @error('linkedin')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
@@ -79,7 +79,7 @@
                     <div class="form-group">
                         <label><i class="fab fa-instagram"></i> Instagram</label>
                         <input type="text" class="form-control" name="instagram" placeholder="Masukan username instagram"
-                            value="{{ $tim->instagram ?? old('instagram') }}" required />
+                            value="{{ $tim->instagram ?? old('instagram') }}" />
                         @error('instagram')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror

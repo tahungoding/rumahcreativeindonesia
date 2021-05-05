@@ -89,7 +89,7 @@
                                             <i class="ti-pencil"></i></a>
 
                                         <form action="{{ route('kategori_artikel.destroy', $category) }}" method="post"
-                                            onsubmit="return confirm('Yakin hapus data ini?')" style="display: inline">
+                                            onsubmit="return confirm('Yakin hapus data ini? Dengan menghapus data ini, anda akan menghapus semua yang berhubungan dengan data ini.')" style="display: inline">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-outline-danger waves-effect waves-light"

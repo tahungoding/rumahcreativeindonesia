@@ -7,8 +7,12 @@ Route::get('/profiles', 'GuestController@profiles')->name('profiles');
 Route::resource('programs', 'Guest\ProgramController');
 Route::resource('agendas', 'Guest\AgendaController');
 Route::resource('umkms', 'Guest\UmkmController');
+Route::get('list-umkms', 'Guest\ListUmkmController@index');
+Route::get('list-umkms-data', 'Guest\ListUmkmController@data');
 Route::resource('articles', 'Guest\ArtikelController');
 Route::resource('mitras', 'Guest\MitraController');
+Route::resource('campaign', 'Guest\CampaignController');
+Route::post('campaign/{slug}', 'Guest\CampaignController@show');
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -35,6 +39,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('user', 'UserController');
     Route::resource('user_level', 'UserLevelController');
     Route::resource('slider', 'SliderController');
+    Route::resource('prolog_umkm', 'PrologUmkmController');
+    Route::resource('prolog_mitra', 'PrologMitraController');
+    Route::resource('donasi', 'DonasiController');
+    Route::resource('donasi_akun', 'DonasiAkunController');
+    Route::resource('donatur', 'DonaturController');
+    Route::resource('kategori_donasi_akun', 'KategoriDonasiAkunController');
 });
 
 Auth::routes();

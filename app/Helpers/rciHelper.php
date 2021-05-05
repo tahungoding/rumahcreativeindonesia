@@ -26,5 +26,5 @@ function tgl_indo($datetime, $withTime = false, $withDay = false)
 
 function avatar($path = null)
 {
-    return ($path) ? Storage::url($path) : asset('assets/back/images/logo-sm.png');
+    return ($path) ? Storage::url($path) : asset('assets/noimage.png');
 }

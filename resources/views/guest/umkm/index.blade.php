@@ -19,51 +19,35 @@
         </section>
         <!-- Page Title End -->
         <!-- About Section Begin -->
-        <section class="pt-120 pb-120">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-3">
-                        <img src="{{asset('assets/front/img/case-study-about.jpg')}}" class="rounded-circle" data-rjs="2" alt="">
-                    </div>
-                    <div class="col-lg-9">
-                        <!-- Section Title Begin -->
-                        <div class="section-title mb-50 mb-lg-0">
-                            <h3>What We’ve Done</h3>
-                            <h2>We Work All Over The <br>
-                                World With Company</h2>
-                            <p>Enjoyed minutes related on fanny dried as often me. Goodness as reserved raptures to mistaken steepest oh he. Gravity he
-                            mr sixteen esteems. Mile home new way with high said. Finished horrible blessing landlord dwelling dissuade if. Rent
-                            fond am he in on read. Anxious cordial demands settled entered in do to colonel landlord dwelling dissuade.</p>
+        <?php $count = 1; ?>
+        @foreach ($prolog_umkm as $prol)
+            <section class="pt-120 pb-120">
+                <div class="container">
+                    <div class="row align-items-center">
+                        @if ($count%1==0)
+                        <div class="col-lg-3">
+                            <img src="{{avatar($prol->gambar)}}" style="width:540px;height:250px;object-fit:cover;" class="rounded-circle" data-rjs="2" alt="">
                         </div>
-                        <!-- Section Title End -->
+                        @endif
+                        <div class="col-lg-9">
+                            <!-- Section Title Begin -->
+                            <div class="section-title mb-50 mb-lg-0 <?=($count%2==0)?'text-right':null;?> ">
+                                <h3>{{$prol->notice}}</h3>
+                                <h2>{{$prol->judul}}</h2>
+                                {!! $prol->deskripsi !!}
+                            </div>
+                            <!-- Section Title End -->
+                        </div>
+                        @if ($count%2==0)
+                        <div class="col-lg-3">
+                            <img src="{{avatar($prol->gambar)}}" style="width:540px;height:250px;object-fit:cover;" class="rounded-circle" data-rjs="2" alt="">
+                        </div>
+                        @endif
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- About Section End -->
-        <!-- About Section Begin -->
-        <section class="pt-120 pb-120">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-9">
-                        <!-- Section Title Begin -->
-                        <div class="section-title mb-50 mb-lg-0 text-right">
-                            <h3>What We’ve Done</h3>
-                            <h2>We Work All Over The <br>
-                                World With Company</h2>
-                            <p>Enjoyed minutes related on fanny dried as often me. Goodness as reserved raptures to mistaken steepest oh he. Gravity he
-                            mr sixteen esteems. Mile home new way with high said. Finished horrible blessing landlord dwelling dissuade if. Rent
-                            fond am he in on read. Anxious cordial demands settled entered in do to colonel landlord dwelling dissuade.</p>
-                        </div>
-                        <!-- Section Title End -->
-                    </div>
-
-                    <div class="col-lg-3">
-                        <img src="{{asset('assets/front/img/case-study-about.jpg')}}" class="rounded-circle" data-rjs="2" alt="">
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
+            <?php $count++; ?>
+        @endforeach
         <!-- About Section End -->
         <section class="pt-120 pb-70 section-pattern" data-bg-img="http://rumahcreativeindonesia.test/assets/front/img/section-pattern/testimonial-pattern.png">
             <div class="container">
@@ -82,7 +66,9 @@
                 </div>
         
                 <div class="row">
+                    <?php $count = 1; ?>
                     @foreach ($umkm as $item)
+                        <?php if($count == 9) break; ?>
                         <div class="col-lg-3 col-sm-4 text-center mb-3">
                             <!-- Single Team Begin -->
                             <div class="single-team-member ">
@@ -90,7 +76,7 @@
                                 <div class="image position-relative">
                         
                                     <button data-toggle="modal" id="detailUmkm" data-target="#modalUmkm" data-url="{{ url('umkms',['id'=>$item->id])}}">
-                                        <img src="{{avatar($item->gambar)}} " data-rjs="2" alt="" style="width: 200px;height: 200px;object-fit: cover">
+                                        <img src="{{avatar($item->gambar)}} " data-rjs="2" alt="" style="width: 200px;height: 200px;object-fit: cover" title="Lihat detail">
                                       </button>
                                 </div>
                                 <!-- Team Image End -->
@@ -102,8 +88,14 @@
                              
                             <!-- Single Team End -->
                         </div>
+                    <?php $count++?>
                     @endforeach
                 </div>
+                @if (count($umkm) > 4)
+                    <div class="text-center">
+                        <a href="{{url('list-umkms')}}" class="btn btn-primary"><span>Lihat Selengkapnya</span></a>
+                    </div>
+                @endif
             </div>
         </section>
         <!-- Modal -->

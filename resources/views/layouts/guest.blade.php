@@ -38,6 +38,8 @@
     <!-- ======= Custom Stylesheet ======= -->
     <link rel="stylesheet" href="{{asset('assets/front/css/custom.css')}}" />
 
+    @yield('css')
+
     <script type="text/javascript"
         src="https://platform-api.sharethis.com/js/sharethis.js#property=60162321fe6fa50012b7b860&product=inline-share-buttons"
     async="async"></script>
@@ -338,6 +340,7 @@
 
     <!-- ======= Custom JS ======= -->
     <script src="{{asset('assets/front/js/custom.js')}}"></script>
+    <script src="{{ asset('js/share.js') }}"></script>
 
     @yield('js')
 

@@ -49,6 +49,7 @@
 )}(jQuery);
 
 function filePreview(input, previewField = '.img-preview') {
+    $('#img-preview').show();
     if (input.files && input.files[0]) {
         var reader = new FileReader();
 

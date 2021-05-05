@@ -126,33 +126,49 @@ Breadcrumbs::for('testimoni.edit', function ($trail, $testimoni) {
 // UMKM
 Breadcrumbs::for('umkm.index', function ($trail) {
     $trail->parent('home');
-    $trail->push('Umkm', route('umkm.index'));
+    $trail->push('UMKM', route('umkm.index'));
 });
 
 Breadcrumbs::for('umkm.create', function ($trail) {
     $trail->parent('umkm.index');
-    $trail->push('Tambah Umkm', route('umkm.create'));
+    $trail->push('Tambah UMKM', route('umkm.create'));
 });
 
 Breadcrumbs::for('umkm.edit', function ($trail, $umkm) {
     $trail->parent('umkm.index', $umkm);
-    $trail->push('Ubah Umkm', route('umkm.edit', $umkm));
+    $trail->push('Ubah UMKM', route('umkm.edit', $umkm));
 });
 
 // Kategori UMKM
 Breadcrumbs::for('kategori_umkm.index', function ($trail) {
     $trail->parent('home');
-    $trail->push('Kategori Umkm', route('kategori_umkm.index'));
+    $trail->push('Kategori UMKM', route('kategori_umkm.index'));
 });
 
 Breadcrumbs::for('kategori_umkm.create', function ($trail) {
     $trail->parent('kategori_umkm.index');
-    $trail->push('Tambah Kategori Umkm', route('kategori_umkm.create'));
+    $trail->push('Tambah Kategori UMKM', route('kategori_umkm.create'));
 });
 
 Breadcrumbs::for('kategori_umkm.edit', function ($trail, $kategori_umkm) {
     $trail->parent('kategori_umkm.index', $kategori_umkm);
-    $trail->push('Ubah Kategori Umkm', route('kategori_umkm.edit', $kategori_umkm));
+    $trail->push('Ubah Kategori UMKM', route('kategori_umkm.edit', $kategori_umkm));
+});
+
+// Prolog UMKM
+Breadcrumbs::for('prolog_umkm.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Prolog UMKM', route('prolog_umkm.index'));
+});
+
+Breadcrumbs::for('prolog_umkm.create', function ($trail) {
+    $trail->parent('prolog_umkm.index');
+    $trail->push('Tambah Prolog UMKM', route('prolog_umkm.create'));
+});
+
+Breadcrumbs::for('prolog_umkm.edit', function ($trail, $prolog_umkm) {
+    $trail->parent('prolog_umkm.index', $prolog_umkm);
+    $trail->push('Ubah Prolog UMKM', route('prolog_umkm.edit', $prolog_umkm));
 });
 
 // Artikel
@@ -219,8 +235,88 @@ Breadcrumbs::for('kategori_mitra.edit', function ($trail, $kategori_mitra) {
     $trail->push('Ubah Kategori Mitra', route('kategori_mitra.edit', $kategori_mitra));
 });
 
+// Prolog Mitra
+Breadcrumbs::for('prolog_mitra.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Prolog Mitra', route('prolog_mitra.index'));
+});
+
+Breadcrumbs::for('prolog_mitra.create', function ($trail) {
+    $trail->parent('prolog_mitra.index');
+    $trail->push('Tambah Prolog Mitra', route('prolog_mitra.create'));
+});
+
+Breadcrumbs::for('prolog_mitra.edit', function ($trail, $prolog_mitra) {
+    $trail->parent('prolog_mitra.index', $prolog_mitra);
+    $trail->push('Ubah Prolog Mitra', route('prolog_mitra.edit', $prolog_mitra));
+});
+
 // KPengaturan
 Breadcrumbs::for('setting.index', function ($trail) {
     $trail->parent('home');
     $trail->push('Pengaturan', route('setting.index'));
+});
+
+// Donasi
+Breadcrumbs::for('donasi.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Donasi', route('donasi.index'));
+});
+
+Breadcrumbs::for('donasi.create', function ($trail) {
+    $trail->parent('donasi.index');
+    $trail->push('Tambah Donasi', route('donasi.create'));
+});
+
+Breadcrumbs::for('donasi.edit', function ($trail, $donasi) {
+    $trail->parent('donasi.index', $donasi);
+    $trail->push('Ubah Donasi', route('donasi.edit', $donasi));
+});
+
+// Kategori Donasi Akun
+Breadcrumbs::for('kategori_donasi_akun.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Kategori Donasi Akun', route('kategori_donasi_akun.index'));
+});
+
+Breadcrumbs::for('kategori_donasi_akun.create', function ($trail) {
+    $trail->parent('kategori_donasi_akun.index');
+    $trail->push('Tambah Kategori Donasi Akun', route('kategori_donasi_akun.create'));
+});
+
+Breadcrumbs::for('kategori_donasi_akun.edit', function ($trail, $kategori_donasi_akun) {
+    $trail->parent('kategori_donasi_akun.index', $kategori_donasi_akun);
+    $trail->push('Ubah Kategori Donasi Akun', route('kategori_donasi_akun.edit', $kategori_donasi_akun));
+});
+
+// Donasi Akun
+Breadcrumbs::for('donasi_akun.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Donasi Akun', route('donasi_akun.index'));
+});
+
+Breadcrumbs::for('donasi_akun.create', function ($trail) {
+    $trail->parent('donasi_akun.index');
+    $trail->push('Tambah Donasi Akun', route('donasi_akun.create'));
+});
+
+Breadcrumbs::for('donasi_akun.edit', function ($trail, $donasi_akun) {
+    $trail->parent('donasi_akun.index', $donasi_akun);
+    $trail->push('Ubah Donasi Akun', route('donasi_akun.edit', $donasi_akun));
+});
+
+// Donatur
+Breadcrumbs::for('donatur.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Donatur', route('donatur.index'));
+});
+
+Breadcrumbs::for('donatur.create', function ($trail) {
+    $trail->parent('donatur.index');
+    $trail->push('Tambah Donatur', route('donatur.create'));
+});
+
+Breadcrumbs::for('donatur.edit', function ($trail, $donatur) {
+    $trail->parent('donatur.index', $donatur);
+    $trail->push('Ubah Donatur', route('donatur.edit', $donatur));
 });

@@ -5,10 +5,11 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable,SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -51,5 +52,14 @@ class User extends Authenticatable
     public function userLevel()
     {
         return $this->belongsTo(UserLevel::class, 'id_level', 'id');
+    }
+
+    public static function boot() {
+        parent::boot();
+        static::deleting(function($user) {
+            $user->articles->each(function($articles) {
+                $articles->delete();
+            });
+        });
     }
 }

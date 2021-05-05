@@ -140,6 +140,7 @@ class ProgramController extends Controller
         $data['icon'] = $path_icon;
         $data['gambar'] = $path_gambar;
         $data['deskripsi'] = $request->deskripsi;
+        $data['tanda'] = $request->tanda;
         $data['status'] = $request->status;
 
         if ($program->update($data)) {

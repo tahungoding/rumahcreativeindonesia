@@ -157,6 +157,7 @@
                                             <a href="{{url('pelaku_umkm')}}" class="dropdown-item">Pelaku UMKM</a>
                                             <a href="{{url('umkm')}}" class="dropdown-item">UMKM</a>
                                             <a href="{{url('kategori_umkm')}}" class="dropdown-item">Kategori UMKM</a>
+                                            <a href="{{url('prolog_umkm')}}" class="dropdown-item">Prolog UMKM</a>
                                         </div>
                                     </li>
 
@@ -169,7 +170,7 @@
                                             <a href="{{url('kategori_artikel')}}" class="dropdown-item">Kategori Artikel</a>
                                         </div>
                                     </li>
-
+                                    
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-email" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="ti-support"></i>Mitra
@@ -177,6 +178,19 @@
                                         <div class="dropdown-menu dropdown-menu-left" aria-labelledby="topnav-email">
                                             <a href="{{url('mitra')}}" class="dropdown-item">Data Mitra</a>
                                             <a href="{{url('kategori_mitra')}}" class="dropdown-item">Kategori Mitra</a>
+                                            <a href="{{url('prolog_mitra')}}" class="dropdown-item">Prolog Mitra</a>
+                                        </div>
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-email" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="ti-money"></i>Donasi
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="topnav-email">
+                                            <a href="{{url('donasi')}}" class="dropdown-item">Donasi</a>
+                                            <a href="{{url('donasi_akun')}}" class="dropdown-item">Akun</a>
+                                            <a href="{{url('donatur')}}" class="dropdown-item">Donatur</a>
+                                            <a href="{{url('kategori_donasi_akun')}}" class="dropdown-item">Kategori Akun</a>
                                         </div>
                                     </li>
                                 </ul>

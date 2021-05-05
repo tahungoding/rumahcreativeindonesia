@@ -26,7 +26,7 @@
                         <!-- Section Title Begin -->
                         <div class="section-title text-center">
                             {{-- <h3>Hallo Indonesia</h3> --}}
-                            <h2>Later Belakang</h2>
+                            <h2>Latar Belakang</h2>
                             {{-- <p>Met defective are allowance two perceived listening consulted contained. It chicken oh colonel
                                 pressed
                                 excited suppose to shortly.</p> --}}

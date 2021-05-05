@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Umkm;
+use App\PrologUmkm;
 
 class UmkmController extends Controller
 {
@@ -17,6 +18,7 @@ class UmkmController extends Controller
     {
         $data['title'] = "UMKM";
         $data['umkm'] = Umkm::all();
+        $data['prolog_umkm'] = PrologUmkm::all();
 
         return view('guest.umkm.index', $data);
     }
