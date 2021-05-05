@@ -99,6 +99,7 @@
                                 </li>
                                 <li class="{{($uris == 'articles') ? $activeMenu : null}}"><a href="{{url('articles')}}">Artikel</a></li>
                                 <li class="{{($uris == 'mitras') ? $activeMenu : null}}"><a href="{{url('mitras')}}">Mitra</a></li>
+                                <li class="{{($uris == 'campaign') ? $activeMenu : null}}"><a href="{{url('campaign')}}">Donasi</a></li>
                             </ul>
                             <!-- Offcanvas Holder Trigger -->
                             <span class="offcanvas-trigger text-right d-none d-lg-block">
