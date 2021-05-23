@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <img src="{{avatar($item->gambar)}}" data-rjs="2" alt="">
+               <a ><img class="roundedrci" src="{{avatar($item->gambar)}}" data-rjs="2" alt=""></a> 
             </div>
 
             <div class="col-lg-6">

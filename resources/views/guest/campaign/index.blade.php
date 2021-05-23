@@ -1,4 +1,4 @@
-@extends('layouts.guest');
+@extends('layouts.guest')
 
 @section('content')
 <section class="page-title-bg pt-250 pb-100" data-bg-img="{{asset('assets/front/img/section-pattern/page-title.png')}}">
@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title text-center">
-                    <h2>Campaign</h2>
+                    <h2  style="font-size: 35px;">Campaign</h2>
                     <ul class="list-inline">
                         <li><a href="index.html">Beranda</a></li>
                         <li>Campaign</li>
@@ -19,49 +19,78 @@
 <!-- Page Title End -->
 
 <!-- About Section Begin -->
-<section class="pt-120 pb-120">
+<section class="pt-120 pb-20">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <!-- Section Title Begin -->
                 <div class="section-title text-center">
-                    <h3>Rumah Creative Preneur</h3>
-                    <h2>Mari bersama saling menguatkan<br>
-                        Gotong Royong membangun kemanunisiaan</h2>
-                    <p>Rumah Creativepreneur Indonesia ( RCI ) berkolaborasi dengan PT Bisnis Cukur Nusantara ,
-                        Sawala Foundation , dan TDA Sumedang memiliki gagasan Bersama untuk menciptakan ekosistem
-                        positif yang membantu para kelompok Difabel
-                        Melalui pengadaan dan pelatihan usaha Barber & Coffee Shop dengan pelaku tenaga kerja dan
-                        usaha dari kelompok difabel , diharapkan dapat menjadi media produktif dan motivasi bagi
-                        kaum disabilitas
-                        Pengumpulan dana untuk fasilitas kerja dilakukan secara crowdfunding dengan melibatkan
-                        seluruh lapisan masyarakat yang peduli akan membangun dunia yang lebih baik bagi kaum
-                        disabilitas
-                    </p>
+                    <div class="row">
+                        <div class="col-7 text-left">
+                            <h3>Rumah Creativepreneur Indonesia</h3>
+                                <h2  style="font-size: 35px;">Mari bersama saling menguatkan 
+                                    Gotong Royong membangun kemanunisiaan</h2>
+                                <p >Rumah Creativepreneur Indonesia ( RCI ) berkolaborasi dengan PT Bisnis Cukur Nusantara ,
+                                    Sawala Foundation , dan TDA Sumedang memiliki gagasan Bersama untuk menciptakan ekosistem
+                                    positif yang membantu para kelompok Difabel
+                                    Melalui pengadaan dan pelatihan usaha Barber & Coffee Shop dengan pelaku tenaga kerja dan
+                                    usaha dari kelompok difabel , diharapkan dapat menjadi media produktif dan motivasi bagi
+                                    kaum disabilitas
+                                    Pengumpulan dana untuk fasilitas kerja dilakukan secara crowdfunding dengan melibatkan
+                                    seluruh lapisan masyarakat yang peduli akan membangun dunia yang lebih baik bagi kaum
+                                    disabilitas
+                                </p>
+                            </div>
+                            <div class="col-5">
+                                <br><br>
+                                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                      <div class="carousel-item active">
+                                        <img class="d-block w-100" src="{{asset('assets/front/img/campaign/campaign-1.jpeg')}}" alt="First slide">
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img class="d-block w-100" src="{{asset('assets/front/img/campaign/campaign-2.jpeg')}}" alt="Second slide">
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img class="d-block w-100" src="{{asset('assets/front/img/campaign/campaign-3.jpeg')}}" alt="Third slide">
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img class="d-block w-100" src="{{asset('assets/front/img/campaign/campaign-4.jpeg')}}" alt="Forth slide">
+                                      </div>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Next</span>
+                                    </a>
+                                  </div>
+                            </div>
+                        </div>
                 </div>
                 <!-- Section Title End -->
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-12">
-                <img src="{{asset('assets/front/img/solid.jpeg')}}" data-rjs="2" alt="">
-            </div>
-        </div>
-
-
     </div>
 </section>
 
 <!-- Work Process Begin -->
-<section class="pt-120 pb-70 section-pattern" data-bg-img="{{asset('assets/front/img/section-pattern/work-process-pattern.png')}}">
+<section class="pb-20 section-pattern" data-bg-img="{{asset('assets/front/img/section-pattern/work-process-pattern.png')}}">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <!-- Section Title Begin -->
                 <div class="section-title text-center">
                     <h3>Rumah Creativepreneur Indonesia</h3>
-                    <h2>Konsep Program</h2>
+                    <h2  style="font-size: 35px;">Konsep Program</h2>
                     <!-- Section Title End -->
                 </div>
             </div>
@@ -148,14 +177,14 @@
 
 
 <!-- Service Begin -->
-<section class="pt-120 pb-90">
+<section class="pb-20">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <!-- Section Title Begin -->
                 <div class="section-title text-center">
                     <h3>Rumah Creativepreneur Indonesia</h3>
-                    <h2>Manfaat dan Tujuan Program
+                    <h2  style="font-size: 35px;">Manfaat dan Tujuan Program
                     </h2>
                     <p>Kegiatan ini akan memberikan manfaat dan memberikan dampak untuk <br>Teman Difabel sebagai
                         berikut</p>
@@ -245,21 +274,31 @@
 <!-- Service End -->
 
 <!-- Pricing Plan Begin -->
-<section class="pt-120 pb-120 section-pattern" data-bg-img="{{asset('assets/front/img/section-pattern/price-pattern.png')}}">
+<section class="pb-50 section-pattern" data-bg-img="{{asset('assets/front/img/section-pattern/price-pattern.png')}}">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <!-- Section Title Begin -->
                 <div class="section-title text-center">
                     <h3>Rumah Creativepreneur Indonesia</h3>
-                    <h2>Berkolaborasi dengan dengan PT. Bisnis Cukur Nusantara</h2>
-                    <p>untuk mendapatkan hasil maksimal kami berkolaborasi dengan Perusahan yang expert di
-                        bidangnya, dengan latar belakang sebagai berikut </p>
+                    <h2  style="font-size: 35px;">Berkolaborasi dengan PT. Bisnis Cukur Nusantara <br> dan TDA Sumedang</h2>
+                    
                 </div>
                 <!-- Section Title End -->
             </div>
         </div>
         <div class="row">
+            <div class="col-4">
+                <img src="{{asset('assets/front/img/logo/RCI.png')}}" style="width:100%;height:150px;object-fit:contain" alt="">
+            </div>
+            <div class="col-4">
+                <img src="{{asset('assets/front/img/logo/PT BISNIS CUKUR.png')}}" style="width:100%;height:150px;object-fit:contain" alt="">
+            </div>
+            <div class="col-4">
+                <img src="{{asset('assets/front/img/logo/TDA.png')}}" style="width:100%;height:100px;object-fit:contain" alt="">
+            </div>
+        </div>
+        {{-- <div class="row">
             <div class="col-lg-6">
                 <!-- Tab Pane Text Begin -->
                 <div class="tab-pane-text">
@@ -312,7 +351,8 @@
                 </div>
                 <!-- Tab Pane Text End -->
             </div>
-        </div>
+        </div> --}}
+        
     </div>
 </section>
 <!-- Pricing Plan End -->
@@ -320,7 +360,7 @@
 
 <!-- About Section End -->
 <!-- Blog Begin -->
-<section class="pt-120 pb-120">
+<section class="pt-120 pb-20">
     <div class="container">
 
         <div class="row">
@@ -328,7 +368,7 @@
                 <!-- Section Title Begin -->
                 <div class="section-title text-center">
                     <h3>Rumah Creativepreneur Indonesia</h3>
-                    <h2>Daftar Calon Penerima Bantuan</h2>
+                    <h2  style="font-size: 35px;">Daftar Calon Penerima Bantuan</h2>
                     <p>Mari bersama saling membantu teman difabel mewujudkan impiannya <br>dengan cara berkolaborasi dan berdonasi </p>
                 </div>
                 <!-- Section Title End -->

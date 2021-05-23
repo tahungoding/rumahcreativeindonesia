@@ -13,6 +13,8 @@ Route::resource('articles', 'Guest\ArtikelController');
 Route::resource('mitras', 'Guest\MitraController');
 Route::resource('campaign', 'Guest\CampaignController');
 Route::post('campaign/{slug}', 'Guest\CampaignController@show');
+Route::get('daftar-umkms', 'Guest\UmkmController@daftar');
+Route::post('daftar-umkms', 'Guest\UmkmController@store_daftar')->name('daftar-umkm-post');
 
 
 Route::group(['middleware' => 'auth'], function () {

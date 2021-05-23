@@ -63,7 +63,13 @@
                         <tr>
                             <td>{{ $number++ }}</td>
                             <td>{{ $umkm->kategori_umkm['nama'] }}</td>
-                            <td>{{ $umkm->nama }}</td>
+                            <td>{{ $umkm->nama }} 
+                                @if ($umkm->status == 'Terverifikasi')
+                                    <i class="fa fa-check text-success" title="Terverifikasi"></i> 
+                                @else
+                                    <i class="fa fa-spinner text-warning" title="Belum diverifikasi"></i> 
+                                @endif
+                            </td>
                             <td><img class="d-flex align-self-center rounded" src="{{ avatar($umkm->gambar) }}" height="64"></td>
                             <td>{{ $umkm->alamat }}</td>
                             <td>{{ $umkm->telepon }}</td>

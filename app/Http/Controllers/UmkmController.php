@@ -71,6 +71,7 @@ class UmkmController extends Controller
         $umkmData['tokopedia']        = $request->tokopedia;
         $umkmData['bukalapak']        = $request->bukalapak;
         $umkmData['gambar']           = $path;
+        $umkmData['status']           = 'Terverifikasi';
 
         if (Umkm::create($umkmData)) {
             return redirect('umkm')->with('success', 'Data UMKM berhasil ditambahkan!');
@@ -127,7 +128,7 @@ class UmkmController extends Controller
             'shopee'           => "required",
             'tokopedia'        => "required",
             'bukalapak'        => "required",
-            'gambar'           => 'required|mimes:png,jpg|max:2048'
+            'status'           => "required",
         ]);
 
         $umkm = Umkm::findOrFail($id);
@@ -149,6 +150,7 @@ class UmkmController extends Controller
         $umkmData['tokopedia']        = $request->tokopedia;
         $umkmData['bukalapak']        = $request->bukalapak;
         $umkmData['gambar']           = $path;
+        $umkmData['status']           = $request->status;
 
 
         if ($umkm->update($umkmData)) {

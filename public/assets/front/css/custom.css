@@ -1,0 +1,15 @@
+@charset "UTF-8";
+.roundedrci {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    border-top-left-radius: 20px;
+    border-top-right-radius : 60px;
+    border-bottom-left-radius : 80px;
+    border-bottom-right-radius : 20px;
+    
+  }
+  
+.roundedrci:hover {
+-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+filter: grayscale(0%);
+}

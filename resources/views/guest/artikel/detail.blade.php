@@ -29,7 +29,7 @@
                 <div class="blog-details">
                     <!-- Blog Details Image Begin -->
                     <div class="blog-details-image">
-                        <img src="{{avatar($artikel->gambar)}}" data-rjs="2" alt="">
+                       <a href=""><img class="roundedrci" src="{{avatar($artikel->gambar)}}" data-rjs="2" alt=""></a> 
                     </div>
                     <!-- Blog Details Image End -->
 
@@ -123,12 +123,6 @@
     </form>
     </div> --}}
     <!-- Widget Search End -->
-
-    <!-- Widget Ad Begin -->
-    <div class="widget widget_ad">
-        <img src="{{asset('assets/front/img/widget_ad.png')}}" data-rjs="2" alt="">
-    </div>
-    <!-- Widget Ad End -->
 
     <!-- Widget Related Post Begin -->
     <div class="widget widget_related_post">

@@ -67,7 +67,7 @@
                     </div>
                     <!-- Video Area -->
                     <div class="col-lg-5 video-area mt-50 mt-lg-0">
-                        <img src="{{avatar($profile['visi_img'])}}" data-rjs="2" alt="" style="max-height: 500px;">
+                        <a><img class="roundedrci" src="{{avatar($profile['visi_img'])}}" data-rjs="2" alt="" style="max-height: 500px;"></a> 
                         {{-- <a href="#" class="vdo-btn popup-video"><img src="{{asset('assets/front/img/icons/play.svg')}}" class="svg" alt=""> Watch
                             Video</a> --}}
                     </div>
@@ -82,7 +82,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <img src="{{avatar($profile['misi_img'])}}" data-rjs="2" class="w-100" alt="">
+                       <a><img class="roundedrci" src="{{avatar($profile['misi_img'])}}" data-rjs="2" class="w-100" alt=""></a> 
                     </div>
 
                     <div class="col-lg-6">
@@ -256,7 +256,7 @@
                                 <div class="col-md-5">
                                     <!-- Testimonial Image Begin -->
                                     <div class="testimonial-image mb-50 mb-md-0">
-                                        <img src="{{avatar($item->gambar)}}" data-rjs="2" alt="" style="width: 435px;height: 391px;object-fit: cover">
+                                       <a><img class="roundedrci" src="{{avatar($item->gambar)}}" data-rjs="2" alt="" style="width: 435px;height: 391px;object-fit: cover"></a> 
                                     </div>
                                     <!-- Testimonial Image End -->
                                 </div>

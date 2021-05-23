@@ -1,4 +1,4 @@
-@extends('layouts.guest');
+@extends('layouts.guest')
 
 @section('content')
         <!-- Page Title Begin -->
@@ -65,14 +65,14 @@
         
                 <div class="row">
                     @foreach ($mitra as $item)
-                        <div class="col-lg-3 col-sm-4 text-center mb-3">
+                        <div class="col-lg-2 col-sm-3 text-center mb-3">
                             <!-- Single Team Begin -->
                             <div class="single-team-member ">
                                 <!-- Team Image Begin -->
                                 <div class="image position-relative">
                         
                                     <button data-toggle="modal" id="detailUmkm" data-target="#modalUmkm" data-url="{{ url('mitras',['id'=>$item->id])}}">
-                                        <img src="{{avatar($item->logo)}} " data-rjs="2" alt="" style="width: 200px;height: 200px;object-fit: cover">
+                                        <img src="{{avatar($item->logo)}} " data-rjs="2" alt="" style="width: 200px;height: 200px;object-fit: contain">
                                       </button>
                                 </div>
                                 <!-- Team Image End -->
@@ -80,8 +80,6 @@
                                 <!-- Team Info Begin -->
                                 <!-- Team Info End -->
                             </div>
-                            
-                             
                             <!-- Single Team End -->
                         </div>
                     @endforeach

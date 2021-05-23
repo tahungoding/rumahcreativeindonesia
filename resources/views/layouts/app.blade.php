@@ -31,7 +31,7 @@
                     <div class="float-left">
                         <!-- LOGO -->
                         <div class="navbar-brand-box">
-                            <a href="index.html" class="logo logo-dark">
+                            <a href="{{url('home')}}" class="logo logo-dark">
                                 <span class="logo-sm">
                                     <img src="{{asset('assets/front')}}/img/logo.png" alt="" height="70">
                                 </span>
@@ -40,7 +40,7 @@
                                 </span>
                             </a>
 
-                            <a href="index.html" class="logo logo-light">
+                            <a href="{{url('home')}}" class="logo logo-light">
                                 <span class="logo-sm">
                                     <img src="{{asset('assets/back')}}/images/logo-sm.png" alt="" height="22">
                                 </span>

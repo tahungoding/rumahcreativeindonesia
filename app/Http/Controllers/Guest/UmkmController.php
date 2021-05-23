@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Umkm;
 use App\PrologUmkm;
+use App\KategoriUmkm;
 
 class UmkmController extends Controller
 {
@@ -17,7 +18,7 @@ class UmkmController extends Controller
     public function index()
     {
         $data['title'] = "UMKM";
-        $data['umkm'] = Umkm::all();
+        $data['umkm'] = Umkm::where('status', '=', 'Terverifikasi')->get();
         $data['prolog_umkm'] = PrologUmkm::all();
 
         return view('guest.umkm.index', $data);
@@ -89,5 +90,49 @@ class UmkmController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function daftar(){
+        $data['title'] = "Daftar UMKM";
+        $data['actionUrl']  = route('daftar-umkm-post');
+        $data['kategori_umkms']     = KategoriUmkm::all();
+
+        return view('guest.umkm.daftar', $data);
+    }
+
+    public function store_daftar(Request $request){
+        $request->validate([
+            'id_kategori_umkm' => "required",
+            'nama'             => "required",
+            'alamat'           => "required",
+            'telepon'          => "required",
+            'instagram'        => "required",
+            'pemilik'          => "required",
+            'shopee'           => "required",
+            'tokopedia'        => "required",
+            'bukalapak'        => "required",
+            'gambar'           => 'required|mimes:png,jpg|max:2048'
+        ]);
+
+        $path = ($request->gambar)
+        ? $request->file('gambar')->store("/public/images/umkm") : Null;
+            
+        $umkmData['id_kategori_umkm'] = $request->id_kategori_umkm;
+        $umkmData['nama']             = $request->nama;
+        $umkmData['alamat']           = $request->alamat;
+        $umkmData['telepon']          = $request->telepon;
+        $umkmData['instagram']        = $request->instagram;
+        $umkmData['pemilik']          = $request->pemilik;
+        $umkmData['shopee']           = $request->shopee;
+        $umkmData['tokopedia']        = $request->tokopedia;
+        $umkmData['bukalapak']        = $request->bukalapak;
+        $umkmData['gambar']           = $path;
+        $umkmData['status']           = 'Belum Diverifikasi';
+
+        if (Umkm::create($umkmData)) {
+            return redirect('daftar-umkms')->with('success', 'Terimakasih sudah mendaftarkan UMKM anda, kami akan segera memverifikasinya !');
+        } else {
+            return redirect('daftar-umkms/create')->with('error', 'Data UMKM gagal ditambahkan!');
+        }
     }
 }

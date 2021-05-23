@@ -24,7 +24,7 @@
                     <div class="col-lg-6">
                         <!-- Banner Content Begin -->
                         <div class="banner-image mt-50 mt-lg-0 text-center text-lg-right">
-                            <img src="{{avatar($item->gambar)}}" data-rjs="2" alt="">
+                            <a><img class="roundedrci" style="width: 500px;object-fit:cover;" src="{{avatar($item->gambar)}}" data-rjs="2" alt=""></a>
                         </div>
                         <!-- Banner Content End -->
                     </div>
@@ -123,7 +123,7 @@
                 <!-- About Tabs End -->
             </div>
             <div class="col-lg-5 video-area mt-50 mt-lg-0">
-                <img src="{{avatar($profile->visi_img)}}" data-rjs="2" alt="" style="max-height: 500px;">
+                <a><img class="roundedrci" src="{{avatar($profile->visi_img)}}" data-rjs="2" alt="" style="max-height: 500px;"></a> 
                 {{-- <a href="#" class="vdo-btn popup-video"><img src="{{asset('assets')}}/front/img/icons/play.svg" class="svg" alt=""> Watch
                 Video</a> --}}
             </div>
@@ -528,7 +528,7 @@
                 <div class="single-project-item">
                     <!-- Project Image Begin -->
                     <div class="image">
-                        <img src="{{ Storage::url($item->gambar) }}" data-rjs="2" alt="">
+                        <a href="{{url('articles',$item->slug)}}"><img style="cursor: pointer" class="roundedrci" src="{{ Storage::url($item->gambar) }}" style="width:100%;height:350px;object-fit: contain;" data-rjs="2" alt=""></a> 
                     </div>
                     <!-- Project Image End -->
 
@@ -616,11 +616,22 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <!-- Section Title Begin -->
+                <div class="section-title text-center">
+                    <h3>Mitra</h3>
+                    <h2>Rumah Creativepreneur Indonesia</h2>
+                    <p>Dengan mengusung semangat kolaborasi dalam setiap langkah yang ditempuh, berikut adalah tim kolaborator yang telah menjadi mitra Rumah Creativepreneur Indonesia.</p>
+                </div>
+                <!-- Section Title End -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
                 <!-- Partners -->
                 <div class="brand-logo owl-carousel" data-owl-items="4" data-owl-autoplay="true">
                     @foreach ($mitra as $item)
                     <a href="{{$item->link}}" class="single-brand-logo">
-                        <img src="{{avatar($item->logo)}}" alt="" style="max-height: 100px; object-fit:cover;">
+                        <img src="{{avatar($item->logo)}}" alt="" style="max-height: 100px; object-fit:contain;">
                     </a>
                     @endforeach
 

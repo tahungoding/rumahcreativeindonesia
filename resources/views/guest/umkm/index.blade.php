@@ -1,4 +1,4 @@
-@extends('layouts.guest');
+@extends('layouts.guest')
 
 @section('content')
         <!-- Page Title Begin -->
@@ -57,7 +57,8 @@
                         <div class="section-title text-center">
                             <h3>Usaha Mikro, Kecil, & Menengah (UMKM)</h3>
                             <h2>Daftar UMKM Binaan</h2>
-                            <p>UMKM adalah salah satu sektor yang menjadi penopang kuat dalam aspek kemajuan perekonomian negara. Rumah Creativepreneur Indonesia (RCI) sadar betul akan potensi yang bisa dikembangkan lebih jauh oleh para pelaku UMKM di Indonesia. Dengan demikan, RCI bertekad untuk bisa mendampingi para pelaku UMKM yang memerlukan pendampingan. Berikut adalah anggota UMKM Binaan RCI yang telah lolos melalui serangkaian tahapan seleksi.</p>
+                            <p>UMKM adalah salah satu sektor yang menjadi penopang kuat dalam aspek kemajuan perekonomian negara. Rumah Creativepreneur Indonesia (RCI) sadar betul akan potensi yang bisa dikembangkan lebih jauh oleh para pelaku UMKM di Indonesia. Dengan demikan, RCI bertekad untuk bisa mendampingi para pelaku UMKM yang memerlukan pendampingan. Berikut adalah anggota UMKM Binaan RCI yang telah lolos melalui serangkaian tahapan seleksi.</p> 
+                            
                         </div>
                         <!-- Section Title End -->
                     </div>
@@ -67,14 +68,14 @@
                     <?php $count = 1; ?>
                     @foreach ($umkm as $item)
                         <?php if($count == 9) break; ?>
-                        <div class="col-lg-3 col-sm-4 text-center mb-3">
+                        <div class="col-lg-2 col-sm-3 text-center mb-3">
                             <!-- Single Team Begin -->
                             <div class="single-team-member ">
                                 <!-- Team Image Begin -->
                                 <div class="image position-relative">
                         
                                     <button data-toggle="modal" id="detailUmkm" data-target="#modalUmkm" data-url="{{ url('umkms',['id'=>$item->id])}}">
-                                        <img src="{{avatar($item->gambar)}} " data-rjs="2" alt="" style="width: 200px;height: 200px;object-fit: cover" title="Lihat detail">
+                                        <img src="{{avatar($item->gambar)}} " data-rjs="2" alt="" style="width: 200px;height: 200px;object-fit: contain" title="Lihat detail">
                                       </button>
                                 </div>
                                 <!-- Team Image End -->
@@ -94,6 +95,7 @@
                         <a href="{{url('list-umkms')}}" class="btn btn-primary"><span>Lihat Selengkapnya</span></a>
                     </div>
                 @endif
+                <p class="text-center">Tertarik bergabung ? daftar <a href="{{url('daftar-umkms')}}" target="_blank">disini</a></p>
             </div>
         </section>
         <!-- Modal -->

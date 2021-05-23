@@ -111,6 +111,16 @@
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select name="status" class="form-control">
+                            <option value="Terverifikasi" {{($umkm->status == 'Terverifikasi') ? 'selected' : null}}>Terverifikasi</option>
+                            <option value="Belum Diverifikasi" {{($umkm->status == 'Belum Diverifikasi') ? 'selected' : null}}>Belum Diverifikasi</option>
+                        </select>
+                        @error('kategori_umkm')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
                     <div class="form-group mb-0">
                         <div>
                             <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
