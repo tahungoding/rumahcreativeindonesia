@@ -37,7 +37,7 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <img src="{{avatar($profile['latar_belakang_img'])}}" data-rjs="2" alt="" style="width: 1112px;height: 460px;object-fit: cover" >
+                        <img class="roundedrci" src="{{avatar($profile['latar_belakang_img'])}}" data-rjs="2" alt="" style="width: 1112px;height: 460px;object-fit: cover" >
                     </div>
                 </div>
 
@@ -158,7 +158,7 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <img src="{{avatar($profile['model_konsep_img'])}}" data-rjs="2" alt="" style="width: 1112px;height: 460px;object-fit: cover">
+                        <img class="roundedrci" src="{{avatar($profile['model_konsep_img'])}}" data-rjs="2" alt="" style="width: 1112px;height: 460px;object-fit: cover">
                     </div>
                 </div>
 
@@ -194,7 +194,7 @@
                                 <!-- Team Image Begin -->
                                 <div class="image position-relative">
 
-                                    <img src="{{avatar($item->foto)}}" data-rjs="2" alt="" style="width: 348px;height: 283px;object-fit: cover">
+                                    <img class="roundedrci" src="{{avatar($item->foto)}}" data-rjs="2" alt="" style="width: 348px;height: 283px;object-fit: cover">
                                 </div>
                                 <!-- Team Image End -->
 
@@ -290,7 +290,7 @@
                         <div class="brand-logo owl-carousel" data-owl-items="4" data-owl-autoplay="true">
                             @foreach ($mitra as $item)
                                 <a href="{{$item->link}}" class="single-brand-logo">
-                                    <img src="{{avatar($item->logo)}}" alt="" style="max-height: 100px; object-fit:cover;">
+                                    <img src="{{avatar($item->logo)}}" alt="" style="max-height: 100px; object-fit:contain;">
                                 </a>
                             @endforeach
 

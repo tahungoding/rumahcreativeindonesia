@@ -96,7 +96,7 @@
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label>Model Konsep</label>
                         <div>
                             <textarea required class="form-control tiny" rows="5" name="model_konsep">{{ $profile->model_konsep ?? old('model_konsep') }}</textarea>
@@ -104,10 +104,10 @@
                             <span class="text-danger">{{ $message}}</span>
                             @enderror
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="form-group">
-                        <label>Model Konsep Gambar</label><br>
+                        <label>Kekuatan Gambar</label><br>
                         <img class="rounded konsep-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ isset($profile) ? avatar($profile->model_konsep_img) : avatar() }}" data-holder-rendered="true">
                     </div>
                     <div class="form-group">

@@ -379,6 +379,7 @@
             <div class="col-12">
                 <div class="row">
                     @foreach ($campaigns as $item)
+                    <a href="dasdad">
                         <div class="col-md-6">
                             <!-- Single Blog Item Begin -->
                             <div class="single-blog-style--two position-relative">
@@ -396,7 +397,7 @@
                                 <!-- Blog Image End -->
 
                                 <!-- Blog Content Begin -->
-                                
+                            </a>
                                 <div class="blog-content border border-hover">
                                     {{-- <p class="category"><a href="#">Barbershop</a></p> --}}
 

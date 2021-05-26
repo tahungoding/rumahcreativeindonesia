@@ -153,12 +153,12 @@ class DonasiController extends Controller
         $donasiData = [
             'title'               => $request->title,
             'slug'                => Str::slug($request->title),
-            'thumbnail'           => $rab,
+            'thumbnail'           => $path,
             'description'         => $request->description,
             'target'              => $request->target,
             'start_date'          => $request->start_date,
             'end_date'            => $request->end_date,
-            'rab'                 => $request->rab,
+            'rab'                 => $rab,
             'id_user'             => Auth::id(),
             'status'              => $request->status,
         ];

@@ -80,7 +80,6 @@ class ProfileController extends Controller
             'latar_belakang'   => "required",
             'visi'             => "required",
             'misi'             => "required",
-            'model_konsep'     => "required",
             'kekuatan'         => "required",
             'fokus_wilayah'    => "required",
             'alamat'           => "required",
@@ -129,7 +128,7 @@ class ProfileController extends Controller
         $data['latar_belakang'] = $request->latar_belakang;
         $data['visi'] = $request->visi;
         $data['misi'] = $request->misi;
-        $data['model_konsep'] = $request->model_konsep;
+        $data['model_konsep'] = 'nothing';
         $data['kekuatan'] = $request->kekuatan;
         $data['fokus_wilayah'] = $request->fokus_wilayah;
         $data['alamat'] = $request->alamat;
