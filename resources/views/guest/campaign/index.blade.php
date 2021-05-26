@@ -22,11 +22,9 @@
 <section class="pt-120 pb-20">
     <div class="container">
         <div class="row">
-            <div class="col-12">
                 <!-- Section Title Begin -->
-                <div class="section-title text-center">
-                    <div class="row">
-                        <div class="col-7 text-left">
+                <div class="col-md-7 text-left">
+                            <div class="section-title">
                             <h3>Rumah Creativepreneur Indonesia</h3>
                                 <h2  style="font-size: 35px;">Mari bersama saling menguatkan 
                                     Gotong Royong membangun kemanunisiaan</h2>
@@ -41,8 +39,8 @@
                                     disabilitas
                                 </p>
                             </div>
-                            <div class="col-5">
-                                <br><br>
+                        </div>
+                            <div class="col-md-5">
                                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                     <ol class="carousel-indicators">
                                       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -73,11 +71,8 @@
                                       <span class="sr-only">Next</span>
                                     </a>
                                   </div>
-                            </div>
-                        </div>
                 </div>
                 <!-- Section Title End -->
-            </div>
         </div>
     </div>
 </section>
