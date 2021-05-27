@@ -59,6 +59,7 @@
                             <th>Nama</th>
                             <th>Total Bayar</th>
                             <th>Donasi Ke</th>
+                            <th>Melalui</th>
                             @if (Auth::user()->userLevel->nama == 'Admin')
                                 <th>Aksi</th>
                             @endif
@@ -79,7 +80,12 @@
                                     <i class="fa fa-spinner text-warning" title="Belum diverifikasi"></i> 
                                 @endif
                             </td>
-                            <td>{{ $campaign_donor->campaign->title }}</td>
+                            <td>
+                                <a href="{{route('campaign.show', $campaign_donor->campaign->slug)}}">{{ $campaign_donor->campaign->title }}</a> 
+                            </td>
+                            <td>
+                                {{$campaign_donor->campaign_account->name}} ({{$campaign_donor->campaign_account->number}} - {{$campaign_donor->campaign_account->directory->name}})
+                            </td>
                             @if (Auth::user()->userLevel->nama == 'Admin')
                                 <td>
                                     <div class="button-items">

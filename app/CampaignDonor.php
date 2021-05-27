@@ -15,6 +15,6 @@ class CampaignDonor extends Model
 
     public function campaign_account()
     {
-        return $this->belongsTo(CampaignAccount::class, 'id_campaign_account', 'id');
+        return $this->belongsTo(CampaignAccount::class, 'id_campaign_account', 'id')->withTrashed();
     }
 }

@@ -73,7 +73,7 @@
                         <tr>
                             <td>{{ $number++ }}</td>
                             <td>
-                                <img src="{{Storage::url($campaign_account->qrcode)}}" style="width: 100px;height: 100px;"  alt="">    
+                                <img src="{{avatar($campaign_account->qrcode)}}" style="width: 100px;height: 100px;"  alt="">    
                             </td>
                             <td>{{ $campaign_account->number }}</td>
                             <td>{{ $campaign_account->name }}</td>

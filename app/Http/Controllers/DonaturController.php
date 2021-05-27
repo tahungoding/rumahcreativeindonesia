@@ -98,7 +98,7 @@ class DonaturController extends Controller
         $data['actionUrl']  = route('donatur.update', $id);
         $data['campaign_donor']    = CampaignDonor::findOrFail($id);
         $data['campaigns'] = Campaign::all();
-        $data['campaign_accounts'] = CampaignAccount::all();
+        $data['campaign_accounts'] = CampaignAccount::withTrashed()->get();
 
         return view('donatur.form', $data);
     }

@@ -74,7 +74,7 @@
                     </div>
                     <div class="form-group">
                         <input type="file" class="filestyle" data-buttonname="btn-secondary" name="qrcode"
-                            value="{{ $campaign_account->qrcode ?? old('qrcode') }}" @empty($campaign_account) required @endempty onchange="filePreview(this)">
+                            value="{{ $campaign_account->qrcode ?? old('qrcode') }}" onchange="filePreview(this)">
                         @error('qrcode')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
