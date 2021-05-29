@@ -213,7 +213,7 @@
                 <div class="single-service style--two text-center">
                     <!-- Icon Begin -->
                     <div class="icon">
-                        <img src="{{asset('assets')}}/front/img/wirausaha.png" style="width: 50%" class="svg" alt="">
+                        <img src="{{asset('assets')}}/front/img/wira-usaha.png" style="width: 50%" class="svg" alt="">
                     </div>
                     <!-- Icon End  -->
 

@@ -564,9 +564,9 @@
             </div>
         </div>
 
-        <div class="row text-center">
+        <div class="row">
             @foreach ($struktur_tim as $item)
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-3 col-sm-6" style="float:none;margin:auto;">
                 <!-- Single Team Begin -->
                 <div class="single-team-member">
                     <!-- Team Image Begin -->
