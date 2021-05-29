@@ -32,7 +32,7 @@ class GuestController extends Controller
         $data['slider'] = Slider::where('status', '=', 'aktif')->get();
         $data['kategoriArtikel'] = KategoriArtikel::all();
 
-        $artikel = Artikel::latest()->limit(4)->get();
+        $artikel = Artikel::latest()->limit(3)->get();
 
         if ($request->kategori) {
             $kategori = KategoriArtikel::where('nama', $request->kategori)->first();

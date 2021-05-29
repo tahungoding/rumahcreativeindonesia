@@ -45,8 +45,8 @@ class ProgramController extends Controller
     {
         $request->validate([
             'nama_program'  => 'required',
-            'gambar'        => 'nullable|mimes:png,jpg|max:4048',
-            'icon'          => 'nullable|mimes:png,jpg|max:2048',
+            'gambar'        => 'nullable|mimes:png,jpg,svg|max:4048',
+            'icon'          => 'nullable|mimes:png,jpg,svg|max:2048',
             'tanda'         => 'nullable',
             'deskripsi'     => 'required',
             'status'        => 'required'
@@ -111,8 +111,8 @@ class ProgramController extends Controller
     {
         $request->validate([
             'nama_program'  => 'required',
-            'icon'          => 'nullable|mimes:png,jpg|max:2048',
-            'gambar'        => 'nullable|mimes:png,jpg|max:4048',
+            'icon'          => 'nullable|mimes:png,jpg,svg|max:2048',
+            'gambar'        => 'nullable|mimes:png,jpg,svg|max:4048',
             'tanda'         => 'nullable',
             'deskripsi'     => 'required',
             'status'        => 'required'

@@ -24,7 +24,7 @@
                     <div class="col-lg-6">
                         <!-- Banner Content Begin -->
                         <div class="banner-image mt-50 mt-lg-0 text-center text-lg-right">
-                            <a><img class="roundedrci" style="width: 500px;object-fit:cover;" src="{{avatar($item->gambar)}}" data-rjs="2" alt=""></a>
+                            <a><img style="width: 500px;object-fit:cover;" src="{{avatar($item->gambar)}}" data-rjs="2" alt=""></a>
                         </div>
                         <!-- Banner Content End -->
                     </div>
@@ -40,7 +40,7 @@
 
 
 <!-- Feature Begin -->
-<section class="pt-120 pb-90 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/feature-pattern.png">
+<section class="section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/feature-pattern.png">
     <div class="container">
         <div class="row justify-content-center">
             <div class="section-title text-center">
@@ -91,11 +91,10 @@
                     <!-- Nav Tabs Begin -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-items">
-                            <a class="nav-link active" data-toggle="tab" href="#mission" role="tab" aria-selected="true">Our Mission</a>
+                            <a class="nav-link active" data-toggle="tab" href="#mission" role="tab" aria-selected="true">Misi</a>
                         </li>
                         <li class="nav-items">
-                            <a class="nav-link" data-toggle="tab" href="#vission" role="tab" aria-selected="false">Our
-                                Vission</a>
+                            <a class="nav-link" data-toggle="tab" href="#vission" role="tab" aria-selected="false">Visi</a>
                         </li>
                     </ul>
                     <!-- Nav Tabs End -->
@@ -105,16 +104,16 @@
                         <!-- Mission Tab Begin -->
                         <div class="tab-pane fade show active" id="mission" role="tabpanel">
                             {!! \Str::limit($profile->misi, 200) !!}
-                            <br>
-                            <a href="{{url('profiles')}}" class="btn"><span>SELENGKAPNYA</span></a>
+                            <br><br>
+                            <a href="{{url('profiles')}}" class="btn"><span>Selengkapnya</span></a>
                         </div>
                         <!-- Mission Tab End -->
 
                         <!-- Vission Tab Begin -->
                         <div class="tab-pane fade" id="vission" role="tabpanel">
                             {!! \Str::limit($profile->visi, 200) !!}
-                            <br>
-                            <a href="{{url('profiles')}}" class="btn"><span>SELENGKAPNYA</span></a>
+                            <br><br>
+                            <a href="{{url('profiles')}}" class="btn"><span>Selengkapnya</span></a>
                         </div>
                         <!-- Vission Tab End -->
                     </div>
@@ -133,7 +132,7 @@
 <!-- About End -->
 
 <!-- Work Process Begin -->
-<section class="pt-120 pb-70 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/work-process-pattern.png">
+<section class="section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/work-process-pattern.png">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -153,7 +152,7 @@
                 <div class="single-process text-center">
                     <!-- Image Begin -->
                     <div class="image">
-                        <img src="{{asset('assets')}}/front/img/office.svg" data-rjs="2" alt="">
+                        <img style="width:80%" src="{{asset('assets')}}/front/img/office.svg" data-rjs="2" alt="">
                     </div>
                     <!-- Image End -->
 
@@ -171,7 +170,7 @@
                 <div class="single-process text-center">
                     <!-- Image Begin -->
                     <div class="image">
-                        <img src="{{asset('assets')}}/front/img/koneksi.svg" data-rjs="2" alt="">
+                        <img style="width:80%" src="{{asset('assets')}}/front/img/koneksi.svg" data-rjs="2" alt="">
                     </div>
                     <!-- Image End -->
 
@@ -189,7 +188,7 @@
                 <div class="single-process text-center">
                     <!-- Image Begin -->
                     <div class="image">
-                        <img src="{{asset('assets')}}/front/img/people.svg" data-rjs="2" alt="">
+                        <img style="width:80%" src="{{asset('assets')}}/front/img/people.svg" data-rjs="2" alt="">
                     </div>
                     <!-- Image End -->
 
@@ -207,7 +206,7 @@
                 <div class="single-process text-center">
                     <!-- Image Begin -->
                     <div class="image">
-                        <img src="{{asset('assets')}}/front/img/sistem.svg" data-rjs="2" alt="">
+                        <img style="width:80%" src="{{asset('assets')}}/front/img/sistem.svg" data-rjs="2" alt="">
                     </div>
                     <!-- Image End -->
 
@@ -337,7 +336,7 @@
 <!-- Work Process End -->
 
 <!-- Service Begin -->
-<section class="pt-120 pb-90 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/service-pattern.png">
+<section class="pt-30 pb-30 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/service-pattern.png">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
@@ -361,7 +360,7 @@
                         <div class="single-service text-center">
                             <!-- Icon Begin -->
                             <div class="icon">
-                                <img src="{{asset('assets')}}/front/img/icons/service-1.png" data-rjs="2" alt="">
+                                <img src="{{asset('assets')}}/front/img/aplikasi.png" style="width: 45%" data-rjs="2" alt="">
                             </div>
                             <!-- Icon End  -->
 
@@ -369,7 +368,7 @@
                             <div class="content">
                                 <h4>Aplikasi</h4>
                                 <p>Aplikasi ini akan menyediakan semua fitur kebutuhan para mitra UMKM binaan.</p>
-                                {{-- <a href="#" class="btn-inline">Read More</a> --}}
+                                {{-- <a href="#" class="btn-inline">Selengkapnya</a> --}}
                             </div>
                             <!-- Content End -->
                         </div>
@@ -380,7 +379,7 @@
                         <div class="single-service text-center">
                             <!-- Icon Begin -->
                             <div class="icon">
-                                <img src="{{asset('assets')}}/front/img/icons/service-2.png" data-rjs="2" alt="">
+                                <img src="{{asset('assets')}}/front/img/event.png" style="width: 30%" data-rjs="2" alt="">
                             </div>
                             <!-- Icon End  -->
 
@@ -388,7 +387,7 @@
                             <div class="content">
                                 <h4>Event & Creative Media</h4>
                                 <p> Menciptakan perluasan pasar bagi seluruh mitra melalui event-event kreatif dan media kreatif.</p>
-                                {{-- <a href="#" class="btn-inline">Read More</a> --}}
+                                {{-- <a href="#" class="btn-inline">Selengkapnya</a> --}}
                             </div>
                             <!-- Content End -->
                         </div>
@@ -399,7 +398,7 @@
                         <div class="single-service text-center">
                             <!-- Icon Begin -->
                             <div class="icon">
-                                <img src="{{asset('assets')}}/front/img/icons/service-3.png" data-rjs="2" alt="">
+                                <img src="{{asset('assets')}}/front/img/creative-mover.png" style="width: 40%" data-rjs="2" alt="">
                             </div>
                             <!-- Icon End  -->
 
@@ -407,7 +406,7 @@
                             <div class="content">
                                 <h4>Creative Mover Academy</h4>
                                 <p>Sekolah Kreatif yang sebagian besar diperuntukan bagi mereka yang memiliki concern di dunia kreatif.</p>
-                                {{-- <a href="#" class="btn-inline">Read More</a> --}}
+                                {{-- <a href="#" class="btn-inline">Selengkapnya</a> --}}
                             </div>
                             <!-- Content End -->
                         </div>
@@ -418,7 +417,7 @@
                         <div class="single-service text-center">
                             <!-- Icon Begin -->
                             <div class="icon">
-                                <img src="{{asset('assets')}}/front/img/icons/service-4.png" data-rjs="2" alt="">
+                                <img src="{{asset('assets')}}/front/img/sistem-koperasi.png" style="width:45%" data-rjs="2" alt="">
                             </div>
                             <!-- Icon End  -->
 
@@ -426,7 +425,7 @@
                             <div class="content">
                                 <h4>Sistem Korporasi</h4>
                                 <p>Rumah Creativepreneur Indonesia berstatus sebagai yayasan yang mana akan ada beberapa perusahaan turunan yang dikelola dan dijalankan sebagai satu perusahaan besar.</p>
-                                {{-- <a href="#" class="btn-inline">Read More</a> --}}
+                                {{-- <a href="#" class="btn-inline">Selengkapnya</a> --}}
                             </div>
                             <!-- Content End -->
                         </div>
@@ -524,11 +523,11 @@
         <div class="row project-items grid">
             <!-- Single Project Begin -->
             @foreach ($artikel as $item)
-            <div class="col-lg-6 grid-item {{ $item->category->name }}">
-                <div class="single-project-item">
+            <div class="col-lg-4 grid-item {{ $item->category->name }}">
+                <div class="single-project-item" style="border-top:20%">
                     <!-- Project Image Begin -->
                     <div class="image">
-                        <a href="{{url('articles',$item->slug)}}"><img style="cursor: pointer" class="roundedrci" src="{{ Storage::url($item->gambar) }}" style="width:100%;height:350px;object-fit: contain;" data-rjs="2" alt=""></a> 
+                        <a href="{{url('articles',$item->slug)}}"><img style="cursor: pointer" class="roundedrci-no-border" src="{{ Storage::url($item->gambar) }}" style="width:100%;max-height:350px;object-fit: contain;" data-rjs="2" alt=""></a> 
                     </div>
                     <!-- Project Image End -->
 
@@ -537,7 +536,7 @@
                         <h3><a href="{{url('articles',$item->slug)}}">{{ $item->judul }}</a></h3>
                         <p class="project-meta">Penulis:<span>{{ $item->writer->name }}</span></p>
                         <p>{!! Str::limit($item->konten, 50) !!}</p>
-                        <a href="{{url('articles',$item->slug)}}" class="btn-inline">Read More</a>
+                        <a href="{{url('articles',$item->slug)}}" class="btn-inline btn-xs">Selengkapnya</a>
                     </div>
                     <!-- Project Body End -->
                 </div>
@@ -551,7 +550,7 @@
 <!-- Project End -->
 
 <!-- Team Begin -->
-<section class="pt-120 pb-70 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/testimonial-pattern.png">
+<section class="pb-70 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/testimonial-pattern.png">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -567,13 +566,13 @@
 
         <div class="row text-center">
             @foreach ($struktur_tim as $item)
-            <div class="col-lg-4 col-sm-6">
+            <div class="col-lg-3 col-sm-6">
                 <!-- Single Team Begin -->
                 <div class="single-team-member">
                     <!-- Team Image Begin -->
                     <div class="image position-relative">
 
-                        <img src="{{avatar($item->foto)}}" data-rjs="2" alt="" style="width: 348px;height: 283px;object-fit: cover">
+                        <img class="roundedrci-no-border" src="{{avatar($item->foto)}}" data-rjs="2" alt="" style="width: 348px;height: 283px;object-fit: cover">
                     </div>
                     <!-- Team Image End -->
 
@@ -612,7 +611,7 @@
 <!-- Team End -->
 
 <!-- Brand Slider Begin -->
-<section class="pt-120 pb-120">
+<section class="pb-120">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -631,7 +630,7 @@
                 <div class="brand-logo owl-carousel" data-owl-items="4" data-owl-autoplay="true">
                     @foreach ($mitra as $item)
                     <a href="{{$item->link}}" class="single-brand-logo">
-                        <img src="{{avatar($item->logo)}}" alt="" style="max-height: 100px; object-fit:contain;">
+                        <img src="{{avatar($item->logo)}}" class="roundedrci-no-border" alt="" style="max-height: 100px; object-fit:contain;">
                     </a>
                     @endforeach
 

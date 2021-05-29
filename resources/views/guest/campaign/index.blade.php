@@ -96,7 +96,7 @@
                     <div class="single-process text-center">
                         <!-- Image Begin -->
                         <div class="image">
-                            <img src="{{asset('assets/front/img/aim.svg')}}" width="90%" data-rjs="2" alt="">
+                            <img src="{{asset('assets/front/img/aim.svg')}}" width="85%" data-rjs="2" alt="">
                         </div>
                         <!-- Image End -->
 
@@ -114,7 +114,7 @@
                     <div class="single-process text-center">
                         <!-- Image Begin -->
                         <div class="image">
-                            <img src="{{asset('assets/front/img/group.svg')}}" width="90%" data-rjs="2" alt="">
+                            <img src="{{asset('assets/front/img/group.svg')}}" width="85%" data-rjs="2" alt="">
                         </div>
                         <!-- Image End -->
 
@@ -132,7 +132,7 @@
                     <div class="single-process text-center">
                         <!-- Image Begin -->
                         <div class="image">
-                            <img src="{{asset('assets/front/img/online-business.svg')}}" width="90%" data-rjs="2" alt="">
+                            <img src="{{asset('assets/front/img/online-business.svg')}}" width="85%" data-rjs="2" alt="">
                         </div>
                         <!-- Image End -->
 
@@ -151,7 +151,7 @@
                     <div class="single-process text-center">
                         <!-- Image Begin -->
                         <div class="image">
-                            <img src="{{asset('assets/front/img/flag.svg')}}" width="90%" data-rjs="2" alt="">
+                            <img src="{{asset('assets/front/img/flag.svg')}}" width="85%" data-rjs="2" alt="">
                         </div>
                         <!-- Image End -->
 
@@ -194,7 +194,7 @@
                 <div class="single-service style--two text-center">
                     <!-- Icon Begin -->
                     <div class="icon">
-                        <img src="{{asset('assets/front/img/icons/service-1.svg')}}" class="svg" alt="">
+                        <img src="{{asset('assets')}}/front/img/tenagakerja.png" style="width: 35%" class="svg" alt="">
                     </div>
                     <!-- Icon End  -->
 
@@ -213,7 +213,7 @@
                 <div class="single-service style--two text-center">
                     <!-- Icon Begin -->
                     <div class="icon">
-                        <img src="{{asset('assets/front/img/icons/service-2.svg')}}" class="svg" alt="">
+                        <img src="{{asset('assets')}}/front/img/wirausaha.png" style="width: 50%" class="svg" alt="">
                     </div>
                     <!-- Icon End  -->
 
@@ -231,7 +231,7 @@
                 <div class="single-service style--two text-center">
                     <!-- Icon Begin -->
                     <div class="icon">
-                        <img src="{{asset('assets/front/img/icons/service-3.svg')}}" class="svg" alt="">
+                        <img src="{{asset('assets')}}/front/img/karya.png" style="width: 50%" class="svg" alt="">
                     </div>
                     <!-- Icon End  -->
 
@@ -250,7 +250,7 @@
                 <div class="single-service style--two text-center">
                     <!-- Icon Begin -->
                     <div class="icon">
-                        <img src="{{asset('assets/front/img/icons/service-4.sv')}}g" class="svg" alt="">
+                        <img src="{{asset('assets')}}/front/img/vokasi.png" style="width: 50%" class="svg" alt="">
                     </div>
                     <!-- Icon End  -->
 

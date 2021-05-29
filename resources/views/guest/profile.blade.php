@@ -19,14 +19,14 @@
         <!-- Page Title End -->
 
         <!-- About Section Begin -->
-        <section class="pt-120 pb-120">
-            <div class="container">
+        <section>
+            <div class="container pb-50">
                 <div class="row">
                     <div class="col-12">
                         <!-- Section Title Begin -->
                         <div class="section-title text-center">
-                            {{-- <h3>Hallo Indonesia</h3> --}}
                             <h2>Latar Belakang</h2>
+                            <h3>Rumah CreativePreneur Indonesia</h3>
                             {{-- <p>Met defective are allowance two perceived listening consulted contained. It chicken oh colonel
                                 pressed
                                 excited suppose to shortly.</p> --}}
@@ -53,13 +53,15 @@
         <!-- About Section End -->
 
         <!-- About Section Begin -->
-        <section class="pt-120 pb-120 ov-hidden">
+        <section class="ov-hidden">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-7">
                         <!-- Section Title Begin -->
                         <div class="section-title mb-4">
                             <h2>VISI</h2>
+                            <h3>Rumah CreativePreneur Indonesia</h3>
+                            <br>
                             {!! $profile['visi'] !!}
                         </div>
                         <!-- Section Title End -->
@@ -78,7 +80,7 @@
         <!-- About Section Begin -->
 
         <!-- About Section Begin -->
-        <section class="pt-120 pb-120">
+        <section>
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
@@ -89,6 +91,8 @@
                         <!-- Section Title Begin -->
                         <div class="section-title mb-4 mt-50 mt-lg-0">
                             <h2>MISI</h2>
+                            <h3>Rumah CreativePreneur Indonesia</h3>
+                            <br>
                             {!! $profile['misi'] !!}
                         </div>
                         <!-- Section Title End -->
@@ -144,13 +148,14 @@
         <!-- Counter End -->
 
         <!-- About Section Begin -->
-        <section class="pt-120 pb-120">
+        <section class="pt-120">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <!-- Section Title Begin -->
                         <div class="section-title text-center">
                             <h2>Kekuatan Kami</h2>
+                            <h3>Rumah CreativePreneur Indonesia</h3>
                         </div>
                         <!-- Section Title End -->
                     </div>
@@ -181,6 +186,7 @@
                         <!-- Section Title Begin -->
                         <div class="section-title text-center">
                             <h2>TEAM</h2>
+                            <h3>Rumah CreativePreneur Indonesia</h3>
                         </div>
                         <!-- Section Title End -->
                     </div>
@@ -188,13 +194,13 @@
 
                 <div class="row">
                     @foreach ($struktur_tim as $item)
-                        <div class="col-lg-4 col-sm-6">
+                        <div class="col-lg-3 col-sm-6">
                             <!-- Single Team Begin -->
                             <div class="single-team-member">
                                 <!-- Team Image Begin -->
                                 <div class="image position-relative">
 
-                                    <img class="roundedrci" src="{{avatar($item->foto)}}" data-rjs="2" alt="" style="width: 348px;height: 283px;object-fit: cover">
+                                    <img class="roundedrci-no-border" src="{{avatar($item->foto)}}" data-rjs="2" alt="" style="width: 348px;height: 283px;object-fit: cover">
                                 </div>
                                 <!-- Team Image End -->
 
@@ -234,13 +240,14 @@
 
 
         <!-- Testimonial Begin -->
-        <section class="pt-120 pb-120 section-pattern" data-bg-img="{{asset('assets/front/img/section-pattern/testimonial-pattern.png')}}">
+        <section class="section-pattern" data-bg-img="{{asset('assets/front/img/section-pattern/testimonial-pattern.png')}}">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <!-- Section Title Begin -->
                         <div class="section-title text-center">
                             <h2>Testimoni</h2>
+                            <h3>Rumah CreativePreneur Indonesia</h3>
                         </div>
                         <!-- Section Title End -->
                     </div>
@@ -282,16 +289,26 @@
         <!-- Testimonial End -->
 
         <!-- Brand Slider Begin -->
-        <section class="pt-120 pb-120">
+        <section class="pt-120 pb-80">
             <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Section Title Begin -->
+                        <div class="section-title text-center">
+                            <h2>Mitra</h2>
+                            <h3>Rumah CreativePreneur Indonesia</h3>
+                        </div>
+                        <!-- Section Title End -->
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-12">
                         <!-- Partners -->
                         <div class="brand-logo owl-carousel" data-owl-items="4" data-owl-autoplay="true">
                             @foreach ($mitra as $item)
-                                <a href="{{$item->link}}" class="single-brand-logo">
-                                    <img src="{{avatar($item->logo)}}" alt="" style="max-height: 100px; object-fit:contain;">
-                                </a>
+                            <a href="{{$item->link}}" class="single-brand-logo">
+                                <img src="{{avatar($item->logo)}}" class="roundedrci-no-border" alt="" style="max-height: 100px; object-fit:contain;">
+                            </a>
                             @endforeach
 
                         </div>
