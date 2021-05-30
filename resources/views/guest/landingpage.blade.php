@@ -81,7 +81,7 @@
                 <!-- Section Title Begin -->
                 <div class="section-title">
                     <h3>Tentang Kami</h3>
-                    <h2>Berawal dari sebuah gagasan untuk berkontribusi membangun Indonesia melalui ekonomi kreatif</h2>
+                    <h2>Semangat berkontribusi membangun Industri Kreatif Indonesia</h2>
                     <p>Kami melihat bahwa pemberdayaan Usaha Mikro, Kecil, & Menengah (UMKM) serta memaksimalkan potensi bonus demografi adalah jalan untuk mewujudkan hal tersebut.</p>
                 </div>
                 <!-- Section Title End -->
@@ -343,7 +343,7 @@
                 <!-- Section Title Begin -->
                 <div class="section-title">
                     <h3>PRODUK</h3>
-                    <h2>Menghadirkan Solusi adalah Salah Satu Semangat Nilai yang Selalu Kami Peruangkan</h2>
+                    <h2>Menghadirkan Solusi adalah Salah Satu Semangat Nilai yang Selalu Kami Perjuangkan</h2>
                     <p>Kami menyediakan beberapa muara produk yang tentunya akan bermanfaat bagi seluruh pihak terkait yang terlibat.</p>
                 </div>
                 <!-- Section Title End -->

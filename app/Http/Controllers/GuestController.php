@@ -25,7 +25,7 @@ class GuestController extends Controller
         $data['profile'] = Profile::first();
         $data['struktur_tim'] = StrukturTim::where('status', '=', 'aktif')->orderBy('urutan', 'asc')->get();
         $data['testimoni'] = Testimoni::all();
-        $data['mitra'] = Mitra::where('status', '=', 'aktif')->get();
+        $data['mitra'] = Mitra::where('status', '=', 'aktif')->orderBy('created_at', 'asc')->get();
         $data['umkm_c'] = Umkm::count();
         $data['program'] = Program::where('status', '=', 'aktif')->get();
         $data['program_c'] = Program::count();
@@ -51,7 +51,7 @@ class GuestController extends Controller
         $data['profile'] = Profile::first();
         $data['struktur_tim'] = StrukturTim::where('status', '=', 'aktif')->orderBy('urutan', 'asc')->get();
         $data['testimoni'] = Testimoni::all();
-        $data['mitra'] = Mitra::where('status', '=', 'aktif')->get();
+        $data['mitra'] = Mitra::where('status', '=', 'aktif')->orderBy('created_at', 'asc')->get();
         $data['umkm_c'] = Umkm::count();
         $data['program_c'] = Program::count();
 

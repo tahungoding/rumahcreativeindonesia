@@ -53,7 +53,7 @@
         <!-- About Section End -->
 
         <!-- About Section Begin -->
-        <section class="ov-hidden">
+        <section class="pt-70 ov-hidden">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-7">
@@ -80,7 +80,7 @@
         <!-- About Section Begin -->
 
         <!-- About Section Begin -->
-        <section>
+        <section class="pt-70 pb-70">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
@@ -333,7 +333,7 @@
                                 <!-- Single Contact Info -->
                                 <div class="col-sm-6 col-lg-12 single-contact-info media align-items-center">
                                     <div class="image">
-                                        <img src="{{asset('assets/front/img/icons/location.svg')}}" class="svg" alt="">
+                                        <img src="{{asset('assets/front/img/icons/location.svg')}}" style="width: 50px;" class="svg" alt="">
                                     </div>
                                     <div class="media-body">
                                         <h4>Lokasi Kantor</h4>
@@ -345,7 +345,7 @@
                                 <!-- Single Contact Info -->
                                 <div class="col-sm-6 col-lg-12 single-contact-info media align-items-center">
                                     <div class="image">
-                                        <img src="{{asset('assets/front/img/icons/phone.svg')}}" class="svg" alt="">
+                                        <img src="{{asset('assets/front/img/icons/phone.svg')}}" style="width: 50px;" class="svg" alt="">
                                     </div>
                                     <div class="media-body">
                                         <h4>Telepon</h4>
@@ -357,7 +357,7 @@
                                 <!-- Single Contact Info -->
                                 <div class="col-sm-6 col-lg-12 single-contact-info media align-items-center">
                                     <div class="image">
-                                        <img src="{{asset('assets/front/img/icons/email.svg')}}" class="svg" alt="">
+                                        <img src="{{asset('assets/front/img/icons/email.svg')}}" style="width: 50px;" class="svg" alt="">
                                     </div>
                                     <div class="media-body">
                                         <h4>Email</h4>
@@ -369,7 +369,7 @@
                                 <!-- Single Contact Info -->
                                 <div class="col-sm-6 col-lg-12 single-contact-info media align-items-center">
                                     <div class="image">
-                                        <img src="{{asset('assets/front/img/icons/clock.svg')}}" class="svg" alt="">
+                                        <img src="{{asset('assets/front/img/icons/clock.svg')}}" style="width: 50px;" class="svg" alt="">
                                     </div>
                                     <div class="media-body">
                                         <h4>Jam Kerja</h4>

@@ -7,10 +7,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title text-center">
-                            <h2>Blog</h2>
+                            <h2>Artikel</h2>
                             <ul class="list-inline">
                                 <li><a href="{{url('/')}}">Beranda</a></li>
-                                <li>Blog</li>
+                                <li>Artikel</li>
                             </ul>
                         </div>
                     </div>

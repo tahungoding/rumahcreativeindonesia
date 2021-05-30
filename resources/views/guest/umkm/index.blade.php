@@ -95,7 +95,18 @@
                         <a href="{{url('list-umkms')}}" class="btn btn-primary"><span>Lihat Selengkapnya</span></a>
                     </div>
                 @endif
-                <p class="text-center">Tertarik bergabung ? daftar <a href="{{url('daftar-umkms')}}" target="_blank">disini</a></p>
+                <p class="text-center">Tertarik bergabung ? <a style="background: #25CE9E;
+                    color: #ffffff !important;
+                    padding: .25rem .4rem;
+                    font-size: .875rem;
+                    line-height: .5;
+                    border-radius: .2rem;
+                    text-transform: capitalize;
+                    border-radius: 50px;
+                    letter-spacing: 0.5px;
+                    border:0px !important;
+                    cursor:pointer;
+                    width: 100%;" href="{{url('daftar-umkms')}}" target="_blank"><span>daftar disini</span> </a> </p>
             </div>
         </section>
         <!-- Modal -->
