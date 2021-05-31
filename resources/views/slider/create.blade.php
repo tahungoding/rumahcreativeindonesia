@@ -22,7 +22,7 @@
 
                     <div class="form-group">
                         <label>Judul</label>
-                        <textarea name="judul" class="tiny" id="" cols="5" rows="10" required>
+                        <textarea name="judul" class="tiny" id="" cols="5" rows="10">
                             {{ old('judul') }}
                         </textarea>
                         @error('judul')
@@ -35,7 +35,7 @@
                         <img class="rounded img-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ avatar() }}" data-holder-rendered="true">
                     </div>
                     <div class="form-group">
-                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="gambar" id="" required onchange="filePreview(this)">
+                        <input type="file" class="filestyle" data-buttonname="btn-secondary" name="gambar" id="" onchange="filePreview(this)">
                         @error('gambar')
                             <span class="text-danger">{{ $message}}</span>
                         @enderror
@@ -43,7 +43,7 @@
 
                     <div class="form-group">
                         <label>Deskripsi</label>
-                        <input type="text" class="form-control" name="deskripsi" value="{{ old('deskripsi') }}" required />
+                        <input type="text" class="form-control" name="deskripsi" value="{{ old('deskripsi') }}" />
                         @error('deskripsi')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
@@ -51,7 +51,7 @@
 
                     <div class="form-group">
                         <label>Link</label>
-                        <input type="text" class="form-control" name="link" value="{{ old('link') }}" required />
+                        <input type="text" class="form-control" name="link" value="{{ old('link') }}" />
                         @error('link')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror

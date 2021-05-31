@@ -283,14 +283,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-4">
+            <div class="col-3">
                 <img src="{{asset('assets/front/img/logo/RCI.png')}}" style="width:100%;height:150px;object-fit:contain" alt="">
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <img src="{{asset('assets/front/img/logo/PT BISNIS CUKUR.png')}}" style="width:100%;height:150px;object-fit:contain" alt="">
             </div>
-            <div class="col-4">
-                <img src="{{asset('assets/front/img/logo/TDA.png')}}" style="width:100%;height:100px;object-fit:contain" alt="">
+            <div class="col-3">
+                <img src="{{asset('assets/front/img/Logo-TDA-Sumedang.png')}}" style="width:100%;height:100px;object-fit:contain" alt="">
+            </div>
+            <div class="col-3">
+                <img src="{{asset('assets/front/img/Logo_Sawala_Foundation_1000px.png')}}" style="width:100%;height:100px;object-fit:contain" alt="">
             </div>
         </div>
         {{-- <div class="row">
@@ -365,6 +368,7 @@
                     <h3>Rumah Creativepreneur Indonesia</h3>
                     <h2  style="font-size: 35px;">Daftar Calon Penerima Bantuan</h2>
                     <p>Mari bersama saling membantu teman difabel mewujudkan impiannya <br>dengan cara berkolaborasi dan berdonasi </p>
+                    <b>Untuk keterangan profil dan rincian RAB lebih lanjut silahkan klik gambar atau judul profile dibawah.</b>
                 </div>
                 <!-- Section Title End -->
             </div>
@@ -374,7 +378,7 @@
             <div class="col-12">
                 <div class="row">
                     @foreach ($campaigns as $item)
-                    <a href="dasdad">
+                    <a href="{{url('campaign/'.$item->slug)}}">
                         <div class="col-md-6">
                             <!-- Single Blog Item Begin -->
                             <div class="single-blog-style--two position-relative">

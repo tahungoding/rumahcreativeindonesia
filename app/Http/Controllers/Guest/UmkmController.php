@@ -108,9 +108,8 @@ class UmkmController extends Controller
             'telepon'          => "required",
             'instagram'        => "required",
             'pemilik'          => "required",
-            'shopee'           => "required",
-            'tokopedia'        => "required",
-            'bukalapak'        => "required",
+            'alasan'           => "required",
+            'website'           => "required",
             'gambar'           => 'required|mimes:png,jpg|max:2048'
         ]);
 
@@ -123,9 +122,8 @@ class UmkmController extends Controller
         $umkmData['telepon']          = $request->telepon;
         $umkmData['instagram']        = $request->instagram;
         $umkmData['pemilik']          = $request->pemilik;
-        $umkmData['shopee']           = $request->shopee;
-        $umkmData['tokopedia']        = $request->tokopedia;
-        $umkmData['bukalapak']        = $request->bukalapak;
+        $umkmData['alasan']           = $request->alasan;
+        $umkmData['website']        = $request->website;
         $umkmData['gambar']           = $path;
         $umkmData['status']           = 'Belum Diverifikasi';
 

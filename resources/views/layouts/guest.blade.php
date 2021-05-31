@@ -259,16 +259,16 @@
                         <div class="widget widget_social_icon">
                             <ul class="social_icon_list list-inline">
                                 <li>
-                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                    <a href="https://www.facebook.com/rumah.creativepreneur.3 "><i class="fa fa-facebook" title="Facebook" aria-hidden="true"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    <a href="https://vt.tiktok.com/ZSJmKNm4d/"><i class="fa fa-at" title="Tiktok" aria-hidden="true"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                    <a href="https://www.youtube.com/channel/UCA2W82Tl-D-psvdJ1MBsgEw"><i class="fa fa-youtube text-danger" title="Youtube"  aria-hidden="true"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    <a href="https://www.instagram.com/rumah.creativepreneur/"><i class="fa fa-instagram" title="Instagram" aria-hidden="true"></i></a>
                                 </li>
                             </ul>
                         </div>

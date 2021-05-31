@@ -40,7 +40,7 @@
                         <form method="POST" action="{{ route('daftar-umkm-post') }}" enctype="multipart/form-data" >
                             @csrf
                             <div class="form-group">
-                                <label>Kategori Mitra</label>
+                                <label>Kategori UMKM <sup class="text-danger" title="Wajib diisi">*</sup> </label>
                                 <select id="kategori_umkm" name="id_kategori_umkm" class="form-control">
                                 <option value="">- Pilih Kategori UMKM -</option>
                                     @foreach ($kategori_umkms as $kategori_umkm)
@@ -52,15 +52,23 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>Nama</label>
+                                <label>Nama Usaha <sup class="text-danger" title="Wajib diisi">*</sup></label>
                                 <input type="text" class="form-control" name="nama" value="{{ old('nama') }}"
-                                    required />
+                                    placeholder="Masukan Nama Usaha / UMKM" />
                                 @error('nama')
                                 <span class="text-danger">{{ $message}}</span>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>Gambar</label><br>
+                                <label>Nama Pemilik <sup class="text-danger" title="Wajib diisi">*</sup></label>
+                                <input type="text" class="form-control" name="pemilik" value="{{ old('pemilik') }}"
+                                    placeholder="Masukan Nama Pemilik / Owner" />
+                                @error('pemilik')
+                                <span class="text-danger">{{ $message}}</span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Gambar / Logo Usaha <sup class="text-danger" title="Wajib diisi">*</sup></label><br>
                                 <img class="rounded img-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ avatar() }}" data-holder-rendered="true">
                             </div>
                             <div class="form-group">
@@ -70,17 +78,24 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>Alamat</label>
+                                <label>Alamat <sup class="text-danger" title="Wajib diisi">*</sup></label>
                                 <input type="text" class="form-control" name="alamat" value="{{ old('alamat') }}"
-                                    required />
+                                    placeholder="Masukan Alamat Lengkap" />
                                 @error('alamat')
                                 <span class="text-danger">{{ $message}}</span>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>Telepon</label>
-                                <input type="text" class="form-control" name="telepon" value="{{ old('telepon') }}"
-                                    required />
+                                <label>Alasan dan Tujuan Bergabung <sup class="text-danger" title="Wajib diisi">*</sup></label>
+                                <textarea name="alasan" class="form-control" id="" cols="30" rows="10">{{ old('alasan') }}</textarea>
+                                @error('alasan')
+                                <span class="text-danger">{{ $message}}</span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Telepon <sup class="text-danger" title="Wajib diisi">*</sup></label>
+                                <input type="number" class="form-control" name="telepon" value="{{ old('telepon') }}"
+                                    placeholder="Masukan no telepon aktif" />
                                 @error('telepon')
                                 <span class="text-danger">{{ $message}}</span>
                                 @enderror
@@ -88,40 +103,19 @@
                             <div class="form-group">
                                 <label>Instagram</label>
                                 <input type="text" class="form-control" name="instagram" value="{{ old('instagram') }}"
-                                    required />
-                                @error('instagram')
-                                <span class="text-danger">{{ $message}}</span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label>Pemilik</label>
-                                <input type="text" class="form-control" name="pemilik" value="{{ old('pemilik') }}"
-                                    required />
-                                @error('pemilik')
-                                <span class="text-danger">{{ $message}}</span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label>Shopee</label>
-                                <input type="text" class="form-control" name="shopee" value="{{ old('shopee') }}"
-                                    required />
-                                @error('shopee')
-                                <span class="text-danger">{{ $message}}</span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label>Tokopedia</label>
-                                <input type="text" class="form-control" name="tokopedia" value="{{ old('tokopedia') }}"
-                                    required />
-                                @error('tokopedia')
-                                <span class="text-danger">{{ $message}}</span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label>Bukalapak</label>
-                                <input type="text" class="form-control" name="bukalapak" value="{{ old('bukalapak') }}"
-                                    required />
-                                @error('bukalapak')
+                                    placeholder="Masukan username instagram akun UMKM (example: umkm.co.id)" />
+                                    <small>*Isi <b>-</b> bila tidak ada</small>
+                                    @error('instagram')
+                                    <span class="text-danger">{{ $message}}</span>
+                                    @enderror
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Website</label>
+                                    <input type="text" class="form-control" name="website" value="{{ old('website') }}"
+                                    placeholder="Masukan alamat website anda (example: https://umkm.co.id/) " />
+                                    <small>*Isi <b>-</b> bila tidak ada</small>
+                                @error('website')
                                 <span class="text-danger">{{ $message}}</span>
                                 @enderror
                             </div>

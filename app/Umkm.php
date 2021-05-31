@@ -18,6 +18,8 @@ class Umkm extends Model
         'tokopedia',
         'bukalapak',
         'gambar',
+        'alasan',
+        'website',
         'status'
     ];
 

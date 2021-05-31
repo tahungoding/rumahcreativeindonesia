@@ -126,6 +126,14 @@
             $(this).addClass("active");   
         });
     });
+    function copyToClipboard(element) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+        alert('Tautan tersalin');
+    }
 </script>
 @endsection
 @section('content')
@@ -223,10 +231,11 @@
                                 </div>
 
                             </div>
+                            <p id="url">{{url()->current()}}</p>
 
                             <div class="row" style="margin-top: 20px;">
                                 <div class="col-md-6">
-                                    <button type="button" class="" data-toggle="modal" data-target="#exampleModal" style="background: #007bff;
+                                    <button type="button" class="" data-toggle="modal" data-target="#exampleModal" style="background: #25CE9E;
                                 color: #ffffff !important;
                                 display: inline-block;
                                 font-size: 15px;
@@ -257,6 +266,9 @@
                                             </li>
                                             <li>
                                                 <a href="https://wa.me/?" target="_blank" title="Bagikan di whatsapp" onclick="window.open('https://wa.me/?text=' + encodeURIComponent(document.title) + ':%20 ' + encodeURIComponent(document.URL)); return false;" style="color:#25D366"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li>
+                                                <button title="Salin tautan" onclick="copyToClipboard('#url')"><i class="fa fa-link" aria-hidden="true"></i></button>
                                             </li>
                                         </ul>
                                     </div>
@@ -397,6 +409,8 @@
                                         <h4>Rencana Anggaran Biaya</h4>
                                         <br>
                                         <embed src="{{Storage::url($detail->rab)}}" width="100%" height="1000px" />
+                                            <br>
+                                            <a href="{{Storage::url($detail->rab)}}" download>Silahkan Unduh disini <i class="fa fa-download"></i> </a>
                                     </div>
 
                                 </div>
