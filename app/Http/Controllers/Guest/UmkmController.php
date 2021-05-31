@@ -105,11 +105,12 @@ class UmkmController extends Controller
             'id_kategori_umkm' => "required",
             'nama'             => "required",
             'alamat'           => "required",
+            'alamat_usaha'     => "required",
             'telepon'          => "required",
             'instagram'        => "required",
             'pemilik'          => "required",
             'alasan'           => "required",
-            'website'           => "required",
+            'website'          => "required",
             'gambar'           => 'required|mimes:png,jpg|max:2048'
         ]);
 
@@ -119,11 +120,12 @@ class UmkmController extends Controller
         $umkmData['id_kategori_umkm'] = $request->id_kategori_umkm;
         $umkmData['nama']             = $request->nama;
         $umkmData['alamat']           = $request->alamat;
+        $umkmData['alamat_usaha']     = $request->alamat_usaha;
         $umkmData['telepon']          = $request->telepon;
         $umkmData['instagram']        = $request->instagram;
         $umkmData['pemilik']          = $request->pemilik;
         $umkmData['alasan']           = $request->alasan;
-        $umkmData['website']        = $request->website;
+        $umkmData['website']          = $request->website;
         $umkmData['gambar']           = $path;
         $umkmData['status']           = 'Belum Diverifikasi';
 

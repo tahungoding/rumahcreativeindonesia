@@ -26,7 +26,7 @@
                     @endisset
 
                     <div class="form-group">
-                        <label>Kategori Mitra</label>
+                        <label>Kategori Usaha</label>
                         <select id="kategori_umkm" name="id_kategori_umkm" class="form-control">
                         <option value="">- Pilih Kategori Mitra -</option>
                             @foreach ($kategori_umkms as $kategori_umkm)
@@ -38,7 +38,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Nama</label>
+                        <label>Nama Usaha</label>
                         <input type="text" class="form-control" name="nama" value="{{ $umkm->nama ?? old('nama') }}"
                             required />
                         @error('nama')
@@ -46,7 +46,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Gambar</label><br>
+                        <label>Gambar / Logo Usaha</label><br>
                         <img class="rounded img-preview mr-2 mo-mb-2" alt="200x200" width="200" src="{{ isset($umkm) ? avatar($umkm->gambar) : avatar() }}" data-holder-rendered="true">
                     </div>
                     <div class="form-group">
@@ -56,10 +56,10 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Alamat</label>
-                        <input type="text" class="form-control" name="alamat" value="{{ $umkm->alamat ?? old('alamat') }}"
+                        <label>Alamat Usaha</label>
+                        <input type="text" class="form-control" name="alamat_usaha" value="{{ $umkm->alamat_usaha ?? old('alamat_usaha') }}"
                             required />
-                        @error('alamat')
+                        @error('alamat_usaha')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
@@ -80,10 +80,18 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Pemilik</label>
+                        <label>Nama Pemilik</label>
                         <input type="text" class="form-control" name="pemilik" value="{{ $umkm->pemilik ?? old('pemilik') }}"
                             required />
                         @error('pemilik')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label>Alamat Pemilik</label>
+                        <input type="text" class="form-control" name="alamat" value="{{ $umkm->alamat ?? old('alamat') }}"
+                            required />
+                        @error('alamat')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>
@@ -108,6 +116,14 @@
                         <input type="text" class="form-control" name="bukalapak" value="{{ $umkm->bukalapak ?? old('bukalapak') }}"
                             required />
                         @error('bukalapak')
+                        <span class="text-danger">{{ $message}}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label>Website</label>
+                        <input type="text" class="form-control" name="website" value="{{ $umkm->website ?? old('website') }}"
+                            required />
+                        @error('website')
                         <span class="text-danger">{{ $message}}</span>
                         @enderror
                     </div>

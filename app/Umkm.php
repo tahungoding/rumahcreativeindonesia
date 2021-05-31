@@ -11,6 +11,7 @@ class Umkm extends Model
         'id_kategori_umkm',
         'nama',
         'alamat',
+        'alamat_usaha',
         'telepon',
         'instagram',
         'pemilik',

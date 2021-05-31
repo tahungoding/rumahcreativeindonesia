@@ -37,7 +37,7 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <img class="roundedrci" src="{{avatar($profile['latar_belakang_img'])}}" data-rjs="2" alt="" style="width: 1112px;height: 460px;object-fit: cover" >
+                        <img class="" src="{{avatar($profile['latar_belakang_img'])}}" data-rjs="2" alt="" style="width: 1112px;height: 460px;object-fit: cover" >
                     </div>
                 </div>
 
@@ -69,7 +69,7 @@
                     </div>
                     <!-- Video Area -->
                     <div class="col-lg-5 video-area mt-50 mt-lg-0">
-                        <a><img class="roundedrci" src="{{avatar($profile['visi_img'])}}" data-rjs="2" alt="" style="max-height: 500px;"></a> 
+                        <a><img class="" src="{{avatar($profile['visi_img'])}}" data-rjs="2" alt="" style="max-height: 500px;"></a> 
                         {{-- <a href="#" class="vdo-btn popup-video"><img src="{{asset('assets/front/img/icons/play.svg')}}" class="svg" alt=""> Watch
                             Video</a> --}}
                     </div>
@@ -84,7 +84,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                       <a><img class="roundedrci" src="{{avatar($profile['misi_img'])}}" data-rjs="2" class="w-100" alt=""></a> 
+                       <a><img class="" src="{{avatar($profile['misi_img'])}}" data-rjs="2" class="w-100" alt=""></a> 
                     </div>
 
                     <div class="col-lg-6">
@@ -163,7 +163,7 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <img class="roundedrci" src="{{avatar($profile['model_konsep_img'])}}" data-rjs="2" alt="" style="width: 1112px;height: 460px;object-fit: cover">
+                        <img class="" src="{{avatar($profile['model_konsep_img'])}}" data-rjs="2" alt="" style="width: 1112px;height: 460px;object-fit: cover">
                     </div>
                 </div>
 
@@ -200,7 +200,7 @@
                                 <!-- Team Image Begin -->
                                 <div class="image position-relative">
 
-                                    <img class="roundedrci-no-border" src="{{avatar($item->foto)}}" data-rjs="2" alt="" style="width: 348px;height: 283px;object-fit: cover">
+                                    <img class="" src="{{avatar($item->foto)}}" data-rjs="2" alt="" style="width: 348px;height: 283px;object-fit: cover">
                                 </div>
                                 <!-- Team Image End -->
 
@@ -263,7 +263,7 @@
                                 <div class="col-md-5">
                                     <!-- Testimonial Image Begin -->
                                     <div class="testimonial-image mb-50 mb-md-0">
-                                       <a><img class="roundedrci" src="{{avatar($item->gambar)}}" data-rjs="2" alt="" style="width: 435px;height: 391px;object-fit: cover"></a> 
+                                       <a><img class="" src="{{avatar($item->gambar)}}" data-rjs="2" alt="" style="width: 435px;height: 391px;object-fit: cover"></a> 
                                     </div>
                                     <!-- Testimonial Image End -->
                                 </div>
@@ -307,7 +307,7 @@
                         <div class="brand-logo owl-carousel" data-owl-items="4" data-owl-autoplay="true">
                             @foreach ($mitra as $item)
                             <a href="{{$item->link}}" class="single-brand-logo">
-                                <img src="{{avatar($item->logo)}}" class="roundedrci-no-border" alt="" style="max-height: 100px; object-fit:contain;">
+                                <img src="{{avatar($item->logo)}}" class="" alt="" style="max-height: 100px; object-fit:contain;">
                             </a>
                             @endforeach
 

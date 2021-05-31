@@ -54,6 +54,8 @@ class UmkmController extends Controller
             'pemilik'          => "required",
             'shopee'           => "required",
             'tokopedia'        => "required",
+            'website'        => "required",
+            'alasan'        => "required",
             'bukalapak'        => "required",
             'gambar'           => 'required|mimes:png,jpg|max:2048'
         ]);
@@ -69,6 +71,8 @@ class UmkmController extends Controller
         $umkmData['pemilik']          = $request->pemilik;
         $umkmData['shopee']           = $request->shopee;
         $umkmData['tokopedia']        = $request->tokopedia;
+        $umkmData['website']        = $request->website;
+        $umkmData['alasan']        = $request->alasan;
         $umkmData['bukalapak']        = $request->bukalapak;
         $umkmData['gambar']           = $path;
         $umkmData['status']           = 'Terverifikasi';
@@ -122,11 +126,14 @@ class UmkmController extends Controller
             'id_kategori_umkm' => "required",
             'nama'             => "required",
             'alamat'           => "required",
+            'alamat_usaha'           => "required",
             'telepon'          => "required",
             'instagram'        => "required",
             'pemilik'          => "required",
             'shopee'           => "required",
             'tokopedia'        => "required",
+            'website'        => "required",
+            'alasan'        => "required",
             'bukalapak'        => "required",
             'status'           => "required",
         ]);
@@ -143,11 +150,14 @@ class UmkmController extends Controller
         $umkmData['id_kategori_umkm'] = $request->id_kategori_umkm;
         $umkmData['nama']             = $request->nama;
         $umkmData['alamat']           = $request->alamat;
+        $umkmData['alamat_usaha']           = $request->alamat_usaha;
         $umkmData['telepon']          = $request->telepon;
         $umkmData['instagram']        = $request->instagram;
         $umkmData['pemilik']          = $request->pemilik;
         $umkmData['shopee']           = $request->shopee;
         $umkmData['tokopedia']        = $request->tokopedia;
+        $umkmData['wesbite']        = $request->wesbite;
+        $umkmData['alasan']        = $request->alasan;
         $umkmData['bukalapak']        = $request->bukalapak;
         $umkmData['gambar']           = $path;
         $umkmData['status']           = $request->status;

@@ -78,10 +78,18 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>Alamat <sup class="text-danger" title="Wajib diisi">*</sup></label>
+                                <label>Alamat Pemilih<sup class="text-danger" title="Wajib diisi">*</sup></label>
                                 <input type="text" class="form-control" name="alamat" value="{{ old('alamat') }}"
                                     placeholder="Masukan Alamat Lengkap" />
                                 @error('alamat')
+                                <span class="text-danger">{{ $message}}</span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Alamat Usaha<sup class="text-danger" title="Wajib diisi">*</sup></label>
+                                <input type="text" class="form-control" name="alamat_usaha" value="{{ old('alamat_usaha') }}"
+                                    placeholder="Masukan Alamat Usaha Lengkap" />
+                                @error('alamat_usaha')
                                 <span class="text-danger">{{ $message}}</span>
                                 @enderror
                             </div>

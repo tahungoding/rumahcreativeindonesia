@@ -122,7 +122,7 @@
                 <!-- About Tabs End -->
             </div>
             <div class="col-lg-5 video-area mt-50 mt-lg-0">
-                <a><img class="roundedrci" src="{{avatar($profile->visi_img)}}" data-rjs="2" alt="" style="max-height: 500px;"></a> 
+                <a><img class="" src="{{avatar($profile->visi_img)}}" data-rjs="2" alt="" style="max-height: 500px;"></a> 
                 {{-- <a href="#" class="vdo-btn popup-video"><img src="{{asset('assets')}}/front/img/icons/play.svg" class="svg" alt=""> Watch
                 Video</a> --}}
             </div>
@@ -527,7 +527,7 @@
                 <div class="single-project-item" style="border-top:20%">
                     <!-- Project Image Begin -->
                     <div class="image">
-                        <a href="{{url('articles',$item->slug)}}"><img style="cursor: pointer" class="roundedrci-no-border" src="{{ Storage::url($item->gambar) }}" style="width:100%;max-height:350px;object-fit: contain;" data-rjs="2" alt=""></a> 
+                        <a href="{{url('articles',$item->slug)}}"><img style="cursor: pointer" class="" src="{{ Storage::url($item->gambar) }}" style="width:100%;max-height:350px;object-fit: contain;" data-rjs="2" alt=""></a> 
                     </div>
                     <!-- Project Image End -->
 
@@ -536,7 +536,7 @@
                         <h3><a href="{{url('articles',$item->slug)}}">{{ $item->judul }}</a></h3>
                         <p class="project-meta">Penulis:<span>{{ $item->writer->name }}</span></p>
                         <p>{!! Str::limit($item->konten, 50) !!}</p>
-                        <a href="{{url('articles',$item->slug)}}" class="btn-inline btn-xs">Selengkapnya</a>
+                        <a href="{{url('articles',$item->slug)}}" class="btn-inline" style="font-size: 12px;">Selengkapnya</a>
                     </div>
                     <!-- Project Body End -->
                 </div>
@@ -549,66 +549,54 @@
 </section>
 <!-- Project End -->
 
-<!-- Team Begin -->
-<section class="pb-70 section-pattern" data-bg-img="{{asset('assets')}}/front/img/section-pattern/testimonial-pattern.png">
+<!-- Testimonial Begin -->
+<section class="section-pattern pb-120" data-bg-img="{{asset('assets/front/img/section-pattern/testimonial-pattern.png')}}">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <!-- Section Title Begin -->
                 <div class="section-title text-center">
-                    <h3>Founder</h3>
-                    <h2>Struktur Tim</h2>
-                    <p>Para pendiri terdiri dari kalangan pemerharti, profesional, & ahli di Bidang Ekonomi Kreatif dan Pemberdayaan Manusia.</p>
+                    <h2>Testimoni</h2>
+                    <h3>Rumah CreativePreneur Indonesia</h3>
                 </div>
                 <!-- Section Title End -->
             </div>
         </div>
 
-        <div class="row">
-            @foreach ($struktur_tim as $item)
-            <div class="col-lg-3 col-sm-6" style="float:none;margin:auto;">
-                <!-- Single Team Begin -->
-                <div class="single-team-member">
-                    <!-- Team Image Begin -->
-                    <div class="image position-relative">
-
-                        <img class="roundedrci-no-border" src="{{avatar($item->foto)}}" data-rjs="2" alt="" style="width: 348px;height: 283px;object-fit: cover">
-                    </div>
-                    <!-- Team Image End -->
-
-                    <!-- Team Info Begin -->
-                    <div class="team-info">
-                        <div class="info-front text-center">
-                            <h4>{{$item->nama}}</h4>
-                            <p>{{$item->jabatan}}</p>
+        <!-- Testimonial Slider Begin -->
+        <div class="testimonial-slider owl-carousel" data-owl-nav="true" data-owl-autoplay="false"
+            data-owl-animate-Out="fadeOut" data-owl-animate-in="fadeIn" data-owl-margin="3">
+            <!-- Single Testimonial Begin -->
+            @foreach ($testimoni as $item)
+                <div class="single-testimonial-slide">
+                    <div class="row align-items-center">
+                        <div class="col-md-5">
+                            <!-- Testimonial Image Begin -->
+                            <div class="testimonial-image mb-50 mb-md-0">
+                               <a><img class="" src="{{avatar($item->gambar)}}" data-rjs="2" alt="" style="width: 435px;height: 391px;object-fit: cover"></a> 
+                            </div>
+                            <!-- Testimonial Image End -->
                         </div>
 
-                        <div class="info-back">
-                            <ul class="social_icon_list list-inline text-center w-100 d-flex justify-content-around">
-                                <li>
-                                    <a href="https://facebook.com/{{$item->facebook}}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://twitter.com/{{$item->facebook}}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://linkedin.com/u/{{$item->facebook}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://instagram.com/{{$item->instagram}}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                </li>
-                            </ul>
+                        <div class="col-md-7">
+                            <!-- Testimonial Content Begin -->
+                            <div class="testimonial-content">
+                                <p>{{$item->isi}}</p>
+
+                                <h4>{{$item->responden}}</h4>
+                                <span>{{$item->asal}}</span>
+                            </div>
+                            <!-- Testimonial Content End -->
                         </div>
                     </div>
-                    <!-- Team Info End -->
                 </div>
-                <!-- Single Team End -->
-            </div>
             @endforeach
+            <!-- Single Testimonial End -->
         </div>
+        <!-- Testimonial Slider End -->
     </div>
 </section>
-<!-- Team End -->
+<!-- Testimonial End -->
 
 <!-- Brand Slider Begin -->
 <section class="pb-120">
@@ -630,7 +618,7 @@
                 <div class="brand-logo owl-carousel" data-owl-items="4" data-owl-autoplay="true">
                     @foreach ($mitra as $item)
                     <a href="{{$item->link}}" class="single-brand-logo">
-                        <img src="{{avatar($item->logo)}}" class="roundedrci-no-border" alt="" style="max-height: 100px; object-fit:contain;">
+                        <img src="{{avatar($item->logo)}}" class="" alt="" style="max-height: 100px; object-fit:contain;">
                     </a>
                     @endforeach
 

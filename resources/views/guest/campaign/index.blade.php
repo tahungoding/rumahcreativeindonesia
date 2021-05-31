@@ -56,7 +56,7 @@
                                         <img class="d-block w-100" src="{{asset('assets/front/img/campaign/campaign-2.jpeg')}}" alt="Second slide">
                                       </div>
                                       <div class="carousel-item">
-                                        <img class="d-block w-100" src="{{asset('assets/front/img/campaign/campaign-3.jpeg')}}" alt="Third slide">
+                                        <img class="d-block w-100" src="{{asset('assets/front/img/campaign/campaign-3-rev-1.jpg')}}" alt="Third slide">
                                       </div>
                                       <div class="carousel-item">
                                         <img class="d-block w-100" src="{{asset('assets/front/img/campaign/campaign-4.jpeg')}}" alt="Forth slide">
