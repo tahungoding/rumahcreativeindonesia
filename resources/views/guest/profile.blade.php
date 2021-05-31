@@ -238,56 +238,6 @@
         </section>
         <!-- Team End -->
 
-
-        <!-- Testimonial Begin -->
-        <section class="section-pattern" data-bg-img="{{asset('assets/front/img/section-pattern/testimonial-pattern.png')}}">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- Section Title Begin -->
-                        <div class="section-title text-center">
-                            <h2>Testimoni</h2>
-                            <h3>Rumah CreativePreneur Indonesia</h3>
-                        </div>
-                        <!-- Section Title End -->
-                    </div>
-                </div>
-
-                <!-- Testimonial Slider Begin -->
-                <div class="testimonial-slider owl-carousel" data-owl-nav="true" data-owl-autoplay="false"
-                    data-owl-animate-Out="fadeOut" data-owl-animate-in="fadeIn" data-owl-margin="3">
-                    <!-- Single Testimonial Begin -->
-                    @foreach ($testimoni as $item)
-                        <div class="single-testimonial-slide">
-                            <div class="row align-items-center">
-                                <div class="col-md-5">
-                                    <!-- Testimonial Image Begin -->
-                                    <div class="testimonial-image mb-50 mb-md-0">
-                                       <a><img class="" src="{{avatar($item->gambar)}}" data-rjs="2" alt="" style="width: 435px;height: 391px;object-fit: cover"></a> 
-                                    </div>
-                                    <!-- Testimonial Image End -->
-                                </div>
-
-                                <div class="col-md-7">
-                                    <!-- Testimonial Content Begin -->
-                                    <div class="testimonial-content">
-                                        <p>{{$item->isi}}</p>
-
-                                        <h4>{{$item->responden}}</h4>
-                                        <span>{{$item->asal}}</span>
-                                    </div>
-                                    <!-- Testimonial Content End -->
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                    <!-- Single Testimonial End -->
-                </div>
-                <!-- Testimonial Slider End -->
-            </div>
-        </section>
-        <!-- Testimonial End -->
-
         <!-- Brand Slider Begin -->
         <section class="pt-120 pb-80">
             <div class="container">
