@@ -12,7 +12,7 @@
             </div>
             <!-- Video Area -->
             <div class="col-lg-5 video-area mt-50 mt-lg-0">
-               <a><img class="roundedrci" src="{{avatar($item->gambar)}}" data-rjs="2" alt="" style="max-height: 500px;"></a> 
+               <a><img class="" src="{{avatar($item->gambar)}}" data-rjs="2" alt="" style="max-height: 500px;"></a> 
             </div>
             <!-- End Video Area -->
         </div>

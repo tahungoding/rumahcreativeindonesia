@@ -29,7 +29,7 @@
                 <div class="blog-details">
                     <!-- Blog Details Image Begin -->
                     <div class="blog-details-image">
-                       <a href=""><img class="roundedrci" src="{{avatar($artikel->gambar)}}" data-rjs="2" alt=""></a> 
+                       <a href=""><img class="" src="{{avatar($artikel->gambar)}}" data-rjs="2" alt=""></a> 
                     </div>
                     <!-- Blog Details Image End -->
 

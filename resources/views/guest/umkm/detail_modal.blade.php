@@ -13,10 +13,12 @@
 <div>
     {{$umkm->kategori_umkm['nama']}}
 </div>
-<h4 for="">Alamat Usaha</h4>
-<div>
-    {{$umkm->alamat_usaha}}
-</div>
+@if (!empty($umkm->alamat_usaha))
+    <h4 for="">Alamat Usaha</h4>
+    <div>
+        {{$umkm->alamat_usaha}}
+    </div>
+@endif
 @if (!empty($umkm->pemilik))
     <h4 for="">Nama Pemilik</h4>
     <div>

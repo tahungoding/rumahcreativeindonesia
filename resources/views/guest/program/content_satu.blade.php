@@ -12,7 +12,7 @@
                     </div>
                     <!-- Video Area -->
                     <div class="col-lg-5 video-area mt-50 mt-lg-0">
-                       <a><img class="roundedrci" src="{{avatar($item->gambar)}}" data-rjs="2" alt="" style="max-height: 500px;"></a> 
+                       <a><img class="" src="{{avatar($item->gambar)}}" data-rjs="2" alt="" style="max-height: 500px;"></a> 
                         {{-- <a href="#" class="vdo-btn popup-video"><img src="{{asset('assets/front/img/icons/play.svg')}}"
                                 class="svg" alt=""> Watch
                             Video</a> --}}

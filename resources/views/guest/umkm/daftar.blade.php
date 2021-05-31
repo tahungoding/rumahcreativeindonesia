@@ -78,7 +78,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>Alamat Pemilih<sup class="text-danger" title="Wajib diisi">*</sup></label>
+                                <label>Alamat Pemilik<sup class="text-danger" title="Wajib diisi">*</sup></label>
                                 <input type="text" class="form-control" name="alamat" value="{{ old('alamat') }}"
                                     placeholder="Masukan Alamat Lengkap" />
                                 @error('alamat')

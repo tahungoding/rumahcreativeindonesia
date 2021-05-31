@@ -2,7 +2,9 @@
 <div class="col-lg-6 sales {{($agend->status == 'aktif') ? 'comingsoon' : 'done'}}"
     >
     <div class="single-project-item">
-        <div class="image"><img src="{{avatar($agend->gambar)}}" data-rjs="0" alt="" /></div>
+        <div class="image"><a href="{{url('agendas/'.$agend->slug)}}">
+            <img src="{{avatar($agend->gambar)}}" data-rjs="0" alt="" />
+            </a></div>
         <div style="background-color: #20b7ba;
                     color: white;
                     width: 100%;
@@ -19,7 +21,7 @@
             </div>
         </div>
         <div class="project-body">
-            <h3><a href="{{url('agendas/'.$agend->slug)}} ">{{$agend->nama_agenda}}</a></h3>
+            <h3><a href="{{url('agendas/'.$agend->slug)}}">{{$agend->nama_agenda}}</a></h3>
             <div class="row">
                 <div class="col-md-6">
                     <p class="project-meta">Penyelengara:<span>{{$agend->penyelenggara}}</span></p>
