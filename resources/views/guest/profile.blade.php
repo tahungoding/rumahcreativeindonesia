@@ -239,7 +239,7 @@
         <!-- Team End -->
 
         <!-- Brand Slider Begin -->
-        <section class="pt-120 pb-80">
+        <section class="pb-80">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
