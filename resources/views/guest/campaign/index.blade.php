@@ -27,7 +27,7 @@
                             <div class="section-title">
                             <h3>Rumah Creativepreneur Indonesia</h3>
                                 <h2  style="font-size: 35px;">Mari bersama saling menguatkan 
-                                    Gotong Royong membangun kemanunisiaan</h2>
+                                    Gotong Royong membangun kemanusian</h2>
                                 <p >Rumah Creativepreneur Indonesia ( RCI ) berkolaborasi dengan PT Bisnis Cukur Nusantara ,
                                     Sawala Foundation , dan TDA Sumedang memiliki gagasan Bersama untuk menciptakan ekosistem
                                     positif yang membantu para kelompok Difabel
@@ -290,7 +290,7 @@
                 <img src="{{asset('assets/front/img/logo/PT BISNIS CUKUR.png')}}" style="width:100%;height:150px;object-fit:contain" alt="">
             </div>
             <div class="col-3">
-                <img src="{{asset('assets/front/img/Logo-TDA-Sumedang.png')}}" style="width:100%;height:100px;object-fit:contain" alt="">
+                <img src="{{asset('assets/front/img/tda.png')}}" style="width:200px;height:100px;" alt="">
             </div>
             <div class="col-3">
                 <img src="{{asset('assets/front/img/Logo_Sawala_Foundation_1000px.png')}}" style="width:100%;height:100px;object-fit:contain" alt="">
@@ -379,7 +379,7 @@
                 <div class="row">
                     @foreach ($campaigns as $item)
                     <a href="{{url('campaign/'.$item->slug)}}">
-                        <div class="col-md-6">
+                        <div class="col-md-10" style="float:none;margin:auto;">
                             <!-- Single Blog Item Begin -->
                             <div class="single-blog-style--two position-relative">
                             
