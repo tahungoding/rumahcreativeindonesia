@@ -231,7 +231,7 @@
                                 </div>
 
                             </div>
-                            <p id="url">{{url()->current()}}</p>
+                            <p id="url" style="display: none;">{{url()->current()}}</p>
 
                             <div class="row" style="margin-top: 20px;">
                                 <div class="col-md-6">
@@ -268,7 +268,7 @@
                                                 <a href="https://wa.me/?" target="_blank" title="Bagikan di whatsapp" onclick="window.open('https://wa.me/?text=' + encodeURIComponent(document.title) + ':%20 ' + encodeURIComponent(document.URL)); return false;" style="color:#25D366"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                                             </li>
                                             <li>
-                                                <button title="Salin tautan" onclick="copyToClipboard('#url')"><i class="fa fa-link" aria-hidden="true"></i></button>
+                                                <button style="all: unset;cursor: pointer;" title="Salin tautan" onclick="copyToClipboard('#url')"><i class="fa fa-link" aria-hidden="true"></i></button>
                                             </li>
                                         </ul>
                                     </div>
