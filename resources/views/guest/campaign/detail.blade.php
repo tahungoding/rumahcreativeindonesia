@@ -174,7 +174,7 @@
                     <div class="blog-content border border-hover" style="height: 400px;padding:30px;margin-left: -30px;border-top-right-radius: 20px;
                     border-bottom-right-radius: 20px;">
 
-                        <h3 class="blog-title"><a href="campaign-detail.html">{{ $detail->title }}</a></h3>
+                        <h3 class="blog-title"><a href="{{url('campaign/'.$detail->slug)}}">{{ $detail->title }}</a></h3>
                         @if (session('success'))
                         <br>
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
