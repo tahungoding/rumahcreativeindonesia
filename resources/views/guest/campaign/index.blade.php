@@ -356,9 +356,26 @@
 <!-- Pricing Plan End -->
 
 
+<section class="pt-50 section-pattern" data-bg-img="{{asset('assets/front/img/section-pattern/price-pattern.png')}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Section Title Begin -->
+                <div class="section-title text-center">
+                    <h3>Testimoni</h3>
+                    <h2  style="font-size: 35px;">Bupati Sumedang</h2>
+                    <br>
+                    <iframe src="https://drive.google.com/file/d/1AOO1GaDPvlIB2YaEDiaAQcv6n2oDrUkW/preview" width="800" height="450" allow="autoplay"></iframe>
+                </div>
+                <!-- Section Title End -->
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- About Section End -->
 <!-- Blog Begin -->
-<section class="pt-120 pb-20">
+<section class="pt-50 pb-20">
     <div class="container">
 
         <div class="row">
